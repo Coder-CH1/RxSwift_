@@ -52,8 +52,6 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
         setupSideBarButton()
         setupTitleLabel()
         setupSearchIconImage()
-        
-        segmentedControl.homeViewController = self
     }
     
     func setupSideBarButton() {

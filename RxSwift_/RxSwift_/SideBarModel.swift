@@ -8,8 +8,8 @@
 import UIKit
 
 struct Profile {
-    var profileImage: UIImage?
-    var profileName: String
+    var profileIcon: UIImage?
+    var profileLabel: String
     //    var viewProfile: String
 }
 
@@ -49,12 +49,12 @@ struct SidebarItem {
     let type: ItemType
 }
 
-let profileItem = SidebarItem(type: .profile(Profile(profileImage: UIImage(named: ""), profileName: "")))
+let profileItem = SidebarItem(type: .profile(Profile(profileIcon: UIImage(named: "profile"), profileLabel: "Profile")))
 
-let ordersItem = SidebarItem(type: .orders(Orders(ordersIcon: UIImage(named: ""), ordersLabel: "")))
+let ordersItem = SidebarItem(type: .orders(Orders(ordersIcon: UIImage(named: "order"), ordersLabel: "Orders")))
 
-let offerItem = SidebarItem(type: .offer(Offer(offerIcon: UIImage(named: ""), offerLabel: "")))
+let offerItem = SidebarItem(type: .offer(Offer(offerIcon: UIImage(named: "offer"), offerLabel: "Offer and Promo")))
 
-let privacyItem = SidebarItem(type: .privacy(Privacy(privacyIcon: UIImage(named: ""), privacyLabel: "")))
+let privacyItem = SidebarItem(type: .privacy(Privacy(privacyIcon: UIImage(named: "privacy"), privacyLabel: "Privacy")))
 
-let securityItem = SidebarItem(type: .security(Security(securityIcon: UIImage(named: ""), securityLabel: "")))
+let securityItem = SidebarItem(type: .security(Security(securityIcon: UIImage(named: "security"), securityLabel: "Security")))

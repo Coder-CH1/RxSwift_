@@ -29,6 +29,16 @@ class SideBarViewController: UIViewController {
         return collectionView
     }()
     
+    var sideBarData: [SidebarItem] = [profileItem,
+                                    ordersItem,
+                                    offerItem,
+                                    privacyItem,
+                                    securityItem] {
+        didSet {
+            sidebarCollectionView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
@@ -38,12 +48,29 @@ class SideBarViewController: UIViewController {
 
 extension SideBarViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return sideBarData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SideBarCollectionViewCell", for: indexPath) as! SideBarCollectionViewCell
-        cell.backgroundColor = .gray
+        let item = sideBarData[indexPath.item]
+        switch item.type {
+        case .profile(let profileItem):
+            cell.privacyIcon.image = profileItem.profileIcon
+            cell.profileLabel.text = profileItem.profileLabel
+        case .orders(let ordersItem):
+            cell.ordersIcon.image = ordersItem.ordersIcon
+            cell.ordersLabel.text = ordersItem.ordersLabel
+        case .offer(let offerItem):
+            cell.offerIcon.image = offerItem.offerIcon
+            cell.offerLabel.text = offerItem.offerLabel
+        case .privacy(let privacyItem):
+            cell.privacyIcon.image = privacyItem.privacyIcon
+            cell.privacyLabel.text = privacyItem.privacyLabel
+        case .security(let securityItem):
+            cell.securityIcon.image = securityItem.securityIcon
+            cell.securityLabel.text = securityItem.securityLabel
+        }
         return cell
     }
 }
