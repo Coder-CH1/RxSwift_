@@ -25,6 +25,7 @@ class SideBarViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.isUserInteractionEnabled = true
         collectionView.register(SideBarCollectionViewCell.self, forCellWithReuseIdentifier: "SideBarCollectionViewCell")
         return collectionView
     }()
