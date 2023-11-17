@@ -17,8 +17,8 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         let stack = UIStackView(arrangedSubviews: [profileIcon, profileLabel])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
-        stack.spacing = 30
-        stack.alignment = .leading
+        stack.spacing = 10
+        stack.alignment = .center
         return stack
     }()
     
@@ -91,12 +91,9 @@ class SideBarCollectionViewCell: UICollectionViewCell {
    
     func setupViews() {
         self.addSubview(parentStackView)
-        
         NSLayoutConstraint.activate([
-            parentStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            parentStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-//            parentStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50),
-            //parentStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            parentStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
+            parentStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
     }
     

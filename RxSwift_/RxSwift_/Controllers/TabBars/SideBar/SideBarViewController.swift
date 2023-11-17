@@ -30,10 +30,10 @@ class SideBarViewController: UIViewController {
     }()
     
     var sideBarData: [SidebarItem] = [profileItem,
-                                    ordersItem,
-                                    offerItem,
-                                    privacyItem,
-                                    securityItem] {
+                                      ordersItem,
+                                      offerItem,
+                                      privacyItem,
+                                      securityItem] {
         didSet {
             sidebarCollectionView.reloadData()
         }
@@ -96,7 +96,11 @@ extension SideBarViewController: UICollectionViewDelegate {
 
 extension SideBarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 40)
+        return CGSize(width: view.frame.height, height: 40)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
 }
 
@@ -117,6 +121,8 @@ extension SideBarViewController {
             sidebarCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             sidebarCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             sidebarCollectionView.bottomAnchor.constraint(equalTo: signoutButton.bottomAnchor, constant: -50),
+            sidebarCollectionView.heightAnchor.constraint(equalToConstant: 400),
+            sidebarCollectionView.widthAnchor.constraint(equalToConstant: view.frame.height),
             
             signoutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
             signoutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
@@ -129,6 +135,7 @@ extension SideBarViewController {
 }
 
 extension SideBarViewController {
+    
     func navigateToProfileViewController() {
         let vc = ProfileViewController()
         navigationController?.pushViewController(vc, animated: true)
