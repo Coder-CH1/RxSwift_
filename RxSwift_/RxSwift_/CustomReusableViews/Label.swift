@@ -18,7 +18,6 @@ class Label: UILabel {
         self.textAlignment = .center
         self.lineBreakMode = .byWordWrapping
         self.font = font
-        //self.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

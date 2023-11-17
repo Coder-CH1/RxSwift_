@@ -21,6 +21,14 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
     
     let searchIconImage = CustomImageView(image: UIImage(systemName: "magnifyingglass"))
     
+    let foodView = FoodView()
+    
+    let drinksView = DrinksView()
+    
+    let snacksView = DrinksView()
+    
+    let sauceView = SauceView()
+    
     lazy var searchTextField: UITextField = {
         let textField = UITextField()
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
