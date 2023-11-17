@@ -1,18 +1,17 @@
 //
-//  ProfileViewController.swift
+//  OrdersViewController.swift
 //  RxSwift_
 //
-//  Created by Mac on 16/11/2023.
+//  Created by Mac on 17/11/2023.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class OrdersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Profile"
+        title = "Orders"
         view.backgroundColor = .white
     }
-
 }

@@ -49,12 +49,12 @@ struct SidebarItem {
     let type: ItemType
 }
 
-let profileItem = SidebarItem(type: .profile(Profile(profileIcon: UIImage(named: "profile"), profileLabel: "Profile")))
+let profileItem = SidebarItem(type: .profile(Profile(profileIcon: UIImage(systemName: "person.circle"), profileLabel: "Profile")))
 
-let ordersItem = SidebarItem(type: .orders(Orders(ordersIcon: UIImage(named: "order"), ordersLabel: "Orders")))
+let ordersItem = SidebarItem(type: .orders(Orders(ordersIcon: UIImage(systemName: "cart"), ordersLabel: "Orders")))
 
-let offerItem = SidebarItem(type: .offer(Offer(offerIcon: UIImage(named: "offer"), offerLabel: "Offer and Promo")))
+let offerItem = SidebarItem(type: .offer(Offer(offerIcon: UIImage(systemName: "tag"), offerLabel: "Offer and Promo")))
 
-let privacyItem = SidebarItem(type: .privacy(Privacy(privacyIcon: UIImage(named: "privacy"), privacyLabel: "Privacy")))
+let privacyItem = SidebarItem(type: .privacy(Privacy(privacyIcon: UIImage(systemName: "list.dash.header.rectangle"), privacyLabel: "Privacy")))
 
-let securityItem = SidebarItem(type: .security(Security(securityIcon: UIImage(named: "security"), securityLabel: "Security")))
+let securityItem = SidebarItem(type: .security(Security(securityIcon: UIImage(systemName: "shield.righthalf.filled"), securityLabel: "Security")))

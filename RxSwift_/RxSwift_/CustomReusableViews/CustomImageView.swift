@@ -13,7 +13,7 @@ class CustomImageView: UIImageView {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.image = image
-        self.backgroundColor = .white
+        self.tintColor = .white
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -76,12 +76,27 @@ extension SideBarViewController: UICollectionViewDataSource {
 }
 
 extension SideBarViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.item {
+        case 0:
+            navigateToProfileViewController()
+        case 1:
+            navigateToOrdersViewController()
+        case 2:
+            navigateToOfferViewController()
+        case 3:
+            navigateToPrivacyViewController()
+        case 4:
+            navigateToSecurityViewController()
+        default:
+            break
+        }
+    }
 }
 
 extension SideBarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 50)
+        return CGSize(width: view.frame.width, height: 40)
     }
 }
 
@@ -110,5 +125,32 @@ extension SideBarViewController {
     
     @objc func toggleBackButtonTapped() {
         delegate?.sideBarDidToggleBack()
+    }
+}
+
+extension SideBarViewController {
+    func navigateToProfileViewController() {
+        let vc = ProfileViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToOrdersViewController() {
+        let vc = OrdersViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToOfferViewController() {
+        let vc = OfferViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToPrivacyViewController() {
+        let vc = PrivacyViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToSecurityViewController() {
+        let vc = SecurityViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
