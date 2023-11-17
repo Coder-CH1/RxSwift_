@@ -86,7 +86,6 @@ class SideBarCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
-        //setupTapGesture()
     }
    
     func setupViews() {
