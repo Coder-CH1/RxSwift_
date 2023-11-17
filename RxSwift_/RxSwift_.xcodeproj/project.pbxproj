@@ -37,6 +37,7 @@
 		04D41A942B06D57D0054F7F8 /* SauceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A932B06D57D0054F7F8 /* SauceView.swift */; };
 		04D41A972B06D5D70054F7F8 /* Protocol Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A962B06D5D70054F7F8 /* Protocol Delegates.swift */; };
 		04D41A992B06D7090054F7F8 /* SideBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A982B06D7090054F7F8 /* SideBarCollectionViewCell.swift */; };
+		04D41A9F2B075BA10054F7F8 /* SideBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A9E2B075BA10054F7F8 /* SideBarModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		04D41A932B06D57D0054F7F8 /* SauceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceView.swift; sourceTree = "<group>"; };
 		04D41A962B06D5D70054F7F8 /* Protocol Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol Delegates.swift"; sourceTree = "<group>"; };
 		04D41A982B06D7090054F7F8 /* SideBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarCollectionViewCell.swift; sourceTree = "<group>"; };
+		04D41A9E2B075BA10054F7F8 /* SideBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				04D41A9C2B06D8570054F7F8 /* Controllers */,
 				04D41A842B06D30A0054F7F8 /* CustomReusableViews */,
 				04D41A9D2B06D8FE0054F7F8 /* Protocols */,
+				04D41A9E2B075BA10054F7F8 /* SideBarModel.swift */,
 				04D41A412B06CF480054F7F8 /* Assets.xcassets */,
 				04D41A432B06CF480054F7F8 /* LaunchScreen.storyboard */,
 				04D41A462B06CF480054F7F8 /* Info.plist */,
@@ -416,6 +419,7 @@
 				04D41A902B06D55C0054F7F8 /* DrinksView.swift in Sources */,
 				04D41A6D2B06D19B0054F7F8 /* HomeViewController.swift in Sources */,
 				04D41A832B06D2FE0054F7F8 /* CustomTopView.swift in Sources */,
+				04D41A9F2B075BA10054F7F8 /* SideBarModel.swift in Sources */,
 				04D41A922B06D56B0054F7F8 /* SnacksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
