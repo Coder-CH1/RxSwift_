@@ -18,7 +18,7 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.spacing = 30
-        stack.alignment = .fill
+        stack.alignment = .leading
         return stack
     }()
     
@@ -31,7 +31,7 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.spacing = 30
-        stack.alignment = .fill
+        stack.alignment = .leading
         return stack
     }()
     
@@ -44,7 +44,7 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.spacing = 30
-        stack.alignment = .fill
+        stack.alignment = .leading
         return stack
     }()
     
@@ -57,7 +57,7 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.spacing = 30
-        stack.alignment = .fill
+        stack.alignment = .leading
         return stack
     }()
     
@@ -70,7 +70,7 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.spacing = 30
-        stack.alignment = .fill
+        stack.alignment = .leading
         return stack
     }()
     
@@ -79,7 +79,7 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.spacing = 20
-        stack.alignment = .fill
+        stack.alignment = .leading
         return stack
     }()
     
@@ -94,7 +94,9 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             parentStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            parentStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50)
+            parentStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+//            parentStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50),
+            //parentStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
     
