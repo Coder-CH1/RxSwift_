@@ -81,7 +81,7 @@ extension SideBarViewController: UICollectionViewDelegate {
 
 extension SideBarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 50)
+        return CGSize(width: view.frame.width, height: 50)
     }
 }
 
@@ -98,7 +98,7 @@ extension SideBarViewController {
             toggleBackButton.heightAnchor.constraint(equalToConstant: 40),
             toggleBackButton.widthAnchor.constraint(equalToConstant: 40),
             
-            sidebarCollectionView.topAnchor.constraint(equalTo: toggleBackButton.bottomAnchor, constant: 100),
+            sidebarCollectionView.topAnchor.constraint(equalTo: toggleBackButton.bottomAnchor, constant: 80),
             sidebarCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             sidebarCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             sidebarCollectionView.bottomAnchor.constraint(equalTo: signoutButton.bottomAnchor, constant: -50),
