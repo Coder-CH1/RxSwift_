@@ -18,7 +18,7 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.spacing = 20
-        stack.alignment = .fill
+        stack.alignment = .leading
         return stack
     }()
     
@@ -31,7 +31,7 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.spacing = 20
-        stack.alignment = .fill
+        stack.alignment = .leading
         return stack
     }()
     
@@ -44,7 +44,7 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.spacing = 20
-        stack.alignment = .fill
+        stack.alignment = .leading
         return stack
     }()
     
@@ -57,7 +57,7 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.spacing = 20
-        stack.alignment = .fill
+        stack.alignment = .leading
         return stack
     }()
     
@@ -70,7 +70,7 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.spacing = 20
-        stack.alignment = .fill
+        stack.alignment = .leading
         return stack
     }()
     
@@ -78,7 +78,7 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         let stack = UIStackView(arrangedSubviews: [profileStackView, ordersStackView, offerStackView, privacyStackView, securityStackView])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
-        stack.spacing = 20
+        stack.spacing = 1
         stack.alignment = .leading
         return stack
     }()
@@ -91,8 +91,12 @@ class SideBarCollectionViewCell: UICollectionViewCell {
     func setupViews() {
         self.addSubview(parentStackView)
         NSLayoutConstraint.activate([
-            parentStackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 5),
-            parentStackView.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            parentStackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 50),
+            parentStackView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 40),
+            parentStackView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -14),
+            parentStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            parentStackView.widthAnchor.constraint(equalToConstant: 300),
+            parentStackView.heightAnchor.constraint(equalToConstant: 300)
         ])
     }
     

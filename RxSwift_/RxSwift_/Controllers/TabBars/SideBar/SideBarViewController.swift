@@ -19,8 +19,9 @@ class SideBarViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 2
+        layout.minimumInteritemSpacing = 2
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
+        collectionView.backgroundColor = .clear
         collectionView.collectionViewLayout = layout
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self
@@ -97,7 +98,7 @@ extension SideBarViewController: UICollectionViewDelegate {
 
 extension SideBarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.height, height: 40)
+        return CGSize(width: view.frame.width, height: 40)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -118,12 +119,12 @@ extension SideBarViewController {
             toggleBackButton.heightAnchor.constraint(equalToConstant: 40),
             toggleBackButton.widthAnchor.constraint(equalToConstant: 40),
             
-            sidebarCollectionView.topAnchor.constraint(equalTo: toggleBackButton.bottomAnchor, constant: 80),
-            sidebarCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            sidebarCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            sidebarCollectionView.topAnchor.constraint(equalTo: toggleBackButton.safeAreaLayoutGuide.bottomAnchor, constant: 150),
+            sidebarCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14),
+            sidebarCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -14),
             sidebarCollectionView.bottomAnchor.constraint(equalTo: signoutButton.bottomAnchor, constant: -50),
             sidebarCollectionView.heightAnchor.constraint(equalToConstant: 400),
-            sidebarCollectionView.widthAnchor.constraint(equalToConstant: view.frame.height),
+            sidebarCollectionView.widthAnchor.constraint(equalToConstant: view.frame.width),
             
             signoutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
             signoutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
