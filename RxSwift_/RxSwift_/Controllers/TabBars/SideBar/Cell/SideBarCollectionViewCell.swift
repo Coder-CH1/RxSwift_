@@ -78,8 +78,8 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         let stack = UIStackView(arrangedSubviews: [profileStackView, ordersStackView, offerStackView, privacyStackView, securityStackView])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
-        stack.spacing = 10
-        stack.alignment = .center
+        stack.spacing = 1
+        stack.alignment = .leading
         return stack
     }()
     
@@ -94,7 +94,7 @@ class SideBarCollectionViewCell: UICollectionViewCell {
             parentStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
             parentStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
             parentStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -14),
-            parentStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
+//            parentStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -0),
             parentStackView.widthAnchor.constraint(equalToConstant: 300),
             parentStackView.heightAnchor.constraint(equalToConstant: 300)
         ])
