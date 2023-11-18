@@ -42,6 +42,7 @@
 		04D41AA32B07875E0054F7F8 /* OfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41AA22B07875E0054F7F8 /* OfferViewController.swift */; };
 		04D41AA52B0787690054F7F8 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41AA42B0787690054F7F8 /* PrivacyViewController.swift */; };
 		04D41AA72B0787750054F7F8 /* SecurityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41AA62B0787750054F7F8 /* SecurityViewController.swift */; };
+		04D41AAB2B0892270054F7F8 /* SideBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41AAA2B0892270054F7F8 /* SideBarTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		04D41AA22B07875E0054F7F8 /* OfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferViewController.swift; sourceTree = "<group>"; };
 		04D41AA42B0787690054F7F8 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		04D41AA62B0787750054F7F8 /* SecurityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityViewController.swift; sourceTree = "<group>"; };
+		04D41AAA2B0892270054F7F8 /* SideBarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				04D41A982B06D7090054F7F8 /* SideBarCollectionViewCell.swift */,
+				04D41AAA2B0892270054F7F8 /* SideBarTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				04D41A6D2B06D19B0054F7F8 /* HomeViewController.swift in Sources */,
 				04D41A832B06D2FE0054F7F8 /* CustomTopView.swift in Sources */,
 				04D41A9F2B075BA10054F7F8 /* SideBarModel.swift in Sources */,
+				04D41AAB2B0892270054F7F8 /* SideBarTableViewCell.swift in Sources */,
 				04D41A922B06D56B0054F7F8 /* SnacksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

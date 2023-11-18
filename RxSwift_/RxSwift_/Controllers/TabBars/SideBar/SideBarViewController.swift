@@ -31,6 +31,19 @@ class SideBarViewController: UIViewController {
         return collectionView
     }()
     
+//    lazy var sideBarTableView: UITableView = {
+//        let tableView = UITableView()
+//        tableView.translatesAutoresizingMaskIntoConstraints = false
+//        tableView.delegate = self
+//        tableView.dataSource = self
+//        tableView.separatorStyle = .singleLine
+//        tableView.separatorColor = .white
+//        tableView.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
+//        tableView.isUserInteractionEnabled = true
+//        tableView.register(SideBarTableViewCell.self, forCellReuseIdentifier: "SideBarTableViewCell")
+//        return tableView
+//    }()
+
     var sideBarData: [SidebarItem] = [profileItem,
                                       ordersItem,
                                       offerItem,
@@ -110,6 +123,7 @@ extension SideBarViewController {
     
     func setupViews() {
         view.addSubview(toggleBackButton)
+//        view.addSubview(sideBarTableView)
         view.addSubview(sidebarCollectionView)
         view.addSubview(signoutButton)
         toggleBackButton.addTarget(self, action: #selector(toggleBackButtonTapped), for: .touchUpInside)
@@ -125,8 +139,13 @@ extension SideBarViewController {
             sidebarCollectionView.bottomAnchor.constraint(equalTo: signoutButton.bottomAnchor, constant: -50),
             sidebarCollectionView.heightAnchor.constraint(equalToConstant: 400),
             sidebarCollectionView.widthAnchor.constraint(equalToConstant: view.frame.width),
+//            sideBarTableView.topAnchor.constraint(equalTo: toggleBackButton.bottomAnchor, constant: 20),
+//            sideBarTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14),
+//            sideBarTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -14),
+//            sideBarTableView.heightAnchor.constraint(equalToConstant: 400),
+//            sideBarTableView.widthAnchor.constraint(equalToConstant: 600),
             
-            signoutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
+            signoutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
             signoutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
         ])
     }
@@ -163,3 +182,58 @@ extension SideBarViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
 }
+
+//extension SideBarViewController: UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return sideBarData.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "SideBarTableViewCell", for: indexPath) as! SideBarTableViewCell
+//        let row = sideBarData[indexPath.item]
+//        switch row.type {
+//        case .profile(let profileItem):
+//            cell.privacyIcon.image = profileItem.profileIcon
+//            cell.profileLabel.text = profileItem.profileLabel
+//        case .orders(let ordersItem):
+//            cell.ordersIcon.image = ordersItem.ordersIcon
+//            cell.ordersLabel.text = ordersItem.ordersLabel
+//        case .offer(let offerItem):
+//            cell.offerIcon.image = offerItem.offerIcon
+//            cell.offerLabel.text = offerItem.offerLabel
+//        case .privacy(let privacyItem):
+//            cell.privacyIcon.image = privacyItem.privacyIcon
+//            cell.privacyLabel.text = privacyItem.privacyLabel
+//        case .security(let securityItem):
+//            cell.securityIcon.image = securityItem.securityIcon
+//            cell.securityLabel.text = securityItem.securityLabel
+//        }
+//        return cell
+//    }
+//
+//
+//}
+//
+//extension SideBarViewController: UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        switch indexPath.item {
+//        case 0:
+//            navigateToProfileViewController()
+//        case 1:
+//            navigateToOrdersViewController()
+//        case 2:
+//            navigateToOfferViewController()
+//        case 3:
+//            navigateToPrivacyViewController()
+//        case 4:
+//            navigateToSecurityViewController()
+//        default:
+//            break
+//        }
+//    }
+//
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 50
+//    }
+//}
+//

@@ -1,13 +1,15 @@
 //
-//  SideBarCollectionViewCell.swift
+//  SideBarTableViewCell.swift
 //  RxSwift_
 //
-//  Created by Mac on 17/11/2023.
+//  Created by Mac on 18/11/2023.
 //
 
 import UIKit
 
-class SideBarCollectionViewCell: UICollectionViewCell {
+class SideBarTableViewCell: UITableViewCell {
+    
+    let identifier = "SideBarTableViewCell"
     
     let profileIcon = CustomImageView(image: UIImage(named: ""))
     
@@ -19,6 +21,8 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         stack.axis = .horizontal
         stack.spacing = 20
         stack.alignment = .leading
+        stack.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        stack.heightAnchor.constraint(equalToConstant: 50).isActive = true
         return stack
     }()
     
@@ -78,29 +82,28 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         let stack = UIStackView(arrangedSubviews: [profileStackView, ordersStackView, offerStackView, privacyStackView, securityStackView])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
-        stack.spacing = 10
-        stack.alignment = .center
+        stack.spacing = 1
+        stack.alignment = .leading
         return stack
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override func awakeFromNib() {
+        super.awakeFromNib()
         setupViews()
     }
-   
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        setupViews()
+    }
+    
     func setupViews() {
         self.addSubview(parentStackView)
         NSLayoutConstraint.activate([
-            parentStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
-            parentStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
-            parentStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -14),
-            parentStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            parentStackView.widthAnchor.constraint(equalToConstant: 300),
-            parentStackView.heightAnchor.constraint(equalToConstant: 300)
+            parentStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 50),
+            parentStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            parentStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20)
         ])
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
 }
