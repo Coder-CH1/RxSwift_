@@ -5,7 +5,7 @@
 //  Created by Mac on 17/11/2023.
 //
 
-import UIKit
+import Foundation
 
 enum SideBarItems: String, CaseIterable {
     case profile
@@ -25,6 +25,6 @@ let sideBarImages: [SideBarItems: String] = [
 
 struct SideBarItemData {
     let item: SideBarItems
-    let imageName: String
+    let iconLabel: String
     let label: String
 }

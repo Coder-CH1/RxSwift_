@@ -33,7 +33,7 @@ class SideBarViewController: UIViewController {
     }()
     
     let sideBarItemsData: [SideBarItemData] = SideBarItems.allCases.map {
-        SideBarItemData(item: $0, imageName: sideBarImages[$0] ?? "", label: $0.rawValue.capitalized)
+        SideBarItemData(item: $0, iconLabel: sideBarImages[$0] ?? "", label: $0.rawValue.capitalized)
     }
     
     override func viewDidLoad() {
@@ -52,7 +52,7 @@ extension SideBarViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SideBarCollectionViewCell", for: indexPath) as! SideBarCollectionViewCell
         let optionData = sideBarItemsData[indexPath.item]
         
-        cell.profileIcon.image = UIImage(named: optionData.imageName)
+        cell.profileIcon.image = UIImage(named: optionData.iconLabel)
         cell.profileLabel.text = optionData.label
         return cell
     }
