@@ -33,7 +33,7 @@ class SideBarCollectionViewCell: UICollectionViewCell {
     }()
     
     lazy var stackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [profileIcon, profileLabel, createSeparatorView])
+        let stack = UIStackView(arrangedSubviews: [profileIcon, profileLabel])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.spacing = 40
