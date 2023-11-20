@@ -24,16 +24,16 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    func createSeparatorView() -> UIView {
+    lazy var createSeparatorView: UIView = {
         let separatorView = UIView()
         separatorView.backgroundColor = UIColor.gray
         separatorView.translatesAutoresizingMaskIntoConstraints = false
         separatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
         return separatorView
-    }
+    }()
     
     lazy var stackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [profileIcon, profileLabel])
+        let stack = UIStackView(arrangedSubviews: [profileIcon, profileLabel, createSeparatorView])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.spacing = 40

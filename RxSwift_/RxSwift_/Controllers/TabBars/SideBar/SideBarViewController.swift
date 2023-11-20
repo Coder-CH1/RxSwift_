@@ -99,7 +99,7 @@ extension SideBarViewController {
             sidebarCollectionView.topAnchor.constraint(equalTo: toggleBackButton.bottomAnchor, constant: 20),
             sidebarCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14),
             sidebarCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -14),
-            sidebarCollectionView.bottomAnchor.constraint(equalTo: signoutButton.bottomAnchor, constant: -100),
+            sidebarCollectionView.bottomAnchor.constraint(equalTo: signoutButton.bottomAnchor, constant: -50),
             
             signoutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
             signoutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
