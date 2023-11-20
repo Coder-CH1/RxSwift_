@@ -56,9 +56,9 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    func configure(with sideBar: SideBarItems) {
-        profileIcon.image = UIImage(named: sideBar.rawValue)
-        profileLabel.text = sideBar.rawValue
+    func configure(with sideBar: SideBarItemData) {
+        profileIcon.image = UIImage(named: sideBar.iconLabel)
+        profileLabel.text = sideBar.label
     }
     
     required init?(coder: NSCoder) {

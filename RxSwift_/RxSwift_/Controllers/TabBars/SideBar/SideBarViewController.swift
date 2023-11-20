@@ -50,10 +50,8 @@ extension SideBarViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SideBarCollectionViewCell", for: indexPath) as! SideBarCollectionViewCell
-        let optionData = sideBarItemsData[indexPath.item]
-        
-        cell.profileIcon.image = UIImage(named: optionData.iconLabel)
-        cell.profileLabel.text = optionData.label
+        let items = sideBarItemsData[indexPath.item]
+        cell.configure(with: items)
         return cell
     }
 }
