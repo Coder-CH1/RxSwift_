@@ -113,22 +113,22 @@ extension SideBarViewController {
     
     func navigateToProfileViewController() {
         let vc = ProfileViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: false)
     }
     
     func navigateToOrdersViewController() {
         let vc = OrdersViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: false)
     }
     
     func navigateToOfferViewController() {
         let vc = OfferViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: false)
     }
     
     func navigateToPrivacyViewController() {
         let vc = PrivacyViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: false)
     }
     
     func navigateToSecurityViewController() {
