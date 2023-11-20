@@ -20,7 +20,7 @@ class SideBarViewController: UIViewController {
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 30
         layout.minimumInteritemSpacing = 2
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
         collectionView.collectionViewLayout = layout
@@ -96,12 +96,12 @@ extension SideBarViewController {
             toggleBackButton.heightAnchor.constraint(equalToConstant: 40),
             toggleBackButton.widthAnchor.constraint(equalToConstant: 40),
             
-            sidebarCollectionView.topAnchor.constraint(equalTo: toggleBackButton.bottomAnchor, constant: 20),
+            sidebarCollectionView.topAnchor.constraint(equalTo: toggleBackButton.bottomAnchor, constant: 40),
             sidebarCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14),
             sidebarCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -14),
             sidebarCollectionView.bottomAnchor.constraint(equalTo: signoutButton.bottomAnchor, constant: -50),
             
-            signoutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+            signoutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -120),
             signoutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
         ])
     }
