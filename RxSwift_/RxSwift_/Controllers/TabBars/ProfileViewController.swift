@@ -9,17 +9,6 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-//    lazy var cardView: UIView = {
-//        let cardView = UIView()
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        let subviews = [profileImage, profileName, profileEmail, profilePhone, profileAddress]
-//        for subview in subviews {
-//            view.addSubview(subview)
-//        }
-//        cardView.backgroundColor = .white
-//        return cardView
-//    }()
-    
     lazy var profileImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -71,8 +60,7 @@ class ProfileViewController: UIViewController {
             profileStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             profileStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             profileStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            profileStackView.heightAnchor.constraint(equalToConstant: 200),
-           // profileStackView.widthAnchor.constraint(equalToConstant: 200)
+            profileStackView.heightAnchor.constraint(equalToConstant: 200)
         ])
     }
 }

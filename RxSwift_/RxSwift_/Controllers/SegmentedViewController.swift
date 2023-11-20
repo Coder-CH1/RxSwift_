@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//MARK: - Objects properties and Constraints
 class SegmentedControlViewController: UIViewController {
     
     let segmentedControlIndicatorView = UIView()

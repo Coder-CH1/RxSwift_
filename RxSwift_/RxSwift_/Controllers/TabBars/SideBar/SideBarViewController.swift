@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: - Objects properties
 class SideBarViewController: UIViewController {
     
     weak var delegate: SidebarViewControllerDelegate?
@@ -43,6 +44,7 @@ class SideBarViewController: UIViewController {
     }
 }
 
+//MARK: - CollectionView Datasource
 extension SideBarViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return sideBarItemsData.count
@@ -56,6 +58,7 @@ extension SideBarViewController: UICollectionViewDataSource {
     }
 }
 
+//MARK: - CollectionView Delegates
 extension SideBarViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.item {
@@ -75,12 +78,14 @@ extension SideBarViewController: UICollectionViewDelegate {
     }
 }
 
+//MARK: - CollectionView Flow Layout of the screen
 extension SideBarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 200, height: 50)
     }
 }
 
+//MARK: - Objects Constraints, Event to toggle back to the HomeViewController
 extension SideBarViewController {
     
     func setupViews() {
@@ -109,6 +114,7 @@ extension SideBarViewController {
     }
 }
 
+//MARK: - Functions to navigate from the SideBar Contents to their respective ViewControllers
 extension SideBarViewController {
     
     func navigateToProfileViewController() {

@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: - Objects properties
 class HomeViewController: UIViewController, SidebarViewControllerDelegate {
     
     let sideBarWidth: CGFloat = 250
@@ -68,6 +69,7 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
     }
 }
 
+//MARK: - Objects Constraints, setting up event to toggle the SideBar
 extension HomeViewController {
     
     func setupViews() {

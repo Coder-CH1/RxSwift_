@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: - Collectionview cell objects and its contraints set up
 class SideBarCollectionViewCell: UICollectionViewCell {
     
     let profileIcon: UIImageView = {
