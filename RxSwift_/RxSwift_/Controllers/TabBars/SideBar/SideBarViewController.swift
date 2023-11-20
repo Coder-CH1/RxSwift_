@@ -31,16 +31,10 @@ class SideBarViewController: UIViewController {
         return collectionView
     }()
     
-    var sideBarData: [SidebarItem] = [profileItem,
-                                      ordersItem,
-                                      offerItem,
-                                      privacyItem,
-                                      securityItem] {
-        didSet {
-            sidebarCollectionView.reloadData()
-        }
+    let sideBarItemsData: [SideBarItemData] = SideBarItems.allCases.map {
+        SideBarItemData(item: $0, imageName: sideBarImages[$0] ?? "", label: $0.rawValue.capitalized)
     }
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
@@ -50,29 +44,15 @@ class SideBarViewController: UIViewController {
 
 extension SideBarViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sideBarData.count
+        return sideBarItemsData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SideBarCollectionViewCell", for: indexPath) as! SideBarCollectionViewCell
-        let item = sideBarData[indexPath.item]
-        switch item.type {
-        case .profile(let profileItem):
-            cell.privacyIcon.image = profileItem.profileIcon
-            cell.profileLabel.text = profileItem.profileLabel
-        case .orders(let ordersItem):
-            cell.ordersIcon.image = ordersItem.ordersIcon
-            cell.ordersLabel.text = ordersItem.ordersLabel
-        case .offer(let offerItem):
-            cell.offerIcon.image = offerItem.offerIcon
-            cell.offerLabel.text = offerItem.offerLabel
-        case .privacy(let privacyItem):
-            cell.privacyIcon.image = privacyItem.privacyIcon
-            cell.privacyLabel.text = privacyItem.privacyLabel
-        case .security(let securityItem):
-            cell.securityIcon.image = securityItem.securityIcon
-            cell.securityLabel.text = securityItem.securityLabel
-        }
+        let optionData = sideBarItemsData[indexPath.item]
+        
+        cell.profileIcon.image = UIImage(named: optionData.imageName)
+        cell.profileLabel.text = optionData.label
         return cell
     }
 }
@@ -101,9 +81,9 @@ extension SideBarViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: 200, height: 50)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-//    }
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    //        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+    //    }
 }
 
 extension SideBarViewController {
@@ -123,7 +103,7 @@ extension SideBarViewController {
             sidebarCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14),
             sidebarCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -14),
             sidebarCollectionView.bottomAnchor.constraint(equalTo: signoutButton.bottomAnchor, constant: -100),
-        
+            
             signoutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
             signoutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
         ])

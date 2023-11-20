@@ -9,76 +9,26 @@ import UIKit
 
 class SideBarCollectionViewCell: UICollectionViewCell {
     
-    let profileIcon = CustomImageView(image: UIImage(named: ""))
+    let profileIcon: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
     
-    let profileLabel = Label(label: "", textColor: .white, font: UIFont.systemFont(ofSize: 14, weight: .regular))
+    let profileLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
-    lazy var profileStackView: UIStackView = {
+    lazy var stackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [profileIcon, profileLabel])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
-        stack.spacing = 10
-        stack.alignment = .center
-        return stack
-    }()
-    
-    let ordersIcon = CustomImageView(image: UIImage(named: ""))
-    
-    let ordersLabel = Label(label: "", textColor: .white, font: UIFont.systemFont(ofSize: 14, weight: .regular))
-    
-    lazy var ordersStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [ordersIcon, ordersLabel])
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .horizontal
-        stack.spacing = 10
-        stack.alignment = .center
-        return stack
-    }()
-    
-    let offerIcon = CustomImageView(image: UIImage(named: ""))
-    
-    let offerLabel = Label(label: "", textColor: .white, font: UIFont.systemFont(ofSize: 14, weight: .regular))
-    
-    lazy var offerStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [offerIcon, offerLabel])
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .horizontal
-        stack.spacing = 10
-        stack.alignment = .center
-        return stack
-    }()
-    
-    let privacyIcon = CustomImageView(image: UIImage(named: ""))
-    
-    let privacyLabel = Label(label: "", textColor: .white, font: UIFont.systemFont(ofSize: 14, weight: .regular))
-    
-    lazy var privacyStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [privacyIcon, privacyLabel])
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .horizontal
-        stack.spacing = 10
-        stack.alignment = .center
-        return stack
-    }()
-    
-    let securityIcon = CustomImageView(image: UIImage(named: ""))
-    
-    let securityLabel = Label(label: "", textColor: .white, font: UIFont.systemFont(ofSize: 14, weight: .regular))
-    
-    lazy var securityStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [securityIcon, securityLabel])
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .horizontal
-        stack.spacing = 10
-        stack.alignment = .center
-        return stack
-    }()
-    
-    lazy var parentStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [profileStackView, ordersStackView, offerStackView, privacyStackView, securityStackView])
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .vertical
-        stack.spacing = 10
+        stack.spacing = 2
         stack.alignment = .leading
         return stack
     }()
@@ -87,16 +37,21 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         setupViews()
     }
-   
-    func setupViews() {
-        self.addSubview(parentStackView)
+    
+    private func setupViews() {
+        addSubview(stackView)
+        
         NSLayoutConstraint.activate([
-            parentStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
-            parentStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
-            parentStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -14),
-            parentStackView.widthAnchor.constraint(equalToConstant: 300),
-            parentStackView.heightAnchor.constraint(equalToConstant: 300)
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         ])
+    }
+    
+    func configure(with sideBar: SideBarItems) {
+        profileIcon.image = UIImage(named: sideBar.rawValue)
+        profileLabel.text = sideBar.rawValue
     }
     
     required init?(coder: NSCoder) {
