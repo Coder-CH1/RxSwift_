@@ -24,16 +24,16 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var createSeparatorView: UIView = {
+    lazy var separatorView: UIView = {
         let separatorView = UIView()
-        separatorView.backgroundColor = UIColor.gray
+        separatorView.backgroundColor = .white
         separatorView.translatesAutoresizingMaskIntoConstraints = false
         separatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
         return separatorView
     }()
     
     lazy var stackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [profileIcon, profileLabel])
+        let stack = UIStackView(arrangedSubviews: [profileIcon, profileLabel, separatorView])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.spacing = 40
@@ -48,11 +48,16 @@ class SideBarCollectionViewCell: UICollectionViewCell {
     
     private func setupViews() {
         addSubview(stackView)
+        addSubview(separatorView)
         
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            
+            separatorView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
+            separatorView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
+            separatorView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
     
