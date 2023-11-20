@@ -18,8 +18,9 @@ class SideBarViewController: UIViewController {
     lazy var sidebarCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 2
+        layout.minimumLineSpacing = 30
         layout.minimumInteritemSpacing = 2
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
         collectionView.collectionViewLayout = layout
