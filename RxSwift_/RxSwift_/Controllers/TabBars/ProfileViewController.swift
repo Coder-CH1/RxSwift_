@@ -9,7 +9,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    let informationLabel = Label(label: "Information", textColor: .black, font: UIFont.systemFont(ofSize: 22, weight: .semibold))
+    let informationLabel = Label(label: "Information", textColor: .black, font: UIFont.systemFont(ofSize: 17, weight: .semibold))
     
     lazy var profileImage: UIImageView = {
         let image = UIImageView()
@@ -21,13 +21,13 @@ class ProfileViewController: UIViewController {
         return image
     }()
     
-    let profileName = Label(label: "John doe", textColor: .black, font: UIFont.systemFont(ofSize: 20, weight: .semibold))
+    let profileName = Label(label: "John doe", textColor: .black, font: UIFont.systemFont(ofSize: 18, weight: .semibold))
     
-    let profileEmail = Label(label: "johndoe@gmail.com", textColor: .gray, font: UIFont.systemFont(ofSize: 16, weight: .regular))
+    let profileEmail = Label(label: "johndoe@gmail.com", textColor: .gray, font: UIFont.systemFont(ofSize: 13, weight: .regular))
     
-    let profilePhone = Label(label: "+23480", textColor: .gray, font: UIFont.systemFont(ofSize: 16, weight: .regular))
+    let profilePhone = Label(label: "+23480", textColor: .gray, font: UIFont.systemFont(ofSize: 13, weight: .regular))
     
-    let profileAddress = Label(label: "No 16 john doe street", textColor: .gray, font: UIFont.systemFont(ofSize: 16, weight: .regular))
+    let profileAddress = Label(label: "No 16 john doe street", textColor: .gray, font: UIFont.systemFont(ofSize: 13, weight: .regular))
     
     lazy var profileView: UIView = {
         let profileView = UIView()
@@ -37,7 +37,7 @@ class ProfileViewController: UIViewController {
         return profileView
     }()
     
-    let paymentLabel = Label(label: "Payment Method", textColor: .black, font: UIFont.systemFont(ofSize: 22, weight: .semibold))
+    let paymentLabel = Label(label: "Payment Method", textColor: .black, font: UIFont.systemFont(ofSize: 17, weight: .semibold))
     
     lazy var paymentView: UIView = {
         let profileView = UIView()
@@ -47,10 +47,6 @@ class ProfileViewController: UIViewController {
         return profileView
     }()
     
-//    let sideBarItemsData: [PaymentItemsData] = PaymentOptions.allCases.map {
-//        PaymentItemsData(item: $0, iconLabel: sideBarImages[$0] ?? "", label: $0.rawValue.capitalized)
-//    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
@@ -65,12 +61,12 @@ class ProfileViewController: UIViewController {
         }
         NSLayoutConstraint.activate([
             informationLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
-            informationLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            informationLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             
             profileView.topAnchor.constraint(equalTo: informationLabel.bottomAnchor, constant: 5),
-            profileView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            profileView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
-            profileView.heightAnchor.constraint(equalToConstant: 150),
+            profileView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            profileView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+            profileView.heightAnchor.constraint(equalToConstant: 133),
             
             profileImage.topAnchor.constraint(equalTo: profileView.topAnchor, constant: 20),
             profileImage.leadingAnchor.constraint(equalTo: profileView.leadingAnchor, constant: 20),
@@ -85,12 +81,12 @@ class ProfileViewController: UIViewController {
             profileAddress.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 20),
             
             paymentLabel.topAnchor.constraint(equalTo: profileView.bottomAnchor, constant: 30),
-            paymentLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            paymentLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             
             paymentView.topAnchor.constraint(equalTo: paymentLabel.bottomAnchor, constant: 5),
-            paymentView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            paymentView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
-            paymentView.heightAnchor.constraint(equalToConstant: 300)
+            paymentView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            paymentView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+            paymentView.heightAnchor.constraint(equalToConstant: 231)
         ])
     }
 }
