@@ -45,9 +45,10 @@ class ProfileViewController: UIViewController {
     }
     
     func setupViews() {
-        view.addSubview(informationLabel)
-        view.addSubview(profileView)
-        view.addSubview(profileImage)
+        let subviews = [informationLabel, profileView, profileImage, profileName, profileEmail, profileAddress]
+        for subview in subviews {
+            view.addSubview(subview)
+        }
         NSLayoutConstraint.activate([
             informationLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             informationLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -58,7 +59,16 @@ class ProfileViewController: UIViewController {
             profileView.heightAnchor.constraint(equalToConstant: 150),
             
             profileImage.topAnchor.constraint(equalTo: profileView.topAnchor, constant: 20),
-            profileImage.leadingAnchor.constraint(equalTo: profileView.leadingAnchor, constant: 20)
+            profileImage.leadingAnchor.constraint(equalTo: profileView.leadingAnchor, constant: 20),
+            
+            profileName.topAnchor.constraint(equalTo: profileView.topAnchor, constant: 20),
+            profileName.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 20),
+            
+            profileEmail.topAnchor.constraint(equalTo: profileName.bottomAnchor, constant: 10),
+            profileEmail.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 20),
+            
+            profileAddress.topAnchor.constraint(equalTo: profileEmail.bottomAnchor, constant: 10),
+            profileAddress.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 20),
         ])
     }
 }
