@@ -46,6 +46,10 @@ class ProfileViewController: UIViewController {
         profileView.layer.cornerRadius = 10
         return profileView
     }()
+    
+//    let sideBarItemsData: [PaymentItemsData] = PaymentOptions.allCases.map {
+//        PaymentItemsData(item: $0, iconLabel: sideBarImages[$0] ?? "", label: $0.rawValue.capitalized)
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
