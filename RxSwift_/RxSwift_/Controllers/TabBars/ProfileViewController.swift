@@ -9,7 +9,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    let informationLabel = Label(label: "Information", textColor: .black, font: UIFont.systemFont(ofSize: 24, weight: .semibold))
+    let informationLabel = Label(label: "Information", textColor: .black, font: UIFont.systemFont(ofSize: 22, weight: .semibold))
     
     lazy var profileImage: UIImageView = {
         let image = UIImageView()
@@ -21,7 +21,7 @@ class ProfileViewController: UIViewController {
         return image
     }()
     
-    let profileName = Label(label: "John doe", textColor: .black, font: UIFont.systemFont(ofSize: 24, weight: .semibold))
+    let profileName = Label(label: "John doe", textColor: .black, font: UIFont.systemFont(ofSize: 20, weight: .semibold))
     
     let profileEmail = Label(label: "johndoe@gmail.com", textColor: .gray, font: UIFont.systemFont(ofSize: 16, weight: .regular))
     
@@ -30,6 +30,16 @@ class ProfileViewController: UIViewController {
     let profileAddress = Label(label: "No 16 john doe street", textColor: .gray, font: UIFont.systemFont(ofSize: 16, weight: .regular))
     
     lazy var profileView: UIView = {
+        let profileView = UIView()
+        profileView.translatesAutoresizingMaskIntoConstraints = false
+        profileView.backgroundColor = .white
+        profileView.layer.cornerRadius = 10
+        return profileView
+    }()
+    
+    let paymentLabel = Label(label: "Payment Method", textColor: .black, font: UIFont.systemFont(ofSize: 22, weight: .semibold))
+    
+    lazy var paymentView: UIView = {
         let profileView = UIView()
         profileView.translatesAutoresizingMaskIntoConstraints = false
         profileView.backgroundColor = .white
@@ -45,7 +55,7 @@ class ProfileViewController: UIViewController {
     }
     
     func setupViews() {
-        let subviews = [informationLabel, profileView, profileImage, profileName, profileEmail, profileAddress]
+        let subviews = [informationLabel, profileView, profileImage, profileName, profileEmail, profileAddress, paymentLabel, paymentView]
         for subview in subviews {
             view.addSubview(subview)
         }
@@ -53,9 +63,9 @@ class ProfileViewController: UIViewController {
             informationLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             informationLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             
-            profileView.topAnchor.constraint(equalTo: informationLabel.bottomAnchor, constant: 10),
+            profileView.topAnchor.constraint(equalTo: informationLabel.bottomAnchor, constant: 5),
             profileView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            profileView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            profileView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
             profileView.heightAnchor.constraint(equalToConstant: 150),
             
             profileImage.topAnchor.constraint(equalTo: profileView.topAnchor, constant: 20),
@@ -69,6 +79,14 @@ class ProfileViewController: UIViewController {
             
             profileAddress.topAnchor.constraint(equalTo: profileEmail.bottomAnchor, constant: 10),
             profileAddress.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 20),
+            
+            paymentLabel.topAnchor.constraint(equalTo: profileView.bottomAnchor, constant: 30),
+            paymentLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            
+            paymentView.topAnchor.constraint(equalTo: paymentLabel.bottomAnchor, constant: 5),
+            paymentView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            paymentView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
+            paymentView.heightAnchor.constraint(equalToConstant: 300)
         ])
     }
 }
