@@ -29,24 +29,12 @@ class ProfileViewController: UIViewController {
     
     let profileAddress = Label(label: "No 16 john doe street", textColor: .gray, font: UIFont.systemFont(ofSize: 16, weight: .regular))
     
-    lazy var stackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [profileName, profileEmail, profilePhone, profileAddress])
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .vertical
-        stack.spacing = 10
-        stack.alignment = .fill
-        return stack
-    }()
-    
-    lazy var profileStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [profileImage, stackView])
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .horizontal
-        stack.spacing = 1
-        stack.alignment = .center
-        stack.backgroundColor = .white
-        stack.layer.cornerRadius = 8
-        return stack
+    lazy var profileView: UIView = {
+        let profileView = UIView()
+        profileView.translatesAutoresizingMaskIntoConstraints = false
+        profileView.backgroundColor = .white
+        profileView.layer.cornerRadius = 10
+        return profileView
     }()
 
     override func viewDidLoad() {
@@ -58,15 +46,19 @@ class ProfileViewController: UIViewController {
     
     func setupViews() {
         view.addSubview(informationLabel)
-        view.addSubview(profileStackView)
+        view.addSubview(profileView)
+        view.addSubview(profileImage)
         NSLayoutConstraint.activate([
             informationLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             informationLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             
-            profileStackView.topAnchor.constraint(equalTo: informationLabel.bottomAnchor, constant: 10),
-            profileStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14),
-            profileStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            profileStackView.heightAnchor.constraint(equalToConstant: 150)
+            profileView.topAnchor.constraint(equalTo: informationLabel.bottomAnchor, constant: 10),
+            profileView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            profileView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            profileView.heightAnchor.constraint(equalToConstant: 150),
+            
+            profileImage.topAnchor.constraint(equalTo: profileView.topAnchor, constant: 20),
+            profileImage.leadingAnchor.constraint(equalTo: profileView.leadingAnchor, constant: 20)
         ])
     }
 }
