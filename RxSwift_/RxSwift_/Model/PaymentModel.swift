@@ -24,3 +24,4 @@ struct PaymentItemsData {
     let iconLabel: String
     let label: String
 }
+
