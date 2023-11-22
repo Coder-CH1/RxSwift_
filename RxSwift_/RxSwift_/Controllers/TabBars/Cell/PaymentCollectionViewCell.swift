@@ -14,6 +14,8 @@ class PaymentCollectionViewCell: UICollectionViewCell {
     lazy var paymentIcon: UIImageView = {
         let paymentIcon = UIImageView()
         paymentIcon.translatesAutoresizingMaskIntoConstraints = false
+        paymentIcon.heightAnchor.constraint(equalToConstant: 16).isActive = true
+        paymentIcon.widthAnchor.constraint(equalToConstant: 16).isActive = true
         paymentIcon.backgroundColor = .black
         return paymentIcon
     }()
@@ -25,12 +27,13 @@ class PaymentCollectionViewCell: UICollectionViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.spacing = 20
-        stack.alignment = .fill
+        stack.alignment = .leading
         return stack
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        paymentLabel.textAlignment = .left
         setupViews()
     }
     
@@ -40,7 +43,6 @@ class PaymentCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5)
         ])
     }
     
@@ -48,7 +50,7 @@ class PaymentCollectionViewCell: UICollectionViewCell {
         radioButton.setImage(optionInfo.buttonImage, for: .normal)
         paymentIcon.image = UIImage(named: optionInfo.imageName)
         paymentLabel.text = optionInfo.labelName
-
+        
         switch optionInfo.item {
         case .card:
             paymentIcon.backgroundColor = .orange

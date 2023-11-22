@@ -11,14 +11,14 @@ enum PaymentOptions: String, CaseIterable {
     case card
     case bankAccount
     case paypal
-
+    
     struct OptionInfo {
         let buttonImage: UIImage
         let imageName: String
         let labelName: String
         let item: PaymentOptions
     }
-
+    
     var optionInfo: OptionInfo {
         switch self {
         case .card:
