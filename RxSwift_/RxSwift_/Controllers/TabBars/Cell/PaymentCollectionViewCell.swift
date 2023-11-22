@@ -48,6 +48,15 @@ class PaymentCollectionViewCell: UICollectionViewCell {
         radioButton.setImage(optionInfo.buttonImage, for: .normal)
         paymentIcon.image = UIImage(named: optionInfo.imageName)
         paymentLabel.text = optionInfo.labelName
+
+        switch optionInfo.item {
+        case .card:
+            paymentIcon.backgroundColor = .orange
+        case .bankAccount:
+            paymentIcon.backgroundColor = .systemPink
+        case .paypal:
+            paymentIcon.backgroundColor = .blue
+        }
     }
     
     required init?(coder: NSCoder) {

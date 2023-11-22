@@ -54,9 +54,9 @@ class ProfileViewController: UIViewController {
     }()
     
     let paymentOptionsInfo: [PaymentOptions: PaymentOptions.OptionInfo] = [
-        .card: PaymentOptions.OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: "card", labelName: "card"),
-        .bankAccount: PaymentOptions.OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: "bank", labelName: "Bank account"),
-        .paypal: PaymentOptions.OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: "paypal", labelName: "Paypal")
+        .card: PaymentOptions.OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: "card", labelName: "card", item: .card),
+        .bankAccount: PaymentOptions.OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: "bank", labelName: "Bank account", item: .bankAccount),
+        .paypal: PaymentOptions.OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: "paypal", labelName: "Paypal", item: .paypal)
     ]
     
     override func viewDidLoad() {
