@@ -23,10 +23,10 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate  {
     
     func setupViewControllers() {
         let vcIcons = [
-            UIImage(named: "homeIcon"),
-            UIImage(named: "favoriteIcon"),
-            UIImage(named: "profileIcon"),
-            UIImage(named: "historyIcon")
+            UIImage(systemName: "house.fill"),
+            UIImage(systemName: "heart"),
+            UIImage(systemName: "person"),
+            UIImage(systemName: "clock.arrow.circlepath")
         ]
         setViewControllers([firstVC, secondVC, thirdVC, fourthVC], animated: true)
         tabBar.tintColor = #colorLiteral(red: 0.9940347075, green: 0.3827575445, blue: 0.02892503142, alpha: 1)

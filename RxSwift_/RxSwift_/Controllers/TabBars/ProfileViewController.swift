@@ -63,9 +63,13 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Profile"
         view.backgroundColor = #colorLiteral(red: 0.9436392188, green: 0.9436392188, blue: 0.9436392188, alpha: 1)
         setupViews()
+        setupTitleProfile()
+    }
+    
+    func setupTitleProfile() {
+        tabBarItem.title = ""
     }
     
     func setupViews() {
@@ -105,7 +109,7 @@ class ProfileViewController: UIViewController {
             updateButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             updateButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             updateButton.heightAnchor.constraint(equalToConstant: 60),
-            updateButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40)
+            updateButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80)
         ])
     }
 }
