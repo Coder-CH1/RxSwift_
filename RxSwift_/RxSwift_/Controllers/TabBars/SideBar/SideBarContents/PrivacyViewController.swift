@@ -11,7 +11,7 @@ class PrivacyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Privacy"
+        navigationItem.title = "Privacy"
         view.backgroundColor = .white
     }
 }

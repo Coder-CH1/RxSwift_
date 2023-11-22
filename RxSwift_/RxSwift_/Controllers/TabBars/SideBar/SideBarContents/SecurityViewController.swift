@@ -11,7 +11,7 @@ class SecurityViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Security"
+        navigationItem.title = "Security"
         view.backgroundColor = .white
     }
 }

@@ -16,7 +16,6 @@ class PaymentCollectionViewCell: UICollectionViewCell {
         paymentIcon.translatesAutoresizingMaskIntoConstraints = false
         paymentIcon.heightAnchor.constraint(equalToConstant: 16).isActive = true
         paymentIcon.widthAnchor.constraint(equalToConstant: 16).isActive = true
-        paymentIcon.backgroundColor = .black
         return paymentIcon
     }()
     

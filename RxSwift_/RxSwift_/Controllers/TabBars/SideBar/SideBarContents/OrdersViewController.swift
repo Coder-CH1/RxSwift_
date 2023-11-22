@@ -11,7 +11,7 @@ class OrdersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Orders"
+        navigationItem.title = "Orders"
         view.backgroundColor = .white
     }
 }
