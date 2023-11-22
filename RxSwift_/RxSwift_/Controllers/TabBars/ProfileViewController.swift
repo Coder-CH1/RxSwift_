@@ -69,7 +69,7 @@ class ProfileViewController: UIViewController {
     }
     
     func setupTitleProfile() {
-        tabBarItem.title = ""
+        tabBarItem.title = "Profile"
     }
     
     func setupViews() {
