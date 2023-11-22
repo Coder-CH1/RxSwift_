@@ -39,10 +39,9 @@ class PaymentCollectionViewCell: UICollectionViewCell {
     
     func setupViews() {
         addSubview(stackView)
-        
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5)
         ])
     }
     

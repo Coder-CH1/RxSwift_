@@ -59,6 +59,8 @@ class ProfileViewController: UIViewController {
         .paypal: PaymentOptions.OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: "paypal", labelName: "Paypal", item: .paypal)
     ]
     
+    let updateButton = Button(image: UIImage(systemName: ""), label: "Update", btnTitleColor: .white, backgroundColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), radius: 30, imageColor: .clear)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
@@ -67,7 +69,7 @@ class ProfileViewController: UIViewController {
     }
     
     func setupViews() {
-        let subviews = [informationLabel, profileView, profileImage, profileName, profileEmail, profileAddress, paymentMethodLabel, paymentOptionsCollectionView]
+        let subviews = [informationLabel, profileView, profileImage, profileName, profileEmail, profileAddress, paymentMethodLabel, paymentOptionsCollectionView, updateButton]
         for subview in subviews {
             view.addSubview(subview)
         }
@@ -98,7 +100,12 @@ class ProfileViewController: UIViewController {
             paymentOptionsCollectionView.topAnchor.constraint(equalTo: paymentMethodLabel.bottomAnchor, constant: 5),
             paymentOptionsCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             paymentOptionsCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            paymentOptionsCollectionView.heightAnchor.constraint(equalToConstant: 231)
+            paymentOptionsCollectionView.heightAnchor.constraint(equalToConstant: 231),
+            
+            updateButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            updateButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+            updateButton.heightAnchor.constraint(equalToConstant: 60),
+            updateButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40)
         ])
     }
 }
