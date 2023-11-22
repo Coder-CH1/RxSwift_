@@ -56,7 +56,7 @@ class SideBarCollectionViewCell: UICollectionViewCell {
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             
-            separatorView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
+            separatorView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
             separatorView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
             separatorView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 20),
         ])

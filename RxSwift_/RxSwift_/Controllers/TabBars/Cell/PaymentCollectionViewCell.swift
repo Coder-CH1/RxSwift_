@@ -22,6 +22,14 @@ class PaymentCollectionViewCell: UICollectionViewCell {
     
     let paymentLabel = Label(label: "", textColor: .black, font: UIFont.systemFont(ofSize: 14, weight: .regular))
     
+    lazy var separatorView: UIView = {
+        let separatorView = UIView()
+        separatorView.backgroundColor = .lightGray
+        separatorView.translatesAutoresizingMaskIntoConstraints = false
+        separatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        return separatorView
+    }()
+    
     lazy var stackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [radioButton, paymentIcon, paymentLabel])
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -39,9 +47,14 @@ class PaymentCollectionViewCell: UICollectionViewCell {
     
     func setupViews() {
         addSubview(stackView)
+        addSubview(separatorView)
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5)
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            
+            separatorView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
+            separatorView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
+            separatorView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
         ])
     }
     
