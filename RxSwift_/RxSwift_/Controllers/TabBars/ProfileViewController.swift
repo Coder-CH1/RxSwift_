@@ -37,15 +37,27 @@ class ProfileViewController: UIViewController {
         return profileView
     }()
     
-    let paymentLabel = Label(label: "Payment Method", textColor: .black, font: UIFont.systemFont(ofSize: 17, weight: .semibold))
+    let paymentMethodLabel = Label(label: "Payment Method", textColor: .black, font: UIFont.systemFont(ofSize: 17, weight: .semibold))
     
-    lazy var paymentView: UIView = {
-        let profileView = UIView()
-        profileView.translatesAutoresizingMaskIntoConstraints = false
-        profileView.backgroundColor = .white
-        profileView.layer.cornerRadius = 10
-        return profileView
+    lazy var paymentOptionsCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 10
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .white
+        collectionView.layer.cornerRadius = 10
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(PaymentCollectionViewCell.self, forCellWithReuseIdentifier: "PaymentCollectionViewCell")
+        return collectionView
     }()
+    
+    let paymentOptionsInfo: [PaymentOptions: PaymentOptions.OptionInfo] = [
+        .card: PaymentOptions.OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: UIImage(named: "card"), labelName: "card"),
+        .bankAccount: PaymentOptions.OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: UIImage(named: "bank"), labelName: "Bank account"),
+        .paypal: PaymentOptions.OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: UIImage(named: "paypal"), labelName: "Paypal")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +67,7 @@ class ProfileViewController: UIViewController {
     }
     
     func setupViews() {
-        let subviews = [informationLabel, profileView, profileImage, profileName, profileEmail, profileAddress, paymentLabel, paymentView]
+        let subviews = [informationLabel, profileView, profileImage, profileName, profileEmail, profileAddress, paymentMethodLabel, paymentOptionsCollectionView]
         for subview in subviews {
             view.addSubview(subview)
         }
@@ -80,13 +92,41 @@ class ProfileViewController: UIViewController {
             profileAddress.topAnchor.constraint(equalTo: profileEmail.bottomAnchor, constant: 10),
             profileAddress.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 20),
             
-            paymentLabel.topAnchor.constraint(equalTo: profileView.bottomAnchor, constant: 30),
-            paymentLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            paymentMethodLabel.topAnchor.constraint(equalTo: profileView.bottomAnchor, constant: 30),
+            paymentMethodLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             
-            paymentView.topAnchor.constraint(equalTo: paymentLabel.bottomAnchor, constant: 5),
-            paymentView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            paymentView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            paymentView.heightAnchor.constraint(equalToConstant: 231)
+            paymentOptionsCollectionView.topAnchor.constraint(equalTo: paymentMethodLabel.bottomAnchor, constant: 5),
+            paymentOptionsCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            paymentOptionsCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+            paymentOptionsCollectionView.heightAnchor.constraint(equalToConstant: 231)
         ])
+    }
+}
+
+extension ProfileViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return paymentOptionsInfo.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PaymentCollectionViewCell", for: indexPath) as! PaymentCollectionViewCell
+        let paymentOption = PaymentOptions.allCases[indexPath.item]
+        let optionInfo = paymentOptionsInfo[paymentOption]!
+        cell.configure(with: optionInfo)
+        return cell
+    }
+}
+
+extension ProfileViewController: UICollectionViewDelegate {
+    
+}
+
+extension ProfileViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width - 80, height: 70)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
     }
 }
