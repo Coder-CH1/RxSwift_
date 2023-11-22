@@ -13,19 +13,19 @@ enum PaymentOptions: String, CaseIterable {
     case paypal
 
     struct OptionInfo {
-        let buttonImage: UIImage?
-        let imageName: UIImage?
+        let buttonImage: UIImage
+        let imageName: String
         let labelName: String
     }
 
     var optionInfo: OptionInfo {
         switch self {
         case .card:
-            return OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: UIImage(named: "card"), labelName: "Card")
+            return OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: "card", labelName: "Card")
         case .bankAccount:
-            return OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: UIImage(named: "bank"), labelName: "Bank account")
+            return OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: "bank", labelName: "Bank account")
         case .paypal:
-            return OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: UIImage(named: "paypal"), labelName: "Paypal")
+            return OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: "paypal", labelName: "Paypal")
         }
     }
 }

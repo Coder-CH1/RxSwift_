@@ -54,9 +54,9 @@ class ProfileViewController: UIViewController {
     }()
     
     let paymentOptionsInfo: [PaymentOptions: PaymentOptions.OptionInfo] = [
-        .card: PaymentOptions.OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: UIImage(named: "card"), labelName: "card"),
-        .bankAccount: PaymentOptions.OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: UIImage(named: "bank"), labelName: "Bank account"),
-        .paypal: PaymentOptions.OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: UIImage(named: "paypal"), labelName: "Paypal")
+        .card: PaymentOptions.OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: "card", labelName: "card"),
+        .bankAccount: PaymentOptions.OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: "bank", labelName: "Bank account"),
+        .paypal: PaymentOptions.OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: "paypal", labelName: "Paypal")
     ]
     
     override func viewDidLoad() {
@@ -123,10 +123,14 @@ extension ProfileViewController: UICollectionViewDelegate {
 
 extension ProfileViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width - 80, height: 70)
+        return CGSize(width: collectionView.bounds.width - 50, height: 70)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 2
     }
 }

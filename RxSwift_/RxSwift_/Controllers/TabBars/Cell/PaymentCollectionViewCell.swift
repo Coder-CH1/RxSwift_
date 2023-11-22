@@ -14,7 +14,7 @@ class PaymentCollectionViewCell: UICollectionViewCell {
     lazy var paymentIcon: UIImageView = {
         let paymentIcon = UIImageView()
         paymentIcon.translatesAutoresizingMaskIntoConstraints = false
-        paymentIcon.backgroundColor = .lightGray
+        paymentIcon.backgroundColor = .black
         return paymentIcon
     }()
     
@@ -25,7 +25,7 @@ class PaymentCollectionViewCell: UICollectionViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.spacing = 20
-        stack.alignment = .center
+        stack.alignment = .fill
         return stack
     }()
     
@@ -38,7 +38,7 @@ class PaymentCollectionViewCell: UICollectionViewCell {
         addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5)
         ])
@@ -46,7 +46,7 @@ class PaymentCollectionViewCell: UICollectionViewCell {
     
     func configure(with optionInfo: PaymentOptions.OptionInfo) {
         radioButton.setImage(optionInfo.buttonImage, for: .normal)
-        paymentIcon.image = UIImage(named: "")
+        paymentIcon.image = UIImage(named: optionInfo.imageName)
         paymentLabel.text = optionInfo.labelName
     }
     
