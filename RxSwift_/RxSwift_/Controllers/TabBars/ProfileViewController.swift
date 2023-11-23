@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//MARK: - Objects properties
 class ProfileViewController: UIViewController {
     
     let informationLabel = Label(label: "Information", textColor: .black, font: UIFont.systemFont(ofSize: 17, weight: .semibold))
@@ -110,6 +110,7 @@ class ProfileViewController: UIViewController {
     }
 }
 
+//MARK: - CollectionView Datasource
 extension ProfileViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -125,10 +126,12 @@ extension ProfileViewController: UICollectionViewDataSource {
     }
 }
 
+//MARK: - CollectionView Delegate
 extension ProfileViewController: UICollectionViewDelegate {
     
 }
 
+//MARK: - CollectionView Delegate Flow layout of the screen
 extension ProfileViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width - 70, height: 70)

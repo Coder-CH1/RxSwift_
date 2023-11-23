@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: - Objects properties and Constraints
 class PaymentCollectionViewCell: UICollectionViewCell {
     
     let radioButton = Button(image: UIImage(systemName: ""), label: "", btnTitleColor: .clear, backgroundColor: .clear, radius: 0, imageColor: .lightGray)
