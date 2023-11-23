@@ -41,6 +41,14 @@ class SideBarViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
         setupViews()
+        setupToggleBackButtonAction()
+    }
+    
+    func setupToggleBackButtonAction() {
+        let action = UIAction { [weak self] _ in
+            self?.toggleBackButtonTapped()
+        }
+        toggleBackButton.addAction(action, for: .primaryActionTriggered)
     }
 }
 
@@ -92,7 +100,6 @@ extension SideBarViewController {
         view.addSubview(toggleBackButton)
         view.addSubview(sidebarCollectionView)
         view.addSubview(signoutButton)
-        toggleBackButton.addTarget(self, action: #selector(toggleBackButtonTapped), for: .touchUpInside)
         NSLayoutConstraint.activate([
             toggleBackButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             toggleBackButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14),
@@ -109,7 +116,7 @@ extension SideBarViewController {
         ])
     }
     
-    @objc func toggleBackButtonTapped() {
+    func toggleBackButtonTapped() {
         delegate?.sideBarDidToggleBack()
     }
 }

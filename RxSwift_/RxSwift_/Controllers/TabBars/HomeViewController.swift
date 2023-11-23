@@ -51,13 +51,16 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
         navigationItem.title = "Home"
         view.backgroundColor = .white
         setupViews()
-        setupSideBarButton()
+        setupSideBarButtonAction()
         setupTitleLabel()
         setupSearchIconImage()
     }
     
-    func setupSideBarButton() {
-        sideBarButton.addTarget(self, action: #selector(toggleSideBar), for: .touchUpInside)
+    func setupSideBarButtonAction() {
+        let action = UIAction { [weak self] _ in
+            self?.toggleSideBar()
+        }
+        sideBarButton.addAction(action, for: .primaryActionTriggered)
     }
     
     func setupTitleLabel() {
@@ -112,7 +115,7 @@ extension HomeViewController {
         segmentedControlScrollView.showsHorizontalScrollIndicator = false
     }
     
-    @objc func toggleSideBar() {
+    func toggleSideBar() {
         if sideBarShowing {
             hideSideBar()
         } else {

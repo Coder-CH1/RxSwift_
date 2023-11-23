@@ -20,7 +20,6 @@ class SegmentedControlViewController: UIViewController {
         let segmentedControl = UISegmentedControl(items: items)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        segmentedControl.addTarget(self, action: #selector(segmentedControlChanged), for: .valueChanged)
         segmentedControl.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
         segmentedControl.setBackgroundImage(UIImage(), for: .selected, barMetrics: .default)
         return segmentedControl
@@ -36,6 +35,14 @@ class SegmentedControlViewController: UIViewController {
         appLogo.backgroundColor = .white
         setupViews()
         setupSegmentedControlIndicator()
+        setupSegmentsTappedAction()
+    }
+    
+    func setupSegmentsTappedAction() {
+        let action = UIAction { [weak self] _ in
+            self?.segmentedControlChanged(self!.segmentedControl)
+        }
+        segmentedControl.addAction(action, for: .valueChanged)
     }
     
     func setupSegmentedControlIndicator() {
@@ -84,7 +91,7 @@ extension SegmentedControlViewController {
         signupView.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    @objc func segmentedControlChanged(_ sender: UISegmentedControl) {
+    func segmentedControlChanged(_ sender: UISegmentedControl) {
         loginView.isHidden = sender.selectedSegmentIndex == 1
         signupView.isHidden = sender.selectedSegmentIndex == 0
         
