@@ -14,7 +14,7 @@ class HistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = "History"
+        navigationItem.title = "History"
         setupViews()
     }
     

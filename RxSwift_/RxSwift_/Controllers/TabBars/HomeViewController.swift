@@ -48,7 +48,7 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Home"
+        navigationItem.title = "Home"
         view.backgroundColor = .white
         setupViews()
         setupSideBarButton()
