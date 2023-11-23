@@ -29,7 +29,7 @@ class SideBarCollectionViewCell: UICollectionViewCell {
         let separatorView = UIView()
         separatorView.backgroundColor = .white
         separatorView.translatesAutoresizingMaskIntoConstraints = false
-        separatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        separatorView.heightAnchor.constraint(equalToConstant: 0.2).isActive = true
         return separatorView
     }()
     
