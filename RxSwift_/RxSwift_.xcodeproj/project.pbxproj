@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04B370682B0CDF15005358E7 /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370672B0CDF15005358E7 /* PaymentModel.swift */; };
 		04B3706A2B0DDBBA005358E7 /* PaymentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370692B0DDBBA005358E7 /* PaymentCollectionViewCell.swift */; };
+		04B3706D2B0F7BCD005358E7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3706C2B0F7BCD005358E7 /* ProfileViewController.swift */; };
 		04D41A392B06CF470054F7F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A382B06CF470054F7F8 /* AppDelegate.swift */; };
 		04D41A3B2B06CF470054F7F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A3A2B06CF470054F7F8 /* SceneDelegate.swift */; };
 		04D41A3D2B06CF470054F7F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A3C2B06CF470054F7F8 /* ViewController.swift */; };
@@ -21,7 +22,7 @@
 		04D41A6B2B06D1700054F7F8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A6A2B06D1700054F7F8 /* TabBarViewController.swift */; };
 		04D41A6D2B06D19B0054F7F8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A6C2B06D19B0054F7F8 /* HomeViewController.swift */; };
 		04D41A6F2B06D1F10054F7F8 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A6E2B06D1F10054F7F8 /* FavoritesViewController.swift */; };
-		04D41A712B06D21C0054F7F8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A702B06D21C0054F7F8 /* ProfileViewController.swift */; };
+		04D41A712B06D21C0054F7F8 /* SideBarProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A702B06D21C0054F7F8 /* SideBarProfileViewController.swift */; };
 		04D41A732B06D22A0054F7F8 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A722B06D22A0054F7F8 /* HistoryViewController.swift */; };
 		04D41A752B06D2580054F7F8 /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A742B06D2580054F7F8 /* SideBarViewController.swift */; };
 		04D41A772B06D2720054F7F8 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A762B06D2720054F7F8 /* Label.swift */; };
@@ -66,6 +67,7 @@
 /* Begin PBXFileReference section */
 		04B370672B0CDF15005358E7 /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
 		04B370692B0DDBBA005358E7 /* PaymentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCollectionViewCell.swift; sourceTree = "<group>"; };
+		04B3706C2B0F7BCD005358E7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		04D41A352B06CF470054F7F8 /* RxSwift_.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwift_.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D41A382B06CF470054F7F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D41A3A2B06CF470054F7F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +84,7 @@
 		04D41A6A2B06D1700054F7F8 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		04D41A6C2B06D19B0054F7F8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04D41A6E2B06D1F10054F7F8 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
-		04D41A702B06D21C0054F7F8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		04D41A702B06D21C0054F7F8 /* SideBarProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarProfileViewController.swift; sourceTree = "<group>"; };
 		04D41A722B06D22A0054F7F8 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		04D41A742B06D2580054F7F8 /* SideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
 		04D41A762B06D2720054F7F8 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
@@ -222,7 +224,7 @@
 				04D41A952B06D5990054F7F8 /* SegmentedViews */,
 				04D41A8C2B06D51B0054F7F8 /* SideBar */,
 				04D41A6E2B06D1F10054F7F8 /* FavoritesViewController.swift */,
-				04D41A702B06D21C0054F7F8 /* ProfileViewController.swift */,
+				04B3706C2B0F7BCD005358E7 /* ProfileViewController.swift */,
 				04B3706B2B0DDCCE005358E7 /* Cell */,
 				04D41A722B06D22A0054F7F8 /* HistoryViewController.swift */,
 			);
@@ -290,6 +292,7 @@
 		04D41AA82B07877C0054F7F8 /* SideBarContents */ = {
 			isa = PBXGroup;
 			children = (
+				04D41A702B06D21C0054F7F8 /* SideBarProfileViewController.swift */,
 				04D41AA02B0787490054F7F8 /* OrdersViewController.swift */,
 				04D41AA22B07875E0054F7F8 /* OfferViewController.swift */,
 				04D41AA42B0787690054F7F8 /* PrivacyViewController.swift */,
@@ -443,6 +446,7 @@
 				04D41A3D2B06CF470054F7F8 /* ViewController.swift in Sources */,
 				04D41A392B06CF470054F7F8 /* AppDelegate.swift in Sources */,
 				04D41A812B06D2E70054F7F8 /* CustomTextFieldView.swift in Sources */,
+				04B3706D2B0F7BCD005358E7 /* ProfileViewController.swift in Sources */,
 				04D41AA52B0787690054F7F8 /* PrivacyViewController.swift in Sources */,
 				04D41A942B06D57D0054F7F8 /* SauceView.swift in Sources */,
 				04D41AA72B0787750054F7F8 /* SecurityViewController.swift in Sources */,
@@ -461,7 +465,7 @@
 				04D41A732B06D22A0054F7F8 /* HistoryViewController.swift in Sources */,
 				04D41A752B06D2580054F7F8 /* SideBarViewController.swift in Sources */,
 				04D41A8E2B06D5500054F7F8 /* FoodView.swift in Sources */,
-				04D41A712B06D21C0054F7F8 /* ProfileViewController.swift in Sources */,
+				04D41A712B06D21C0054F7F8 /* SideBarProfileViewController.swift in Sources */,
 				04D41A902B06D55C0054F7F8 /* DrinksView.swift in Sources */,
 				04D41AA12B0787490054F7F8 /* OrdersViewController.swift in Sources */,
 				04D41A6D2B06D19B0054F7F8 /* HomeViewController.swift in Sources */,
