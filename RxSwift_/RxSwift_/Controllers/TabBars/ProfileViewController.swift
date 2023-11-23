@@ -28,6 +28,14 @@ class ProfileViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.9436392188, green: 0.9436392188, blue: 0.9436392188, alpha: 1)
         navigationItem.title = "Profile"
         setupViews()
+        setupChangeButtonAction()
+    }
+    
+    func setupChangeButtonAction() {
+        let action = UIAction { [weak self] _ in
+            self?.changeButtonTapped()
+        }
+        changeButton.addAction(action, for: .primaryActionTriggered)
     }
     
     func setupViews() {
@@ -51,5 +59,11 @@ class ProfileViewController: UIViewController {
             profileView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             profileView.heightAnchor.constraint(equalToConstant: 197),
         ])
+    }
+    
+    func changeButtonTapped() {
+        let vc = EditProfileViewController()
+        //vc.modalPresentationStyle = .
+        navigationController?.pushViewController(vc, animated: false)
     }
 }
