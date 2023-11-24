@@ -20,14 +20,6 @@ class CustomSegmentedControl: UIStackView {
 
     var selectedIndex: Int?
 
-    var foodView = FoodView()
-
-    var drinksView = DrinksView()
-
-    var snacksView = DrinksView()
-
-    var sauceView = SauceView()
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupStackView()
