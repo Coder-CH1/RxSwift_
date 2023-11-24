@@ -9,6 +9,8 @@ import UIKit
 
 class EditProfileViewController: UIViewController {
     
+    var delegate: EditViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9436392188, green: 0.9436392188, blue: 0.9436392188, alpha: 1)

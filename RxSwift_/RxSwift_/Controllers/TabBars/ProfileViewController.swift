@@ -22,6 +22,14 @@ class ProfileViewController: UIViewController {
         profileView.layer.cornerRadius = 10
         return profileView
     }()
+    
+    let profileName = Label(label: "John doe", textColor: .black, font: UIFont.systemFont(ofSize: 18, weight: .semibold))
+    
+    var profileEmail = Label(label: "johndoe@gmail.com", textColor: .gray, font: UIFont.systemFont(ofSize: 13, weight: .regular))
+    
+    var profilePhone = Label(label: "+23480", textColor: .gray, font: UIFont.systemFont(ofSize: 13, weight: .regular))
+    
+    let profileAddress = Label(label: "No 16 john doe street", textColor: .gray, font: UIFont.systemFont(ofSize: 13, weight: .regular))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +72,16 @@ class ProfileViewController: UIViewController {
     func changeButtonTapped() {
         let vc = EditProfileViewController()
         //vc.modalPresentationStyle = .
+        //vc.delegate = self
         navigationController?.pushViewController(vc, animated: false)
     }
 }
+
+//extension ProfileViewController: EditViewControllerDelegate {
+//
+//    func didUpdateProfile(phoneNumber: String, emailAddress: String) {
+//        self.profilePhone = phoneNumber
+//        self.profileEmail = emailAddress
+//    }
+//
+//}

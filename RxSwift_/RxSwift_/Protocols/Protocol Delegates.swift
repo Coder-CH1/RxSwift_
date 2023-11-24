@@ -7,7 +7,10 @@
 
 import UIKit
 
-protocol SidebarViewControllerDelegate: AnyObject {
+protocol SidebarViewControllerDelegate {
     func sideBarDidToggleBack()
 }
 
+protocol EditViewControllerDelegate {
+    func didUpdateProfile(phoneNumber: String, emailAddress: String)
+}
