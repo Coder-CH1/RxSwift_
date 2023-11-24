@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//MARK: - Objects properties and its constraints
 class EditProfileViewController: UIViewController {
     
     var delegate: EditViewControllerDelegate?

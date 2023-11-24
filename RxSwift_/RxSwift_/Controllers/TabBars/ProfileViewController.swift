@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//MARK: - Objects properties and its constraints
 class ProfileViewController: UIViewController {
     
     let myProfileLabel = Label(label: "My Profile", textColor: .black, font: UIFont.systemFont(ofSize: 30, weight: .semibold))
