@@ -71,17 +71,6 @@ class ProfileViewController: UIViewController {
     
     func changeButtonTapped() {
         let vc = EditProfileViewController()
-        //vc.modalPresentationStyle = .
-        //vc.delegate = self
         navigationController?.pushViewController(vc, animated: false)
     }
 }
-
-//extension ProfileViewController: EditViewControllerDelegate {
-//
-//    func didUpdateProfile(phoneNumber: String, emailAddress: String) {
-//        self.profilePhone = phoneNumber
-//        self.profileEmail = emailAddress
-//    }
-//
-//}
