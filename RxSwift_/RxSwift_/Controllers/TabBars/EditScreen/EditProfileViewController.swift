@@ -24,8 +24,8 @@ class EditProfileViewController: UIViewController {
         view.addSubview(saveButton)
         
         NSLayoutConstraint.activate([
-            saveButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
-            saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            saveButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+            saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
     }
 }
