@@ -34,6 +34,24 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
         return textField
     }()
     
+    lazy var segmentedCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 30
+        layout.minimumInteritemSpacing = 2
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.collectionViewLayout = layout
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.isUserInteractionEnabled = true
+        collectionView.register(SegmentedCollectionViewCell.self, forCellWithReuseIdentifier: "SegmentedCollectionViewCell")
+        return collectionView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Home"
@@ -66,7 +84,7 @@ extension HomeViewController {
     
     func setupViews() {
         //segmentedControlScrollView.addSubview(segmentedControl)
-        let subviews = [sideBarButton, titleLabel, searchTextField, searchIconImage]
+        let subviews = [sideBarButton, titleLabel, searchTextField, searchIconImage, segmentedCollectionView]
         for subview in subviews {
             view.addSubview(subview)
         }
@@ -88,6 +106,11 @@ extension HomeViewController {
             searchIconImage.leadingAnchor.constraint(equalTo: searchTextField.leadingAnchor, constant: 14),
             searchIconImage.widthAnchor.constraint(equalToConstant: 20),
             searchIconImage.heightAnchor.constraint(equalToConstant: 20),
+            
+            segmentedCollectionView.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 10),
+            segmentedCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14),
+            segmentedCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -14),
+            segmentedCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70),
         ])
     }
     
@@ -127,5 +150,27 @@ extension HomeViewController {
     
     func sideBarDidToggleBack() {
         hideSideBar()
+    }
+}
+
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SegmentedCollectionViewCell", for: indexPath) as! SegmentedCollectionViewCell
+        cell.backgroundColor = .gray
+        return cell
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate {
+    
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            return CGSize(width: 200, height: 300)
     }
 }
