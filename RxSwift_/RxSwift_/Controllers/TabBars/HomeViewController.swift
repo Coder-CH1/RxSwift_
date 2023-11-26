@@ -34,18 +34,6 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
         return textField
     }()
     
-    lazy var segmentedControlScrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        return scrollView
-    }()
-    
-    lazy var segmentedControl: CustomSegmentedControl = {
-        let segmentedControl = CustomSegmentedControl()
-        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        return segmentedControl
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Home"
@@ -77,8 +65,8 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
 extension HomeViewController {
     
     func setupViews() {
-        segmentedControlScrollView.addSubview(segmentedControl)
-        let subviews = [sideBarButton, titleLabel, searchTextField, searchIconImage, segmentedControlScrollView]
+        //segmentedControlScrollView.addSubview(segmentedControl)
+        let subviews = [sideBarButton, titleLabel, searchTextField, searchIconImage]
         for subview in subviews {
             view.addSubview(subview)
         }
@@ -100,19 +88,7 @@ extension HomeViewController {
             searchIconImage.leadingAnchor.constraint(equalTo: searchTextField.leadingAnchor, constant: 14),
             searchIconImage.widthAnchor.constraint(equalToConstant: 20),
             searchIconImage.heightAnchor.constraint(equalToConstant: 20),
-            
-            segmentedControlScrollView.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 40),
-            segmentedControlScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            segmentedControlScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            segmentedControlScrollView.heightAnchor.constraint(equalToConstant: 40),
-            
-            segmentedControl.topAnchor.constraint(equalTo: segmentedControlScrollView.topAnchor),
-            segmentedControl.leadingAnchor.constraint(equalTo: segmentedControlScrollView.leadingAnchor),
-            segmentedControl.trailingAnchor.constraint(equalTo: segmentedControlScrollView.trailingAnchor),
-            segmentedControl.bottomAnchor.constraint(equalTo: segmentedControlScrollView.bottomAnchor)
         ])
-        segmentedControlScrollView.isScrollEnabled = true
-        segmentedControlScrollView.showsHorizontalScrollIndicator = false
     }
     
     func toggleSideBar() {
