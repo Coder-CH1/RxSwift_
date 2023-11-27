@@ -37,7 +37,7 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
     lazy var segmentedCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 30
+        layout.minimumLineSpacing = 20
         layout.minimumInteritemSpacing = 2
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -84,7 +84,8 @@ extension HomeViewController {
     
     func setupViews() {
         //segmentedControlScrollView.addSubview(segmentedControl)
-        let subviews = [sideBarButton, titleLabel, searchTextField, searchIconImage, segmentedCollectionView]
+        let subviews = [sideBarButton, titleLabel, searchTextField, searchIconImage,
+        segmentedCollectionView]
         for subview in subviews {
             view.addSubview(subview)
         }
