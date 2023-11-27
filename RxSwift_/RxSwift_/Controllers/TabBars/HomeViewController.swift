@@ -33,7 +33,29 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
         textField.backgroundColor = .systemGray6
         return textField
     }()
-  
+    
+    let foodView = FoodView()
+    let drinksView = DrinksView()
+    let snacksView = SnacksView()
+    let sauceView = SauceView()
+    
+    let segmentedControlIndicatorView = UIView()
+    
+    lazy var segmentedControlScrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.isScrollEnabled = true
+        scrollView.isPagingEnabled = true
+        scrollView.addSubview(segmentedControl)
+        return scrollView
+    }()
+    
+    lazy var segmentedControl: CustomSegmentedControl = {
+        let segments = CustomSegmentedControl(arrangedSubviews: [foodView, drinksView, snacksView, sauceView])
+        segments.translatesAutoresizingMaskIntoConstraints = false
+        return segments
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Home"
@@ -65,8 +87,7 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
 extension HomeViewController {
     
     func setupViews() {
-        //segmentedControlScrollView.addSubview(segmentedControl)
-        let subviews = [sideBarButton, titleLabel, searchTextField, searchIconImage]
+        let subviews = [sideBarButton, titleLabel, searchTextField, searchIconImage, segmentedControlScrollView]
         for subview in subviews {
             view.addSubview(subview)
         }
@@ -88,7 +109,19 @@ extension HomeViewController {
             searchIconImage.leadingAnchor.constraint(equalTo: searchTextField.leadingAnchor, constant: 14),
             searchIconImage.widthAnchor.constraint(equalToConstant: 20),
             searchIconImage.heightAnchor.constraint(equalToConstant: 20),
+            
+            segmentedControlScrollView.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 40),
+            segmentedControlScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            segmentedControlScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            segmentedControlScrollView.heightAnchor.constraint(equalToConstant: 40),
+            
+            segmentedControl.topAnchor.constraint(equalTo: segmentedControlScrollView.topAnchor),
+            segmentedControl.leadingAnchor.constraint(equalTo: segmentedControlScrollView.leadingAnchor),
+            segmentedControl.trailingAnchor.constraint(equalTo: segmentedControlScrollView.trailingAnchor),
+            segmentedControl.bottomAnchor.constraint(equalTo: segmentedControlScrollView.bottomAnchor)
         ])
+        segmentedControlScrollView.isScrollEnabled = true
+        segmentedControlScrollView.showsHorizontalScrollIndicator = false
     }
     
     func toggleSideBar() {
@@ -127,5 +160,18 @@ extension HomeViewController {
     
     func sideBarDidToggleBack() {
         hideSideBar()
+    }
+    
+    func segmentedControlChanged(_ sender: UISegmentedControl) {
+        sauceView.isHidden = sender.selectedSegmentIndex == 3
+        snacksView.isHidden = sender.selectedSegmentIndex == 2
+        foodView.isHidden = sender.selectedSegmentIndex == 1
+        drinksView.isHidden = sender.selectedSegmentIndex == 0
+        
+        let segmentedWidth = segmentedControl.frame.width
+        let indicatorX = CGFloat(sender.selectedSegmentIndex) * segmentedWidth
+        UIView.animate(withDuration: 0.2) {
+            self.segmentedControlIndicatorView.frame.origin.x = indicatorX + 30
+        }
     }
 }
