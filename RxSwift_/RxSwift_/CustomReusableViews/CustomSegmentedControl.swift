@@ -17,6 +17,11 @@ class CustomSegmentedControl: UIStackView {
         "Snacks",
         "Sauce"
     ]
+    
+    let foodView = FoodView()
+    let drinksView = DrinksView()
+    let snacksView = SnacksView()
+    let sauceView = SauceView()
 
     var selectedIndex: Int?
 
@@ -41,11 +46,16 @@ class CustomSegmentedControl: UIStackView {
             addArrangedSubview(button)
         }
     }
-
+    
     @objc func segmentTapped(_ sender: UIButton) {
         for (index, button) in buttons.enumerated() {
             button.isSelected = (button == sender)
         }
+        guard let selectedIndex = buttons.firstIndex(of: sender) else { return }
+        foodView.isHidden = selectedIndex != 0
+        drinksView.isHidden = selectedIndex != 1
+        snacksView.isHidden = selectedIndex != 2
+        sauceView.isHidden = selectedIndex != 3
     }
 
     required init(coder: NSCoder) {

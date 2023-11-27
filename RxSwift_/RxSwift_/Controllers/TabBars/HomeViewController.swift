@@ -51,7 +51,7 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
     }()
     
     lazy var segmentedControl: CustomSegmentedControl = {
-        let segments = CustomSegmentedControl(arrangedSubviews: [foodView, drinksView, snacksView, sauceView])
+        let segments = CustomSegmentedControl()
         segments.translatesAutoresizingMaskIntoConstraints = false
         return segments
     }()
@@ -118,7 +118,7 @@ extension HomeViewController {
             segmentedControl.topAnchor.constraint(equalTo: segmentedControlScrollView.topAnchor),
             segmentedControl.leadingAnchor.constraint(equalTo: segmentedControlScrollView.leadingAnchor),
             segmentedControl.trailingAnchor.constraint(equalTo: segmentedControlScrollView.trailingAnchor),
-            segmentedControl.bottomAnchor.constraint(equalTo: segmentedControlScrollView.bottomAnchor)
+            segmentedControl.bottomAnchor.constraint(equalTo: segmentedControlScrollView.bottomAnchor),
         ])
         segmentedControlScrollView.isScrollEnabled = true
         segmentedControlScrollView.showsHorizontalScrollIndicator = false
@@ -162,16 +162,16 @@ extension HomeViewController {
         hideSideBar()
     }
     
-//    func segmentedControlChanged(_ sender: UISegmentedControl) {
-//        sauceView.isHidden = sender.selectedSegmentIndex == 3
-//        snacksView.isHidden = sender.selectedSegmentIndex == 2
-//        foodView.isHidden = sender.selectedSegmentIndex == 1
-//        drinksView.isHidden = sender.selectedSegmentIndex == 0
-//
-//        let segmentedWidth = segmentedControl.frame.width
-//        let indicatorX = CGFloat(sender.selectedSegmentIndex) * segmentedWidth
-//        UIView.animate(withDuration: 0.2) {
-//            self.segmentedControlIndicatorView.frame.origin.x = indicatorX + 30
-//        }
-//    }
+    func segmentedControlChanged(_ sender: CustomSegmentedControl) {
+        foodView.isHidden = sender.selectedIndex != 0
+        drinksView.isHidden = sender.selectedIndex != 1
+        snacksView.isHidden = sender.selectedIndex != 2
+        sauceView.isHidden = sender.selectedIndex != 3
+
+        let segmentedWidth = segmentedControl.frame.width
+        let indicatorX = CGFloat(sender.selectedIndex!) * segmentedWidth
+        UIView.animate(withDuration: 0.2) {
+            self.segmentedControlIndicatorView.frame.origin.x = indicatorX + 30
+        }
+    }
 }
