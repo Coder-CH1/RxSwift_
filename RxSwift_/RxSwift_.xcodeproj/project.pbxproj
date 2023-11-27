@@ -11,11 +11,6 @@
 		04B3706A2B0DDBBA005358E7 /* PaymentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370692B0DDBBA005358E7 /* PaymentCollectionViewCell.swift */; };
 		04B3706D2B0F7BCD005358E7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3706C2B0F7BCD005358E7 /* ProfileViewController.swift */; };
 		04B3706F2B0F9C56005358E7 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3706E2B0F9C56005358E7 /* EditProfileViewController.swift */; };
-		04B370752B13E13A005358E7 /* SegmentedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370742B13E13A005358E7 /* SegmentedCollectionViewCell.swift */; };
-		04B370782B144EE4005358E7 /* FoodViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370772B144EE4005358E7 /* FoodViewHeader.swift */; };
-		04B3707B2B144FD5005358E7 /* DrinksViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3707A2B144FD5005358E7 /* DrinksViewHeader.swift */; };
-		04B3707D2B145004005358E7 /* SnacksViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3707C2B145004005358E7 /* SnacksViewHeader.swift */; };
-		04B3707F2B145034005358E7 /* SauceViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3707E2B145034005358E7 /* SauceViewHeader.swift */; };
 		04B370812B148CE9005358E7 /* FoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370802B148CE9005358E7 /* FoodView.swift */; };
 		04B370832B148CF5005358E7 /* DrinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370822B148CF5005358E7 /* DrinksView.swift */; };
 		04B370852B148CFF005358E7 /* SnacksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370842B148CFF005358E7 /* SnacksView.swift */; };
@@ -75,11 +70,6 @@
 		04B370692B0DDBBA005358E7 /* PaymentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCollectionViewCell.swift; sourceTree = "<group>"; };
 		04B3706C2B0F7BCD005358E7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		04B3706E2B0F9C56005358E7 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
-		04B370742B13E13A005358E7 /* SegmentedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedCollectionViewCell.swift; sourceTree = "<group>"; };
-		04B370772B144EE4005358E7 /* FoodViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewHeader.swift; sourceTree = "<group>"; };
-		04B3707A2B144FD5005358E7 /* DrinksViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksViewHeader.swift; sourceTree = "<group>"; };
-		04B3707C2B145004005358E7 /* SnacksViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacksViewHeader.swift; sourceTree = "<group>"; };
-		04B3707E2B145034005358E7 /* SauceViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceViewHeader.swift; sourceTree = "<group>"; };
 		04B370802B148CE9005358E7 /* FoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodView.swift; sourceTree = "<group>"; };
 		04B370822B148CF5005358E7 /* DrinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksView.swift; sourceTree = "<group>"; };
 		04B370842B148CFF005358E7 /* SnacksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacksView.swift; sourceTree = "<group>"; };
@@ -160,25 +150,6 @@
 				04B370692B0DDBBA005358E7 /* PaymentCollectionViewCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		04B370762B13E13E005358E7 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				04B370742B13E13A005358E7 /* SegmentedCollectionViewCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		04B370792B144F9C005358E7 /* CollectionViewHeaders */ = {
-			isa = PBXGroup;
-			children = (
-				04B370772B144EE4005358E7 /* FoodViewHeader.swift */,
-				04B3707A2B144FD5005358E7 /* DrinksViewHeader.swift */,
-				04B3707C2B145004005358E7 /* SnacksViewHeader.swift */,
-				04B3707E2B145034005358E7 /* SauceViewHeader.swift */,
-			);
-			path = CollectionViewHeaders;
 			sourceTree = "<group>";
 		};
 		04B370882B148D11005358E7 /* SegmentedViews */ = {
@@ -272,8 +243,6 @@
 			children = (
 				04D41A6C2B06D19B0054F7F8 /* HomeViewController.swift */,
 				04B370882B148D11005358E7 /* SegmentedViews */,
-				04B370762B13E13E005358E7 /* Cell */,
-				04B370792B144F9C005358E7 /* CollectionViewHeaders */,
 				04D41A8C2B06D51B0054F7F8 /* SideBar */,
 				04D41A6E2B06D1F10054F7F8 /* FavoritesViewController.swift */,
 				04B3706C2B0F7BCD005358E7 /* ProfileViewController.swift */,
@@ -485,7 +454,6 @@
 				04B370812B148CE9005358E7 /* FoodView.swift in Sources */,
 				04D41A882B06D34F0054F7F8 /* SignupView.swift in Sources */,
 				04D41A992B06D7090054F7F8 /* SideBarCollectionViewCell.swift in Sources */,
-				04B3707D2B145004005358E7 /* SnacksViewHeader.swift in Sources */,
 				04D41A7D2B06D2B20054F7F8 /* CustomTextField.swift in Sources */,
 				04D41A3D2B06CF470054F7F8 /* ViewController.swift in Sources */,
 				04D41A392B06CF470054F7F8 /* AppDelegate.swift in Sources */,
@@ -496,16 +464,13 @@
 				04B3706F2B0F9C56005358E7 /* EditProfileViewController.swift in Sources */,
 				04B370682B0CDF15005358E7 /* PaymentModel.swift in Sources */,
 				04D41A6F2B06D1F10054F7F8 /* FavoritesViewController.swift in Sources */,
-				04B3707F2B145034005358E7 /* SauceViewHeader.swift in Sources */,
 				04D41A7F2B06D2CA0054F7F8 /* CustomImageView.swift in Sources */,
-				04B370752B13E13A005358E7 /* SegmentedCollectionViewCell.swift in Sources */,
 				04D41A3B2B06CF470054F7F8 /* SceneDelegate.swift in Sources */,
 				04D41A772B06D2720054F7F8 /* Label.swift in Sources */,
 				04D41A6B2B06D1700054F7F8 /* TabBarViewController.swift in Sources */,
 				04D41A972B06D5D70054F7F8 /* Protocol Delegates.swift in Sources */,
 				04D41A692B06D1340054F7F8 /* SegmentedViewController.swift in Sources */,
 				04D41A792B06D27B0054F7F8 /* Button.swift in Sources */,
-				04B3707B2B144FD5005358E7 /* DrinksViewHeader.swift in Sources */,
 				04D41A7B2B06D2990054F7F8 /* CustomSegmentedControl.swift in Sources */,
 				04D41A862B06D33C0054F7F8 /* LoginView.swift in Sources */,
 				04D41AA32B07875E0054F7F8 /* OfferViewController.swift in Sources */,
@@ -519,7 +484,6 @@
 				04D41A832B06D2FE0054F7F8 /* CustomTopView.swift in Sources */,
 				04D41A9F2B075BA10054F7F8 /* SideBarModel.swift in Sources */,
 				04B3706A2B0DDBBA005358E7 /* PaymentCollectionViewCell.swift in Sources */,
-				04B370782B144EE4005358E7 /* FoodViewHeader.swift in Sources */,
 				04B370852B148CFF005358E7 /* SnacksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
