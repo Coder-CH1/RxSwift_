@@ -162,16 +162,16 @@ extension HomeViewController {
         hideSideBar()
     }
     
-    func segmentedControlChanged(_ sender: UISegmentedControl) {
-        sauceView.isHidden = sender.selectedSegmentIndex == 3
-        snacksView.isHidden = sender.selectedSegmentIndex == 2
-        foodView.isHidden = sender.selectedSegmentIndex == 1
-        drinksView.isHidden = sender.selectedSegmentIndex == 0
-        
-        let segmentedWidth = segmentedControl.frame.width
-        let indicatorX = CGFloat(sender.selectedSegmentIndex) * segmentedWidth
-        UIView.animate(withDuration: 0.2) {
-            self.segmentedControlIndicatorView.frame.origin.x = indicatorX + 30
-        }
-    }
+//    func segmentedControlChanged(_ sender: UISegmentedControl) {
+//        sauceView.isHidden = sender.selectedSegmentIndex == 3
+//        snacksView.isHidden = sender.selectedSegmentIndex == 2
+//        foodView.isHidden = sender.selectedSegmentIndex == 1
+//        drinksView.isHidden = sender.selectedSegmentIndex == 0
+//
+//        let segmentedWidth = segmentedControl.frame.width
+//        let indicatorX = CGFloat(sender.selectedSegmentIndex) * segmentedWidth
+//        UIView.animate(withDuration: 0.2) {
+//            self.segmentedControlIndicatorView.frame.origin.x = indicatorX + 30
+//        }
+//    }
 }
