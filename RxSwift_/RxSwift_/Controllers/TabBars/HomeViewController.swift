@@ -46,14 +46,25 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.isScrollEnabled = true
         scrollView.isPagingEnabled = true
-        scrollView.addSubview(segmentedControl)
+        //scrollView.addSubview(segmentedControl)
         return scrollView
     }()
+
+    lazy var segmentedControl: UISegmentedControl = {
+        let items = ["Foods", "Drinks", "Snacks", "Sauce"]
+        let segmentedControl = UISegmentedControl(items: items)
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        segmentedControl.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
+        segmentedControl.setBackgroundImage(UIImage(), for: .selected, barMetrics: .default)
+        return segmentedControl
+    }()
     
-    lazy var segmentedControl: CustomSegmentedControl = {
-        let segments = CustomSegmentedControl()
-        segments.translatesAutoresizingMaskIntoConstraints = false
-        return segments
+    lazy var segmentedView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(segmentedControl)
+        return view
     }()
     
     override func viewDidLoad() {
@@ -64,6 +75,8 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
         setupSideBarButtonAction()
         setupTitleLabel()
         setupSearchIconImage()
+        setupSegmentsTappedAction()
+        setupSegmentedControlIndicator()
     }
     
     func setupSideBarButtonAction() {
@@ -87,7 +100,7 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
 extension HomeViewController {
     
     func setupViews() {
-        let subviews = [sideBarButton, titleLabel, searchTextField, searchIconImage, segmentedControlScrollView]
+        let subviews = [sideBarButton, titleLabel, searchTextField, searchIconImage, segmentedControlScrollView, segmentedView]
         for subview in subviews {
             view.addSubview(subview)
         }
@@ -115,13 +128,19 @@ extension HomeViewController {
             segmentedControlScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             segmentedControlScrollView.heightAnchor.constraint(equalToConstant: 40),
             
-            segmentedControl.topAnchor.constraint(equalTo: segmentedControlScrollView.topAnchor),
-            segmentedControl.leadingAnchor.constraint(equalTo: segmentedControlScrollView.leadingAnchor),
-            segmentedControl.trailingAnchor.constraint(equalTo: segmentedControlScrollView.trailingAnchor),
-            segmentedControl.bottomAnchor.constraint(equalTo: segmentedControlScrollView.bottomAnchor),
+            segmentedView.topAnchor.constraint(equalTo: segmentedControlScrollView.topAnchor),
+            segmentedView.leadingAnchor.constraint(equalTo: segmentedControlScrollView.leadingAnchor),
+            segmentedView.trailingAnchor.constraint(equalTo: segmentedControlScrollView.trailingAnchor),
+            segmentedView.heightAnchor.constraint(equalToConstant: 35),
+            
+            segmentedControl.topAnchor.constraint(equalTo: segmentedView.topAnchor),
+            segmentedControl.leadingAnchor.constraint(equalTo: segmentedView.leadingAnchor),
+            segmentedControl.trailingAnchor.constraint(equalTo: segmentedView.trailingAnchor),
+            segmentedControl.bottomAnchor.constraint(equalTo: segmentedView.bottomAnchor),
         ])
         segmentedControlScrollView.isScrollEnabled = true
         segmentedControlScrollView.showsHorizontalScrollIndicator = false
+        segmentedControlScrollView.isPagingEnabled = true
     }
     
     func toggleSideBar() {
@@ -162,16 +181,30 @@ extension HomeViewController {
         hideSideBar()
     }
     
-    func segmentedControlChanged(_ sender: CustomSegmentedControl) {
-        foodView.isHidden = sender.selectedIndex != 0
-        drinksView.isHidden = sender.selectedIndex != 1
-        snacksView.isHidden = sender.selectedIndex != 2
-        sauceView.isHidden = sender.selectedIndex != 3
-
-        let segmentedWidth = segmentedControl.frame.width
-        let indicatorX = CGFloat(sender.selectedIndex!) * segmentedWidth
+    func setupSegmentsTappedAction() {
+        let action = UIAction { [weak self] _ in
+            self?.segmentedControlChanged(self!.segmentedControl)
+        }
+        segmentedControl.addAction(action, for: .valueChanged)
+    }
+    
+    func setupSegmentedControlIndicator() {
+        segmentedControlIndicatorView.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
+        let segmentedWidth = segmentedControl.frame.width/CGFloat(segmentedControl.numberOfSegments )
+        segmentedControlIndicatorView.frame = CGRect(x: 15, y: 35, width: segmentedWidth * 1, height: 2)
+        segmentedView.addSubview(segmentedControlIndicatorView)
+    }
+    
+    func segmentedControlChanged(_ sender: UISegmentedControl) {
+        sauceView.isHidden = sender.selectedSegmentIndex == 3
+        snacksView.isHidden = sender.selectedSegmentIndex == 2
+        foodView.isHidden = sender.selectedSegmentIndex == 1
+        drinksView.isHidden = sender.selectedSegmentIndex == 0
+        
+        let segmentedWidth = segmentedControl.frame.width/CGFloat(segmentedControl.numberOfSegments)
+        let indicatorX = CGFloat(sender.selectedSegmentIndex) * segmentedWidth
         UIView.animate(withDuration: 0.2) {
-            self.segmentedControlIndicatorView.frame.origin.x = indicatorX + 30
+            self.segmentedControlIndicatorView.frame.origin.x = indicatorX + 15
         }
     }
 }
