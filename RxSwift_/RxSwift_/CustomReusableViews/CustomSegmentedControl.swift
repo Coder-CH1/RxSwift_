@@ -51,11 +51,11 @@ class CustomSegmentedControl: UIStackView {
         for (index, button) in buttons.enumerated() {
             button.isSelected = (button == sender)
         }
-        guard let selectedIndex = buttons.firstIndex(of: sender) else { return }
-        foodView.isHidden = selectedIndex != 0
-        drinksView.isHidden = selectedIndex != 1
-        snacksView.isHidden = selectedIndex != 2
-        sauceView.isHidden = selectedIndex != 3
+//        guard let selectedIndex = buttons.firstIndex(of: sender) else { return }
+//        foodView.isHidden = selectedIndex != 0
+//        drinksView.isHidden = selectedIndex != 1
+//        snacksView.isHidden = selectedIndex != 2
+//        sauceView.isHidden = selectedIndex != 3
     }
 
     required init(coder: NSCoder) {
