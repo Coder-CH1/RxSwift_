@@ -40,6 +40,7 @@ class SideBarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
+//        navigationController?.isNavigationBarHidden = true
         setupViews()
         setupToggleBackButtonAction()
     }
