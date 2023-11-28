@@ -46,19 +46,8 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.isScrollEnabled = true
         scrollView.isPagingEnabled = true
-        //scrollView.addSubview(segmentedControl)
         return scrollView
     }()
-
-//    lazy var segmentedControl: UISegmentedControl = {
-//        let items = ["Foods", "Drinks", "Snacks", "Sauce"]
-//        let segmentedControl = UISegmentedControl(items: items)
-//        segmentedControl.selectedSegmentIndex = 0
-//        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-//        segmentedControl.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
-//        segmentedControl.setBackgroundImage(UIImage(), for: .selected, barMetrics: .default)
-//        return segmentedControl
-//    }()
     
     lazy var segmentedControl: UISegmentedControl = {
         let items = ["Foods", "Drinks", "Snacks", "Sauce"]
@@ -71,10 +60,12 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
         segmentedControl.setTitleTextAttributes([.foregroundColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)], for: .selected)
         segmentedControl.tintColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
         segmentedControl.setDividerImage(UIImage(), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
-        
+        let views = [foodView, drinksView, snacksView, sauceView]
+        for view in views {
+            segmentedControl.addSubview(view)
+        }
         return segmentedControl
     }()
-
     
     lazy var segmentedView: UIView = {
         let view = UIView()
@@ -87,6 +78,10 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
         super.viewDidLoad()
         navigationItem.title = "Home"
         view.backgroundColor = .white
+        updatingUi()
+    }
+    
+    func updatingUi() {
         setupViews()
         setupSideBarButtonAction()
         setupTitleLabel()
@@ -147,16 +142,44 @@ extension HomeViewController {
             segmentedView.topAnchor.constraint(equalTo: segmentedControlScrollView.topAnchor),
             segmentedView.leadingAnchor.constraint(equalTo: segmentedControlScrollView.leadingAnchor),
             segmentedView.trailingAnchor.constraint(equalTo: segmentedControlScrollView.trailingAnchor),
-            segmentedView.heightAnchor.constraint(equalToConstant: 35),
+            segmentedView.heightAnchor.constraint(equalToConstant: 30),
             
             segmentedControl.topAnchor.constraint(equalTo: segmentedView.topAnchor),
             segmentedControl.leadingAnchor.constraint(equalTo: segmentedView.leadingAnchor),
             segmentedControl.trailingAnchor.constraint(equalTo: segmentedView.trailingAnchor),
             segmentedControl.bottomAnchor.constraint(equalTo: segmentedView.bottomAnchor),
+            
+            foodView.topAnchor.constraint(equalTo: segmentedView.bottomAnchor, constant: 10),
+            foodView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            foodView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            foodView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            drinksView.topAnchor.constraint(equalTo: segmentedView.bottomAnchor, constant: 10),
+            drinksView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            drinksView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            drinksView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            snacksView.topAnchor.constraint(equalTo: segmentedView.bottomAnchor, constant: 10),
+            snacksView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            snacksView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            snacksView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            sauceView.topAnchor.constraint(equalTo: segmentedView.bottomAnchor, constant: 10),
+            sauceView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            sauceView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            sauceView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
         segmentedControlScrollView.isScrollEnabled = true
         segmentedControlScrollView.showsHorizontalScrollIndicator = false
         segmentedControlScrollView.isPagingEnabled = true
+        
+        sauceView.isHidden =  true
+        snacksView.isHidden = true
+        drinksView.isHidden = true
+        foodView.translatesAutoresizingMaskIntoConstraints = false
+        drinksView.translatesAutoresizingMaskIntoConstraints = false
+        snacksView.translatesAutoresizingMaskIntoConstraints = false
+        sauceView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func toggleSideBar() {
