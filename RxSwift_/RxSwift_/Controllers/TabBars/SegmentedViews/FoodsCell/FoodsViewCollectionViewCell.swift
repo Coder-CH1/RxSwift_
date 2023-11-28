@@ -7,6 +7,6 @@
 
 import UIKit
 
-class FoodsCollectionViewCell: UICollectionViewCell {
+class FoodsViewCollectionViewCell: UICollectionViewCell {
     
 }

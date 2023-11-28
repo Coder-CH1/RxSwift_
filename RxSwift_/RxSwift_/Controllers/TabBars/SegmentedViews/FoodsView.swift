@@ -26,7 +26,7 @@ class FoodsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         collectionView.dataSource = self
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isUserInteractionEnabled = true
-        collectionView.register(FoodsCollectionViewCell.self, forCellWithReuseIdentifier: "FoodsCollectionViewCell")
+        collectionView.register(FoodsViewCollectionViewCell.self, forCellWithReuseIdentifier: "FoodsViewCollectionViewCell")
         return collectionView
     }()
     
@@ -54,7 +54,7 @@ class FoodsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FoodsCollectionViewCell", for: indexPath) as! FoodsCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FoodsViewCollectionViewCell", for: indexPath) as! FoodsViewCollectionViewCell
         cell.backgroundColor = .gray
         return cell
     }
