@@ -50,6 +50,16 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
         return scrollView
     }()
 
+//    lazy var segmentedControl: UISegmentedControl = {
+//        let items = ["Foods", "Drinks", "Snacks", "Sauce"]
+//        let segmentedControl = UISegmentedControl(items: items)
+//        segmentedControl.selectedSegmentIndex = 0
+//        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+//        segmentedControl.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
+//        segmentedControl.setBackgroundImage(UIImage(), for: .selected, barMetrics: .default)
+//        return segmentedControl
+//    }()
+    
     lazy var segmentedControl: UISegmentedControl = {
         let items = ["Foods", "Drinks", "Snacks", "Sauce"]
         let segmentedControl = UISegmentedControl(items: items)
@@ -57,8 +67,14 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         segmentedControl.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
         segmentedControl.setBackgroundImage(UIImage(), for: .selected, barMetrics: .default)
+        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.gray], for: .normal)
+        segmentedControl.setTitleTextAttributes([.foregroundColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)], for: .selected)
+        segmentedControl.tintColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
+        segmentedControl.setDividerImage(UIImage(), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
+        
         return segmentedControl
     }()
+
     
     lazy var segmentedView: UIView = {
         let view = UIView()
