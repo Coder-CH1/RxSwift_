@@ -63,7 +63,7 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Home"
+        //title = "Home"
         view.backgroundColor = .white
         updatingUi()
     }
@@ -182,7 +182,6 @@ extension HomeViewController {
         }
         sideBarShowing = true
         tabBarController?.tabBar.isHidden = true
-        navigationController?.isNavigationBarHidden = true
     }
     
     func hideSideBar() {
@@ -194,7 +193,6 @@ extension HomeViewController {
             self.sideBarShowing = false
         }
         tabBarController?.tabBar.isHidden = false
-        navigationController?.isNavigationBarHidden = false
     }
     
     func sideBarDidToggleBack() {

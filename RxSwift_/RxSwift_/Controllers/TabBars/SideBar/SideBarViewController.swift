@@ -41,7 +41,12 @@ class SideBarViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
         setupViews()
+        setTitleColor()
         setupToggleBackButtonAction()
+    }
+    
+    func setTitleColor() {
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
     func setupToggleBackButtonAction() {
