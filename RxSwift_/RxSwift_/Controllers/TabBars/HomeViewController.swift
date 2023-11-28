@@ -41,14 +41,6 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
     
     let segmentedControlIndicatorView = UIView()
     
-    lazy var segmentedControlScrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.isScrollEnabled = true
-        scrollView.isPagingEnabled = true
-        return scrollView
-    }()
-    
     lazy var segmentedControl: UISegmentedControl = {
         let items = ["Foods", "Drinks", "Snacks", "Sauce"]
         let segmentedControl = UISegmentedControl(items: items)
@@ -60,17 +52,12 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
         segmentedControl.setTitleTextAttributes([.foregroundColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)], for: .selected)
         segmentedControl.tintColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
         segmentedControl.setDividerImage(UIImage(), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
-        let views = [foodView, drinksView, snacksView, sauceView]
-        for view in views {
-            segmentedControl.addSubview(view)
-        }
         return segmentedControl
     }()
     
     lazy var segmentedView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(segmentedControl)
         return view
     }()
     
@@ -111,7 +98,7 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
 extension HomeViewController {
     
     func setupViews() {
-        let subviews = [sideBarButton, titleLabel, searchTextField, searchIconImage, segmentedControlScrollView, segmentedView]
+        let subviews = [sideBarButton, titleLabel, searchTextField, searchIconImage, segmentedView, segmentedControl, foodView, drinksView, snacksView, sauceView]
         for subview in subviews {
             view.addSubview(subview)
         }
@@ -134,45 +121,37 @@ extension HomeViewController {
             searchIconImage.widthAnchor.constraint(equalToConstant: 20),
             searchIconImage.heightAnchor.constraint(equalToConstant: 20),
             
-            segmentedControlScrollView.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 40),
-            segmentedControlScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            segmentedControlScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            segmentedControlScrollView.heightAnchor.constraint(equalToConstant: 40),
-            
-            segmentedView.topAnchor.constraint(equalTo: segmentedControlScrollView.topAnchor),
-            segmentedView.leadingAnchor.constraint(equalTo: segmentedControlScrollView.leadingAnchor),
-            segmentedView.trailingAnchor.constraint(equalTo: segmentedControlScrollView.trailingAnchor),
-            segmentedView.heightAnchor.constraint(equalToConstant: 30),
+            segmentedView.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 40),
+            segmentedView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            segmentedView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            segmentedView.heightAnchor.constraint(equalToConstant: 10),
             
             segmentedControl.topAnchor.constraint(equalTo: segmentedView.topAnchor),
             segmentedControl.leadingAnchor.constraint(equalTo: segmentedView.leadingAnchor),
             segmentedControl.trailingAnchor.constraint(equalTo: segmentedView.trailingAnchor),
             segmentedControl.bottomAnchor.constraint(equalTo: segmentedView.bottomAnchor),
             
-            foodView.topAnchor.constraint(equalTo: segmentedView.bottomAnchor, constant: 10),
-            foodView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            foodView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            foodView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            foodView.topAnchor.constraint(equalTo: segmentedView.bottomAnchor, constant: 20),
+            foodView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14),
+            foodView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -14),
+            foodView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
             
-            drinksView.topAnchor.constraint(equalTo: segmentedView.bottomAnchor, constant: 10),
-            drinksView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            drinksView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            drinksView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            drinksView.topAnchor.constraint(equalTo: segmentedView.bottomAnchor, constant: 20),
+            drinksView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14),
+            drinksView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -14),
+            drinksView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
             
-            snacksView.topAnchor.constraint(equalTo: segmentedView.bottomAnchor, constant: 10),
-            snacksView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            snacksView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            snacksView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            snacksView.topAnchor.constraint(equalTo: segmentedView.bottomAnchor, constant: 20),
+            snacksView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14),
+            snacksView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -14),
+            snacksView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
             
-            sauceView.topAnchor.constraint(equalTo: segmentedView.bottomAnchor, constant: 10),
-            sauceView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            sauceView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            sauceView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            sauceView.topAnchor.constraint(equalTo: segmentedView.bottomAnchor, constant: 20),
+            sauceView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14),
+            sauceView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -14),
+            sauceView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+
         ])
-        segmentedControlScrollView.isScrollEnabled = true
-        segmentedControlScrollView.showsHorizontalScrollIndicator = false
-        segmentedControlScrollView.isPagingEnabled = true
-        
         sauceView.isHidden =  true
         snacksView.isHidden = true
         drinksView.isHidden = true
@@ -230,15 +209,15 @@ extension HomeViewController {
     func setupSegmentedControlIndicator() {
         segmentedControlIndicatorView.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
         let segmentedWidth = segmentedControl.frame.width/CGFloat(segmentedControl.numberOfSegments )
-        segmentedControlIndicatorView.frame = CGRect(x: 15, y: 35, width: segmentedWidth * 1, height: 2)
+        segmentedControlIndicatorView.frame = CGRect(x: 15, y: 30, width: segmentedWidth * 1, height: 2)
         segmentedView.addSubview(segmentedControlIndicatorView)
     }
     
     func segmentedControlChanged(_ sender: UISegmentedControl) {
-        sauceView.isHidden = sender.selectedSegmentIndex == 3
-        snacksView.isHidden = sender.selectedSegmentIndex == 2
-        foodView.isHidden = sender.selectedSegmentIndex == 1
-        drinksView.isHidden = sender.selectedSegmentIndex == 0
+        sauceView.isHidden = sender.selectedSegmentIndex != 3
+        snacksView.isHidden = sender.selectedSegmentIndex != 2
+        drinksView.isHidden = sender.selectedSegmentIndex != 1
+        foodView.isHidden = sender.selectedSegmentIndex != 0
         
         let segmentedWidth = segmentedControl.frame.width/CGFloat(segmentedControl.numberOfSegments)
         let indicatorX = CGFloat(sender.selectedSegmentIndex) * segmentedWidth

@@ -9,9 +9,19 @@ import UIKit
 
 class FoodView: UIView {
     
+    let label = Label(label: "Foods", textColor: .blue, font: UIFont.systemFont(ofSize: 21, weight: .semibold))
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .systemPink
+        setupViews()
+    }
+    
+    func setupViews() {
+        addSubview(label)
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: topAnchor, constant: 50),
+            label.centerXAnchor.constraint(equalTo: centerXAnchor),
+        ])
     }
     
     required init?(coder: NSCoder) {

@@ -9,11 +9,21 @@ import UIKit
 
 class DrinksView: UIView {
     
+    let label = Label(label: "Drinks", textColor: .blue, font: UIFont.systemFont(ofSize: 21, weight: .semibold))
+   
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .blue
+        setupViews()
     }
     
+    func setupViews() {
+        addSubview(label)
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: topAnchor, constant: 50),
+            label.centerXAnchor.constraint(equalTo: centerXAnchor),
+        ])
+    }
+  
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
