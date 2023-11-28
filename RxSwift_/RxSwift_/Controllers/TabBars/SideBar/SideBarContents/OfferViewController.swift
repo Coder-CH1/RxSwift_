@@ -11,7 +11,7 @@ class OfferViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Offer and Promo"
+        title = "Offer and Promo"
         view.backgroundColor = .white
     }
 }
