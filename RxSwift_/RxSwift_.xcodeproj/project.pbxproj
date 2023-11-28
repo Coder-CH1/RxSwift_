@@ -11,10 +11,11 @@
 		04B3706A2B0DDBBA005358E7 /* PaymentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370692B0DDBBA005358E7 /* PaymentCollectionViewCell.swift */; };
 		04B3706D2B0F7BCD005358E7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3706C2B0F7BCD005358E7 /* ProfileViewController.swift */; };
 		04B3706F2B0F9C56005358E7 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3706E2B0F9C56005358E7 /* EditProfileViewController.swift */; };
-		04B370812B148CE9005358E7 /* FoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370802B148CE9005358E7 /* FoodView.swift */; };
+		04B370812B148CE9005358E7 /* FoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370802B148CE9005358E7 /* FoodsView.swift */; };
 		04B370832B148CF5005358E7 /* DrinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370822B148CF5005358E7 /* DrinksView.swift */; };
 		04B370852B148CFF005358E7 /* SnacksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370842B148CFF005358E7 /* SnacksView.swift */; };
 		04B370872B148D08005358E7 /* SauceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370862B148D08005358E7 /* SauceView.swift */; };
+		04B3708A2B161073005358E7 /* FoodsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370892B161073005358E7 /* FoodsCollectionViewCell.swift */; };
 		04D41A392B06CF470054F7F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A382B06CF470054F7F8 /* AppDelegate.swift */; };
 		04D41A3B2B06CF470054F7F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A3A2B06CF470054F7F8 /* SceneDelegate.swift */; };
 		04D41A3D2B06CF470054F7F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A3C2B06CF470054F7F8 /* ViewController.swift */; };
@@ -70,10 +71,11 @@
 		04B370692B0DDBBA005358E7 /* PaymentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCollectionViewCell.swift; sourceTree = "<group>"; };
 		04B3706C2B0F7BCD005358E7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		04B3706E2B0F9C56005358E7 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
-		04B370802B148CE9005358E7 /* FoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodView.swift; sourceTree = "<group>"; };
+		04B370802B148CE9005358E7 /* FoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsView.swift; sourceTree = "<group>"; };
 		04B370822B148CF5005358E7 /* DrinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksView.swift; sourceTree = "<group>"; };
 		04B370842B148CFF005358E7 /* SnacksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacksView.swift; sourceTree = "<group>"; };
 		04B370862B148D08005358E7 /* SauceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceView.swift; sourceTree = "<group>"; };
+		04B370892B161073005358E7 /* FoodsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsCollectionViewCell.swift; sourceTree = "<group>"; };
 		04D41A352B06CF470054F7F8 /* RxSwift_.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwift_.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D41A382B06CF470054F7F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D41A3A2B06CF470054F7F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,12 +157,21 @@
 		04B370882B148D11005358E7 /* SegmentedViews */ = {
 			isa = PBXGroup;
 			children = (
-				04B370802B148CE9005358E7 /* FoodView.swift */,
+				04B370802B148CE9005358E7 /* FoodsView.swift */,
+				04B3708B2B161078005358E7 /* Cell */,
 				04B370822B148CF5005358E7 /* DrinksView.swift */,
 				04B370842B148CFF005358E7 /* SnacksView.swift */,
 				04B370862B148D08005358E7 /* SauceView.swift */,
 			);
 			path = SegmentedViews;
+			sourceTree = "<group>";
+		};
+		04B3708B2B161078005358E7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				04B370892B161073005358E7 /* FoodsCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		04D41A2C2B06CF470054F7F8 = {
@@ -451,7 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04B370812B148CE9005358E7 /* FoodView.swift in Sources */,
+				04B370812B148CE9005358E7 /* FoodsView.swift in Sources */,
 				04D41A882B06D34F0054F7F8 /* SignupView.swift in Sources */,
 				04D41A992B06D7090054F7F8 /* SideBarCollectionViewCell.swift in Sources */,
 				04D41A7D2B06D2B20054F7F8 /* CustomTextField.swift in Sources */,
@@ -465,6 +476,7 @@
 				04B370682B0CDF15005358E7 /* PaymentModel.swift in Sources */,
 				04D41A6F2B06D1F10054F7F8 /* FavoritesViewController.swift in Sources */,
 				04D41A7F2B06D2CA0054F7F8 /* CustomImageView.swift in Sources */,
+				04B3708A2B161073005358E7 /* FoodsCollectionViewCell.swift in Sources */,
 				04D41A3B2B06CF470054F7F8 /* SceneDelegate.swift in Sources */,
 				04D41A772B06D2720054F7F8 /* Label.swift in Sources */,
 				04D41A6B2B06D1700054F7F8 /* TabBarViewController.swift in Sources */,

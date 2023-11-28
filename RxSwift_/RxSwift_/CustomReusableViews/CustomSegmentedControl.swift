@@ -18,7 +18,7 @@ class CustomSegmentedControl: UIStackView {
         "Sauce"
     ]
     
-    let foodView = FoodView()
+    let foodView = FoodsView()
     let drinksView = DrinksView()
     let snacksView = SnacksView()
     let sauceView = SauceView()

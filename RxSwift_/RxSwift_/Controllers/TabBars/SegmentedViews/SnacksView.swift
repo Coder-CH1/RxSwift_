@@ -9,7 +9,7 @@ import UIKit
 
 class SnacksView: UIView {
     
-    let label = Label(label: "Snacks", textColor: .blue, font: UIFont.systemFont(ofSize: 21, weight: .semibold))
+    let label = Label(label: "SnacksView", textColor: .black, font: UIFont.systemFont(ofSize: 21, weight: .semibold))
    
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,7 +19,7 @@ class SnacksView: UIView {
     func setupViews() {
         addSubview(label)
         NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: topAnchor, constant: 50),
+            label.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             label.centerXAnchor.constraint(equalTo: centerXAnchor),
         ])
     }
