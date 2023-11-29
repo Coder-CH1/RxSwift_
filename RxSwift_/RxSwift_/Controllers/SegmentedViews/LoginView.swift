@@ -21,9 +21,9 @@ class LoginView: UIView {
     
     let passwordView = CustomTextFieldView(color: .black)
     
-    let forgotPassCodeButton = Button(image: UIImage(named: ""), label: "Forgot passcode?", btnTitleColor: #colorLiteral(red: 0.9940347075, green: 0.3827575445, blue: 0.02892503142, alpha: 1), backgroundColor: .clear, radius: 0, imageColor: .clear)
+    let forgotPassCodeButton = Button(image: UIImage(named: ""), label: "Forgot passcode?", btnTitleColor: #colorLiteral(red: 0.9940347075, green: 0.3827575445, blue: 0.02892503142, alpha: 1), backgroundColor: .clear, radius: 0, imageColor: .clear, font: UIFont())
     
-    let loginButton = Button(image: UIImage(named: ""), label: "Login", btnTitleColor: .white, backgroundColor: #colorLiteral(red: 0.9940347075, green: 0.3827575445, blue: 0.02892503142, alpha: 1), radius: 30, imageColor: .clear)
+    let loginButton = Button(image: UIImage(named: ""), label: "Login", btnTitleColor: .white, backgroundColor: #colorLiteral(red: 0.9940347075, green: 0.3827575445, blue: 0.02892503142, alpha: 1), radius: 30, imageColor: .clear, font: UIFont())
     
     override init(frame: CGRect) {
         super.init(frame: frame)

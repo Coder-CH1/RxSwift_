@@ -16,7 +16,7 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
     
     var sideBarViewController = SideBarViewController()
     
-    let sideBarButton = Button(image: UIImage(systemName: "text.alignleft"), label: "", btnTitleColor: .clear, backgroundColor: .clear, radius: 0, imageColor: .black)
+    let sideBarButton = Button(image: UIImage(systemName: "text.alignleft"), label: "", btnTitleColor: .clear, backgroundColor: .clear, radius: 0, imageColor: .black, font: UIFont())
     
     let titleLabel = Label(label: "Delicious \nfood for you", textColor: .black, font: UIFont.systemFont(ofSize: 40, weight: .bold))
     
@@ -63,7 +63,6 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //title = "Home"
         view.backgroundColor = .white
         updatingUi()
     }
@@ -72,6 +71,7 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
         setupViews()
         hideBackButton()
         setupTitleLabel()
+        setupSegmentedViews()
         setupSearchIconImage()
         setupSideBarButtonAction()
         setupSegmentsTappedAction()
@@ -157,6 +157,9 @@ extension HomeViewController {
             sauceView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
 
         ])
+    }
+    
+    func setupSegmentedViews() {
         sauceView.isHidden =  true
         snacksView.isHidden = true
         drinksView.isHidden = true

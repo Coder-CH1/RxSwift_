@@ -12,9 +12,9 @@ class SideBarViewController: UIViewController {
     
     var delegate: SidebarViewControllerDelegate?
     
-    let toggleBackButton = Button(image: UIImage(systemName: "xmark"), label: "", btnTitleColor: .clear, backgroundColor: .clear, radius: 0, imageColor: .gray)
+    let toggleBackButton = Button(image: UIImage(systemName: "xmark"), label: "", btnTitleColor: .clear, backgroundColor: .clear, radius: 0, imageColor: .gray, font: UIFont())
     
-    let signoutButton = Button(image: UIImage(systemName: ""), label: "Sign-out?", btnTitleColor: .white, backgroundColor: .clear, radius: 0, imageColor: .clear)
+    let signoutButton = Button(image: UIImage(systemName: ""), label: "Sign-out?", btnTitleColor: .white, backgroundColor: .clear, radius: 0, imageColor: .clear, font: UIFont())
     
     lazy var sidebarCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -40,7 +40,6 @@ class SideBarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
-        //        navigationController?.isNavigationBarHidden = true
         setupViews()
         setupToggleBackButtonAction()
     }

@@ -13,7 +13,7 @@ class ProfileViewController: UIViewController {
     
     let personalDetailsLabel = Label(label: "Personal details", textColor: .black, font: UIFont.systemFont(ofSize: 17, weight: .semibold))
     
-    let changeButton = Button(image: UIImage(systemName: ""), label: "change", btnTitleColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), backgroundColor: .clear, radius: 0, imageColor: .clear)
+    let changeButton = Button(image: UIImage(systemName: ""), label: "change", btnTitleColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), backgroundColor: .clear, radius: 0, imageColor: .clear, font: UIFont())
     
     lazy var profileView: UIView = {
         let profileView = UIView()
