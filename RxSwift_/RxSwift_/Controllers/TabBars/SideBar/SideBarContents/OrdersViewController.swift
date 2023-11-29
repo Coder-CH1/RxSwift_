@@ -23,7 +23,7 @@ class OrdersViewController: UIViewController {
         NSLayoutConstraint.activate([
             orderingButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80),
             orderingButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            orderingButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+            orderingButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             orderingButton.heightAnchor.constraint(equalToConstant: 60),
         ])
     }

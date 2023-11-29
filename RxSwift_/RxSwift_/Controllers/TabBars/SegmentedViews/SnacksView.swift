@@ -9,7 +9,7 @@ import UIKit
 
 class SnacksView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    let snacksLabel = Label(label: "SnacksView", textColor: .black, font: UIFont.systemFont(ofSize: 21, weight: .semibold))
+    let seeMoreButton = Button(image: UIImage(systemName: ""), label: "see more", btnTitleColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), backgroundColor: .clear, radius: 0, imageColor: .clear)
     
     lazy var snacksCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -36,13 +36,13 @@ class SnacksView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func setupViews() {
-        addSubview(snacksLabel)
+        addSubview(seeMoreButton)
         addSubview(snacksCollectionView)
         NSLayoutConstraint.activate([
-            snacksLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            snacksLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            seeMoreButton.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            seeMoreButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            snacksCollectionView.topAnchor.constraint(equalTo: snacksLabel.bottomAnchor, constant: 10),
+            snacksCollectionView.topAnchor.constraint(equalTo: seeMoreButton.bottomAnchor, constant: 10),
             snacksCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -5),
             snacksCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5),
             snacksCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)

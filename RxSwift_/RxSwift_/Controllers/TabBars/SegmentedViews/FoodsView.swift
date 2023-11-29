@@ -9,7 +9,7 @@ import UIKit
 //MARK: - FoodsView property objects and constraints
 class FoodsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    let foodsLabel = Label(label: "FoodsView", textColor: .black, font: UIFont.systemFont(ofSize: 21, weight: .semibold))
+    let seeMoreButton = Button(image: UIImage(systemName: ""), label: "see more", btnTitleColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), backgroundColor: .clear, radius: 0, imageColor: .clear)
    
     lazy var foodsCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -36,13 +36,13 @@ class FoodsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func setupViews() {
-        addSubview(foodsLabel)
+        addSubview(seeMoreButton)
         addSubview(foodsCollectionView)
         NSLayoutConstraint.activate([
-            foodsLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            foodsLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            seeMoreButton.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            seeMoreButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            foodsCollectionView.topAnchor.constraint(equalTo: foodsLabel.bottomAnchor, constant: 10),
+            foodsCollectionView.topAnchor.constraint(equalTo: seeMoreButton.bottomAnchor, constant: 10),
             foodsCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -10),
             foodsCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 10),
             foodsCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
