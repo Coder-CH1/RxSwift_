@@ -70,11 +70,16 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
     
     func updatingUi() {
         setupViews()
-        setupSideBarButtonAction()
+        hideBackButton()
         setupTitleLabel()
         setupSearchIconImage()
+        setupSideBarButtonAction()
         setupSegmentsTappedAction()
         setupSegmentedControlIndicator()
+    }
+    
+    func hideBackButton() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     func setupSideBarButtonAction() {

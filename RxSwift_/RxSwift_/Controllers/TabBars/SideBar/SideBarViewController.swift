@@ -40,7 +40,7 @@ class SideBarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
-//        navigationController?.isNavigationBarHidden = true
+        //        navigationController?.isNavigationBarHidden = true
         setupViews()
         setupToggleBackButtonAction()
     }
@@ -128,25 +128,30 @@ extension SideBarViewController {
     func navigateToProfileViewController() {
         let vc = SideBarProfileViewController()
         navigationController?.pushViewController(vc, animated: false)
+        navigationController?.navigationBar.tintColor = .black
     }
     
     func navigateToOrdersViewController() {
         let vc = OrdersViewController()
         navigationController?.pushViewController(vc, animated: false)
+        navigationController?.navigationBar.tintColor = .black
     }
     
     func navigateToOfferViewController() {
         let vc = OfferViewController()
         navigationController?.pushViewController(vc, animated: false)
+        navigationController?.navigationBar.tintColor = .black
     }
     
     func navigateToPrivacyViewController() {
         let vc = PrivacyViewController()
         navigationController?.pushViewController(vc, animated: false)
+        navigationController?.navigationBar.tintColor = .black
     }
     
     func navigateToSecurityViewController() {
         let vc = SecurityViewController()
         navigationController?.pushViewController(vc, animated: true)
+        navigationController?.navigationBar.tintColor = .black
     }
 }

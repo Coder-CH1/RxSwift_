@@ -67,7 +67,7 @@ class SideBarProfileViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.9436392188, green: 0.9436392188, blue: 0.9436392188, alpha: 1)
         setupViews()
     }
-  
+   
     func setupViews() {
         let subviews = [informationLabel, profileView, profileImage, profileName, profileEmail, profileAddress, paymentMethodLabel, paymentOptionsCollectionView, updateButton]
         for subview in subviews {
