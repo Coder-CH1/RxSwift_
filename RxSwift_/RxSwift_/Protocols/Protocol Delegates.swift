@@ -20,7 +20,6 @@ protocol LoginViewControllerDelegate {
 }
 
 protocol Coordinator {
-//var childCoodinators: [Coordinator] {get set}
 var navigationController: UINavigationController {get set}
 func start()
 }

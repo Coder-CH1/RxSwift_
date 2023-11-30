@@ -10,7 +10,7 @@ import UIKit
 class LoginView: UIView {
     
     var delegate: LoginViewControllerDelegate?
-  
+    
     let loginEmailLabel = Label(label: "Email address", textColor: #colorLiteral(red: 0.6677635312, green: 0.6680963635, blue: 0.6783171296, alpha: 1), font: UIFont.systemFont(ofSize: 12, weight: .regular))
     
     let loginEmailTextField = CustomTextField(placeholder: "", isSecureTextEntry: false)
@@ -34,16 +34,6 @@ class LoginView: UIView {
         setupSideBarButtonAction()
     }
     
-    func setupSideBarButtonAction() {
-        let action = UIAction { [weak self] _ in
-            self?.loginButtonTapped()
-        }
-        loginButton.addAction(action, for: .primaryActionTriggered)
-    }
-    
-    func loginButtonTapped() {
-        delegate?.customViewDidPresentVC()
-    }
     
     func setupViews() {
         let subviews = [loginButton, loginEmailLabel, loginEmailTextField, emailView, loginPasswordLabel, loginPasswordTextField, passwordView, forgotPassCodeButton]
@@ -82,6 +72,17 @@ class LoginView: UIView {
             loginButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
             loginButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40)
         ])
+    }
+    
+    func setupSideBarButtonAction() {
+        let action = UIAction { [weak self] _ in
+            self?.loginButtonTapped()
+        }
+        loginButton.addAction(action, for: .primaryActionTriggered)
+    }
+    
+    func loginButtonTapped() {
+        delegate?.customViewDidPresentVC()
     }
     
     required init?(coder aDecoder: NSCoder) {
