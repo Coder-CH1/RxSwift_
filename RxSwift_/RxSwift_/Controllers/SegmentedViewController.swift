@@ -22,6 +22,7 @@ class SegmentedControlViewController: UIViewController, LoginViewControllerDeleg
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         segmentedControl.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
         segmentedControl.setBackgroundImage(UIImage(), for: .selected, barMetrics: .default)
+        segmentedControl.setDividerImage(UIImage(), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
         return segmentedControl
     }()
     
@@ -75,6 +76,8 @@ extension SegmentedControlViewController {
             
             appLogo.topAnchor.constraint(equalTo: topView.topAnchor, constant: 100),
             appLogo.centerXAnchor.constraint(equalTo: topView.centerXAnchor),
+            appLogo.heightAnchor.constraint(equalToConstant: 150),
+            appLogo.widthAnchor.constraint(equalToConstant: 150),
             
             segmentedControl.centerXAnchor.constraint(equalTo: topView.centerXAnchor),
             segmentedControl.bottomAnchor.constraint(equalTo: topView.bottomAnchor, constant: -10),
