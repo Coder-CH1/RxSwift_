@@ -9,6 +9,8 @@ import UIKit
 
 class LoginView: UIView {
     
+    var delegate: LoginViewControllerDelegate?
+  
     let loginEmailLabel = Label(label: "Email address", textColor: #colorLiteral(red: 0.6677635312, green: 0.6680963635, blue: 0.6783171296, alpha: 1), font: UIFont.systemFont(ofSize: 12, weight: .regular))
     
     let loginEmailTextField = CustomTextField(placeholder: "", isSecureTextEntry: false)
@@ -29,6 +31,18 @@ class LoginView: UIView {
         super.init(frame: frame)
         self.backgroundColor = #colorLiteral(red: 0.9436392188, green: 0.9436392188, blue: 0.9436392188, alpha: 1)
         setupViews()
+        setupSideBarButtonAction()
+    }
+    
+    func setupSideBarButtonAction() {
+        let action = UIAction { [weak self] _ in
+            self?.loginButtonTapped()
+        }
+        loginButton.addAction(action, for: .primaryActionTriggered)
+    }
+    
+    func loginButtonTapped() {
+        delegate?.customViewDidPresentVC()
     }
     
     func setupViews() {

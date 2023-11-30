@@ -14,3 +14,13 @@ protocol SidebarViewControllerDelegate {
 protocol EditViewControllerDelegate {
     func didUpdateProfile(phoneNumber: String, emailAddress: String)
 }
+
+protocol LoginViewControllerDelegate {
+    func customViewDidPresentVC()
+}
+
+protocol Coordinator {
+//var childCoodinators: [Coordinator] {get set}
+var navigationController: UINavigationController {get set}
+func start()
+}

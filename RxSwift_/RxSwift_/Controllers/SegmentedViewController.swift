@@ -7,8 +7,8 @@
 
 import UIKit
 //MARK: - Objects properties and Constraints
-class SegmentedControlViewController: UIViewController {
-    
+class SegmentedControlViewController: UIViewController, LoginViewControllerDelegate {
+   
     let segmentedControlIndicatorView = UIView()
     
     let topView = CustomTopView(color: .white)
@@ -31,11 +31,16 @@ class SegmentedControlViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updatingUi()
+    }
+    
+    func updatingUi() {
+        setupViews()
+        setupSegmentsTappedAction()
+        setupSegmentedControlIndicator()
+        loginView.delegate = self
         view.backgroundColor = #colorLiteral(red: 0.9436392188, green: 0.9436392188, blue: 0.9436392188, alpha: 1)
         appLogo.backgroundColor = .white
-        setupViews()
-        setupSegmentedControlIndicator()
-        setupSegmentsTappedAction()
     }
     
     func setupSegmentsTappedAction() {
@@ -100,5 +105,11 @@ extension SegmentedControlViewController {
         UIView.animate(withDuration: 0.2) {
             self.segmentedControlIndicatorView.frame.origin.x = indicatorX + 30
         }
+    }
+    
+    func customViewDidPresentVC() {
+        let vc = TabBarViewController()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: false)
     }
 }
