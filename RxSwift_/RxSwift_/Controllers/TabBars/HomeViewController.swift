@@ -8,8 +8,8 @@
 import UIKit
 
 //MARK: - Objects properties
-class HomeViewController: UIViewController, SidebarViewControllerDelegate {
-    
+class HomeViewController: UIViewController, SidebarViewControllerDelegate, SeeMoreButtonTappedDelegate {
+  
     let sideBarWidth: CGFloat = 250
     
     var sideBarShowing = false
@@ -231,5 +231,9 @@ extension HomeViewController {
         UIView.animate(withDuration: 0.2) {
             self.segmentedControlIndicatorView.frame.origin.x = indicatorX + 15
         }
+    }
+    
+    func btnTapped() {
+        
     }
 }

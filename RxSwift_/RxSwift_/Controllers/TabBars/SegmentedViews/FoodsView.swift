@@ -9,6 +9,8 @@ import UIKit
 //MARK: - FoodsView property objects and constraints
 class FoodsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    var delegate: SeeMoreButtonTappedDelegate?
+    
     let seeMoreButton = Button(image: UIImage(systemName: ""), label: "see more", btnTitleColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), backgroundColor: .clear, radius: 0, imageColor: .clear)
    
     lazy var foodsCollectionView: UICollectionView = {
@@ -57,6 +59,10 @@ class FoodsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FoodsViewCollectionViewCell", for: indexPath) as! FoodsViewCollectionViewCell
         cell.backgroundColor = .gray
         return cell
+    }
+    
+    func seeMoreButtonTapped() {
+        delegate?.btnTapped()
     }
     
     required init?(coder: NSCoder) {

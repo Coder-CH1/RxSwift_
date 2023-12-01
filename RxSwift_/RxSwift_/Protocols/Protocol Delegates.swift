@@ -21,9 +21,9 @@ protocol LoginViewControllerDelegate {
 
 protocol Coordinator {
 var navigationController: UINavigationController {get set}
-func start()
+func navigateToVC()
 }
 
-//protocol AppCoordinateDelegate {
-//    func appCoordinate()
-//}
+protocol SeeMoreButtonTappedDelegate {
+    func btnTapped()
+}
