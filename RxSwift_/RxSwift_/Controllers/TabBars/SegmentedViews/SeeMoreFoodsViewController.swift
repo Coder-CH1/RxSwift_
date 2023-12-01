@@ -8,8 +8,11 @@
 import UIKit
 
 class SeeMoreFoodsViewController: UIViewController {
+    
+    var appCoordinator: AppCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .green
     }
 }

@@ -8,7 +8,9 @@
 import UIKit
 
 //MARK: - Objects properties
-class HomeViewController: UIViewController, SidebarViewControllerDelegate, SeeMoreButtonTappedDelegate {
+class HomeViewController: UIViewController, SidebarViewControllerDelegate, SeeMoreDelegate {
+    
+    var appCoordinator: AppCoordinator?
   
     let sideBarWidth: CGFloat = 250
     
@@ -233,7 +235,9 @@ extension HomeViewController {
         }
     }
     
-    func btnTapped() {
-        
+    func navigateToSeeMoreVC() {
+        let vc = SeeMoreFoodsViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        navigationController?.pushViewController(nav, animated: false)
     }
 }

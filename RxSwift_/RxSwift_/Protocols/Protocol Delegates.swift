@@ -19,11 +19,6 @@ protocol LoginViewControllerDelegate {
     func customViewDidPresentVC()
 }
 
-protocol Coordinator {
-var navigationController: UINavigationController {get set}
-func navigateToVC()
-}
-
-protocol SeeMoreButtonTappedDelegate {
-    func btnTapped()
+protocol SeeMoreDelegate {
+func navigateToSeeMoreVC()
 }

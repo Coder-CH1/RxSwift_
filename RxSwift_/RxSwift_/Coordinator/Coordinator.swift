@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AppCoordinator: Coordinator {
+class AppCoordinator {
     
     var navigationController: UINavigationController
 
@@ -15,12 +15,7 @@ class AppCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
-    func navigateToVC() {
-      
+    func start() {
+        
     }
 }
-
-
-
-
-
