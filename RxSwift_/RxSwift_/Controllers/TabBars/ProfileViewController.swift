@@ -9,6 +9,8 @@ import UIKit
 //MARK: - Objects properties and its constraints
 class ProfileViewController: UIViewController {
     
+    weak var coordinator: AppCoordinator?
+    
     let myProfileLabel = Label(label: "My Profile", textColor: .black, font: UIFont.systemFont(ofSize: 30, weight: .semibold))
     
     let personalDetailsLabel = Label(label: "Personal details", textColor: .black, font: UIFont.systemFont(ofSize: 17, weight: .semibold))

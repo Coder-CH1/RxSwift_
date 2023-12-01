@@ -13,7 +13,7 @@ class CustomTextFieldView: UIView {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundColor = color
-        self.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 0.4).isActive = true
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

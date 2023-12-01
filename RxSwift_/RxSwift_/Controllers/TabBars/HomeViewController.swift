@@ -155,7 +155,7 @@ extension HomeViewController {
             sauceView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14),
             sauceView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -14),
             sauceView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
-
+            
         ])
     }
     
@@ -204,6 +204,10 @@ extension HomeViewController {
     }
     
     func sideBarDidToggleBack() {
+        hideSideBar()
+    }
+    
+    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
         hideSideBar()
     }
     
