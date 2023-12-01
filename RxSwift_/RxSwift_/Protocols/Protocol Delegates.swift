@@ -24,6 +24,6 @@ var navigationController: UINavigationController {get set}
 func start()
 }
 
-protocol AppCoordinateDelegate {
-    func appCoordinate()
-}
+//protocol AppCoordinateDelegate {
+//    func appCoordinate()
+//}

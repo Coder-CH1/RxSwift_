@@ -10,8 +10,6 @@ import UIKit
 //MARK: - Objects properties
 class SideBarViewController: UIViewController {
     
-    var appCoordinator: AppCoordinator?
-    
     var delegate: SidebarViewControllerDelegate?
     
     let toggleBackButton = Button(image: UIImage(systemName: "xmark"), label: "", btnTitleColor: .clear, backgroundColor: .clear, radius: 0, imageColor: .gray)

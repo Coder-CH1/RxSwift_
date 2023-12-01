@@ -9,8 +9,6 @@ import UIKit
 //MARK: - Objects properties and Constraints
 class SegmentedControlViewController: UIViewController, LoginViewControllerDelegate {
     
-    var appCoordinator: AppCoordinator?
-    
     let segmentedControlIndicatorView = UIView()
     
     let topView = CustomTopView(color: .white)
@@ -113,6 +111,8 @@ extension SegmentedControlViewController {
     }
     
     func customViewDidPresentVC() {
-        appCoordinator?.start()
+        let vc = TabBarViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: false)
     }
 }
