@@ -9,7 +9,7 @@ import UIKit
 //MARK: - Objects properties and Constraints
 class SegmentedControlViewController: UIViewController, LoginViewControllerDelegate {
     
-    //var delegate: AppCoordinateDelegate?
+    var appCoordinator: AppCoordinator?
     
     let segmentedControlIndicatorView = UIView()
     
@@ -113,8 +113,6 @@ extension SegmentedControlViewController {
     }
     
     func customViewDidPresentVC() {
-        let vc = TabBarViewController()
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: false)
+        appCoordinator?.start()
     }
 }

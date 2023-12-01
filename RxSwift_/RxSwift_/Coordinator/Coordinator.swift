@@ -15,8 +15,18 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = SegmentedControlViewController()
+        let vc = SegmentedControlViewController.init()
+        vc.appCoordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
+    
+//    func tapToSegmentedControlVC() {
+//        print("tapToSegmentedControlVC method called")
+//        let vc = SegmentedControlViewController()
+//        vc.appCoordinator = self
+//        navigationController.pushViewController(vc, animated: true)
+//    }
 }
+
+
 
