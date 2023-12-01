@@ -9,6 +9,8 @@ import UIKit
 //MARK: - Objects properties and Constraints
 class SegmentedControlViewController: UIViewController, LoginViewControllerDelegate {
     
+    //var delegate: AppCoordinateDelegate?
+    
     let segmentedControlIndicatorView = UIView()
     
     let topView = CustomTopView(color: .white)

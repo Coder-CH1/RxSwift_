@@ -33,7 +33,7 @@ class SignupView: UIView {
     
     let passwordView = CustomTextFieldView(color: .black)
     
-    let signupButton = Button(image: UIImage(named: ""), label: "Sign-up", btnTitleColor: .white, backgroundColor: #colorLiteral(red: 0.9940347075, green: 0.3827575445, blue: 0.02892503142, alpha: 1), radius: 30, imageColor: .clear, font: UIFont())
+    let signupButton = Button(image: UIImage(named: ""), label: "Sign-up", btnTitleColor: .white, backgroundColor: #colorLiteral(red: 0.9940347075, green: 0.3827575445, blue: 0.02892503142, alpha: 1), radius: 30, imageColor: .clear)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

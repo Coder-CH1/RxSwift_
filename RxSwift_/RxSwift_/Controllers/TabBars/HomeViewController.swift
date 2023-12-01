@@ -16,7 +16,7 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
     
     var sideBarViewController = SideBarViewController()
     
-    let sideBarButton = Button(image: UIImage(systemName: "text.alignleft"), label: "", btnTitleColor: .clear, backgroundColor: .clear, radius: 0, imageColor: .black, font: UIFont())
+    let sideBarButton = Button(image: UIImage(systemName: "text.alignleft"), label: "", btnTitleColor: .clear, backgroundColor: .clear, radius: 0, imageColor: .black)
     
     let titleLabel = Label(label: "Delicious \nfood for you", textColor: .black, font: UIFont.systemFont(ofSize: 40, weight: .bold))
     
@@ -98,7 +98,6 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
         searchIconImage.backgroundColor = .clear
     }
 }
-
 //MARK: - Objects Constraints, setting up event to toggle the SideBar
 extension HomeViewController {
     
@@ -204,10 +203,6 @@ extension HomeViewController {
     }
     
     func sideBarDidToggleBack() {
-        hideSideBar()
-    }
-    
-    @objc func dismiss(fromGesture gesture: UISwipeGestureRecognizer) {
         hideSideBar()
     }
     
