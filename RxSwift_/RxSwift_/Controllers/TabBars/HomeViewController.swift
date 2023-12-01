@@ -168,6 +168,7 @@ extension HomeViewController {
         drinksView.translatesAutoresizingMaskIntoConstraints = false
         snacksView.translatesAutoresizingMaskIntoConstraints = false
         sauceView.translatesAutoresizingMaskIntoConstraints = false
+        foodView.delegate = self
     }
     
     func toggleSideBar() {
@@ -237,7 +238,6 @@ extension HomeViewController {
     
     func navigateToSeeMoreVC() {
         let vc = SeeMoreFoodsViewController()
-        let nav = UINavigationController(rootViewController: vc)
-        navigationController?.pushViewController(nav, animated: false)
+        navigationController?.pushViewController(vc, animated: false)
     }
 }

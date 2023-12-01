@@ -71,6 +71,7 @@ class FoodsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     
     func seeMoreButtonTapped() {
         delegate?.navigateToSeeMoreVC()
+        print("print")
     }
     
     required init?(coder: NSCoder) {
