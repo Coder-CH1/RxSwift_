@@ -20,5 +20,5 @@ protocol LoginViewControllerDelegate {
 }
 
 protocol SeeMoreDelegate {
-func navigateToSeeMoreVC()
+func navigateToSeeMoreFoodVC()
 }

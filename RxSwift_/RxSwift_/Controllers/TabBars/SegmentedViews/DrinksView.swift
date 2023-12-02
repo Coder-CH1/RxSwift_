@@ -8,6 +8,8 @@
 import UIKit
 
 class DrinksView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    var delegate: SeeMoreDelegate?
    
     let seeMoreButton = Button(image: UIImage(systemName: ""), label: "see more", btnTitleColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), backgroundColor: .clear, radius: 0, imageColor: .clear)
     
@@ -57,6 +59,18 @@ class DrinksView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DrinksViewCollectionViewCell", for: indexPath) as! DrinksViewCollectionViewCell
         cell.backgroundColor = .gray
         return cell
+    }
+    
+    func setupSeeMoreButtonAction() {
+        let action = UIAction { [weak self] _ in
+            self?.seeMoreButtonTapped()
+        }
+        seeMoreButton.addAction(action, for: .primaryActionTriggered)
+    }
+    
+    func seeMoreButtonTapped() {
+        
+        print("print")
     }
     
     required init?(coder: NSCoder) {

@@ -70,7 +70,7 @@ class FoodsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func seeMoreButtonTapped() {
-        delegate?.navigateToSeeMoreVC()
+        delegate?.navigateToSeeMoreFoodVC()
         print("print")
     }
     
