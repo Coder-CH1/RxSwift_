@@ -19,6 +19,18 @@ protocol LoginViewControllerDelegate {
     func customViewDidPresentVC()
 }
 
-protocol SeeMoreDelegate {
-func navigateToSeeMoreFoodVC()
+protocol SeeMoreFoodsDelegate {
+func navigateToSeeMoreFoodsVC()
+}
+
+protocol SeeMoreDrinksDelegate {
+func navigateToSeeMoreDrinksVC()
+}
+
+protocol SeeMoreSnacksDelegate {
+func navigateToSeeMoreSnacksVC()
+}
+
+protocol SeeMoreSauceDelegate {
+func navigateToSeeMoreSauceVC()
 }

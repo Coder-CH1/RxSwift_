@@ -8,7 +8,7 @@
 import UIKit
 
 //MARK: - Objects properties
-class HomeViewController: UIViewController, SidebarViewControllerDelegate, SeeMoreDelegate {
+class HomeViewController: UIViewController, SidebarViewControllerDelegate {
     
     var appCoordinator: AppCoordinator?
   
@@ -238,22 +238,31 @@ extension HomeViewController {
             self.segmentedControlIndicatorView.frame.origin.x = indicatorX + 15
         }
     }
-    
-    func navigateToSeeMoreFoodVC() {
+}
+
+extension HomeViewController: SeeMoreFoodsDelegate {
+    func navigateToSeeMoreFoodsVC() {
         let vc = SeeMoreFoodsViewController()
         navigationController?.pushViewController(vc, animated: false)
     }
-    
+}
+
+extension HomeViewController: SeeMoreDrinksDelegate {
     func navigateToSeeMoreDrinksVC() {
         let vc = SeeMoreDrinksViewController()
         navigationController?.pushViewController(vc, animated: false)
     }
     
+}
+
+extension HomeViewController: SeeMoreSnacksDelegate {
     func navigateToSeeMoreSnacksVC() {
         let vc = SeeMoreSnacksViewController()
         navigationController?.pushViewController(vc, animated: false)
     }
-    
+}
+
+extension HomeViewController: SeeMoreSauceDelegate {
     func navigateToSeeMoreSauceVC() {
         let vc = SeeMoreSauceViewController()
         navigationController?.pushViewController(vc, animated: false)

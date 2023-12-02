@@ -9,7 +9,7 @@ import UIKit
 //MARK: - FoodsView property objects and constraints
 class FoodsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var delegate: SeeMoreDelegate?
+    var delegate: SeeMoreFoodsDelegate?
     
     let seeMoreButton = Button(image: UIImage(systemName: ""), label: "see more", btnTitleColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), backgroundColor: .clear, radius: 0, imageColor: .clear)
    
@@ -70,8 +70,7 @@ class FoodsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func seeMoreButtonTapped() {
-        delegate?.navigateToSeeMoreFoodVC()
-        print("print")
+        delegate?.navigateToSeeMoreFoodsVC()
     }
     
     required init?(coder: NSCoder) {

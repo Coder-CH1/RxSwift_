@@ -9,7 +9,7 @@ import UIKit
 
 class DrinksView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var delegate: SeeMoreDelegate?
+    var delegate: SeeMoreDrinksDelegate?
    
     let seeMoreButton = Button(image: UIImage(systemName: ""), label: "see more", btnTitleColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), backgroundColor: .clear, radius: 0, imageColor: .clear)
     
@@ -35,6 +35,7 @@ class DrinksView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        setupSeeMoreButtonAction()
     }
     
     func setupViews() {
@@ -69,7 +70,7 @@ class DrinksView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func seeMoreButtonTapped() {
-        
+        delegate?.navigateToSeeMoreDrinksVC()
         print("print")
     }
     
