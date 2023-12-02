@@ -10,8 +10,6 @@ import UIKit
 //MARK: - Objects properties
 class HomeViewController: UIViewController, SidebarViewControllerDelegate {
     
-    var appCoordinator: AppCoordinator?
-  
     let sideBarWidth: CGFloat = 250
     
     var sideBarShowing = false
@@ -164,14 +162,14 @@ extension HomeViewController {
         sauceView.isHidden =  true
         snacksView.isHidden = true
         drinksView.isHidden = true
-        foodView.translatesAutoresizingMaskIntoConstraints = false
-        drinksView.translatesAutoresizingMaskIntoConstraints = false
-        snacksView.translatesAutoresizingMaskIntoConstraints = false
-        sauceView.translatesAutoresizingMaskIntoConstraints = false
         foodView.delegate = self
         drinksView.delegate = self
         snacksView.delegate = self
         sauceView.delegate = self
+        foodView.translatesAutoresizingMaskIntoConstraints = false
+        drinksView.translatesAutoresizingMaskIntoConstraints = false
+        snacksView.translatesAutoresizingMaskIntoConstraints = false
+        sauceView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func toggleSideBar() {
@@ -252,7 +250,6 @@ extension HomeViewController: SeeMoreDrinksDelegate {
         let vc = SeeMoreDrinksViewController()
         navigationController?.pushViewController(vc, animated: false)
     }
-    
 }
 
 extension HomeViewController: SeeMoreSnacksDelegate {

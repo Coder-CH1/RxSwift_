@@ -10,7 +10,7 @@ import UIKit
 class AppCoordinator {
     
     var navigationController: UINavigationController
-
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
