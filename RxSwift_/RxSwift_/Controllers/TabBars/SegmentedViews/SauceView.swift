@@ -11,7 +11,7 @@ class SauceView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     
     var delegate: SeeMoreSauceDelegate?
    
-    let seeMoreButton = Button(image: UIImage(systemName: ""), label: "see more", btnTitleColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), backgroundColor: .clear, radius: 0, imageColor: .clear)
+    let seeMoreButton = UIButton()
     
     lazy var sauceCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -35,7 +35,15 @@ class SauceView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        configureButton()
         setupSeeMoreButtonAction()
+    }
+    
+    func configureButton() {
+        seeMoreButton.setTitle("see more", for: .normal)
+        seeMoreButton.setTitleColor(#colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), for: .normal)
+        seeMoreButton.translatesAutoresizingMaskIntoConstraints = false
+        seeMoreButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
     }
     
     func setupViews() {
