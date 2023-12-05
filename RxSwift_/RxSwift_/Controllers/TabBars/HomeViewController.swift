@@ -162,6 +162,10 @@ extension HomeViewController {
         sauceView.isHidden =  true
         snacksView.isHidden = true
         drinksView.isHidden = true
+        foodView.delegate = self
+        drinksView.delegate = self
+        snacksView.delegate = self
+        sauceView.delegate = self
         foodView.translatesAutoresizingMaskIntoConstraints = false
         drinksView.translatesAutoresizingMaskIntoConstraints = false
         snacksView.translatesAutoresizingMaskIntoConstraints = false
@@ -231,5 +235,47 @@ extension HomeViewController {
         UIView.animate(withDuration: 0.2) {
             self.segmentedControlIndicatorView.frame.origin.x = indicatorX + 15
         }
+    }
+}
+
+extension HomeViewController: SeeMoreFoodsDelegate {
+    func seeMoreFoodsButtonTapped() {
+        let vc = SeeMoreFoodsViewController()
+        navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    func didSelectFoodsItem(at index: Int) {
+        let vc = FoodsDetailsViewController()
+        navigationController?.pushViewController(vc, animated: false)
+    }
+}
+
+extension  HomeViewController: SeeMoreDrinksDelegate {
+    func didSelectDrinksItem(at index: Int) {
+        print("print")
+    }
+    
+    func seeMoreDrinksButtonTapped() {
+        print("print")
+    }
+}
+
+extension HomeViewController: SeeMoreSnacksDelegate {
+    func didSelectSnacksItem(at index: Int) {
+        print("print")
+    }
+    
+    func seeMoreSnacksButtonTapped() {
+        print("print")
+    }
+}
+
+extension HomeViewController: SeeMoreSauceDelegate {
+    func didSelectSauceItem(at index: Int) {
+        print("print")
+    }
+    
+    func seeMoreSauceButtonTapped() {
+        print("print")
     }
 }

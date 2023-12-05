@@ -21,21 +21,21 @@ protocol LoginViewControllerDelegate {
 
 protocol SeeMoreFoodsDelegate {
     func seeMoreFoodsButtonTapped()
-    func didSelectItem(at index: Int)
+    func didSelectFoodsItem(at index: Int)
 }
 
 protocol SeeMoreDrinksDelegate {
     func seeMoreDrinksButtonTapped()
-    func didSelectItem(at index: Int)
+    func didSelectDrinksItem(at index: Int)
 }
 
 protocol SeeMoreSnacksDelegate {
     func seeMoreSnacksButtonTapped()
-    func didSelectItem(at index: Int)
+    func didSelectSnacksItem(at index: Int)
 }
 
 protocol SeeMoreSauceDelegate {
     func seeMoreSauceButtonTapped()
-    func didSelectItem(at index: Int)
+    func didSelectSauceItem(at index: Int)
 }
 

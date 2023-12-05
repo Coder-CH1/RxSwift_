@@ -72,6 +72,7 @@ class FoodsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didSelectFoodsItem(at: indexPath.item)
     }
     
     func setupSeeMoreButtonAction() {
