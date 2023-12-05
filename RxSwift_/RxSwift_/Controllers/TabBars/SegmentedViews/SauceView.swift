@@ -70,6 +70,10 @@ class SauceView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didSelectSauceItem(at: indexPath.item)
+    }
+    
     func setupSeeMoreButtonAction() {
         let action = UIAction { [weak self] _ in
             self?.seeMoreButtonTapped()

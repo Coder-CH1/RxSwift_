@@ -45,6 +45,7 @@ class SideBarCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
     }
     
     private func setupViews() {

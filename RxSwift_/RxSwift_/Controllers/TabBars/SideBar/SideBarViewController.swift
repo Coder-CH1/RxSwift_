@@ -23,7 +23,7 @@ class SideBarViewController: UIViewController {
         layout.minimumInteritemSpacing = 2
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
         collectionView.collectionViewLayout = layout
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self
@@ -39,8 +39,8 @@ class SideBarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
         setupViews()
+        view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
         setupToggleBackButtonAction()
     }
     
@@ -62,6 +62,7 @@ extension SideBarViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SideBarCollectionViewCell", for: indexPath) as! SideBarCollectionViewCell
         let items = sideBarItemsData[indexPath.item]
         cell.configure(with: items)
+        cell.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
         return cell
     }
 }

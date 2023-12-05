@@ -63,9 +63,9 @@ class SideBarProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
         title = "Profile"
         view.backgroundColor = #colorLiteral(red: 0.9436392188, green: 0.9436392188, blue: 0.9436392188, alpha: 1)
-        setupViews()
     }
    
     func setupViews() {

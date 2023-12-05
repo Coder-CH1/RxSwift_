@@ -13,9 +13,9 @@ class OrdersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
         title = "Orders"
         view.backgroundColor = .white
-        setupViews()
     }
     
     func setupViews() {

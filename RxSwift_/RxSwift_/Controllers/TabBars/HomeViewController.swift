@@ -63,7 +63,6 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         updatingUi()
     }
     
@@ -251,31 +250,37 @@ extension HomeViewController: SeeMoreFoodsDelegate {
 }
 
 extension  HomeViewController: SeeMoreDrinksDelegate {
-    func didSelectDrinksItem(at index: Int) {
-        print("print")
+    func seeMoreDrinksButtonTapped() {
+        let vc = SeeMoreDrinksViewController()
+        navigationController?.pushViewController(vc, animated: false)
     }
     
-    func seeMoreDrinksButtonTapped() {
-        print("print")
+    func didSelectDrinksItem(at index: Int) {
+        let vc = DrinksDetailsViewController()
+        navigationController?.pushViewController(vc, animated: false)
     }
 }
 
 extension HomeViewController: SeeMoreSnacksDelegate {
-    func didSelectSnacksItem(at index: Int) {
-        print("print")
+    func seeMoreSnacksButtonTapped() {
+        let vc = SeeMoreSnacksViewController()
+        navigationController?.pushViewController(vc, animated: false)
     }
     
-    func seeMoreSnacksButtonTapped() {
-        print("print")
+    func didSelectSnacksItem(at index: Int) {
+        let vc = SnacksDetailsViewController()
+        navigationController?.pushViewController(vc, animated: false)
     }
 }
 
 extension HomeViewController: SeeMoreSauceDelegate {
-    func didSelectSauceItem(at index: Int) {
-        print("print")
+    func seeMoreSauceButtonTapped() {
+        let vc = SeeMoreSauceViewController()
+        navigationController?.pushViewController(vc, animated: false)
     }
     
-    func seeMoreSauceButtonTapped() {
-        print("print")
+    func didSelectSauceItem(at index: Int) {
+        let vc = SauceDetailsViewController()
+        navigationController?.pushViewController(vc, animated: false)
     }
 }

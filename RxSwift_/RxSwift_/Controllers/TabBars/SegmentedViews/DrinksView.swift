@@ -70,6 +70,10 @@ class DrinksView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didSelectDrinksItem(at: indexPath.item)
+    }
+    
     func setupSeeMoreButtonAction() {
         let action = UIAction { [weak self] _ in
             self?.seeMoreButtonTapped()
