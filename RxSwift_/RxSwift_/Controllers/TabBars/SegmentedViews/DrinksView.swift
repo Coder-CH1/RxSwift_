@@ -78,7 +78,7 @@ class DrinksView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func seeMoreButtonTapped() {
-        delegate?.navigateToSeeMoreDrinksVC()
+        delegate?.seeMoreDrinksButtonTapped()
         print("print")
     }
     

@@ -78,7 +78,7 @@ class SauceView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func seeMoreButtonTapped() {
-        delegate?.navigateToSeeMoreSauceVC()
+        delegate?.seeMoreSauceButtonTapped()
         print("print")
     }
     

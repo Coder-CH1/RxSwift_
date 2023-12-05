@@ -162,10 +162,6 @@ extension HomeViewController {
         sauceView.isHidden =  true
         snacksView.isHidden = true
         drinksView.isHidden = true
-        foodView.delegate = self
-        drinksView.delegate = self
-        snacksView.delegate = self
-        sauceView.delegate = self
         foodView.translatesAutoresizingMaskIntoConstraints = false
         drinksView.translatesAutoresizingMaskIntoConstraints = false
         snacksView.translatesAutoresizingMaskIntoConstraints = false
@@ -235,33 +231,5 @@ extension HomeViewController {
         UIView.animate(withDuration: 0.2) {
             self.segmentedControlIndicatorView.frame.origin.x = indicatorX + 15
         }
-    }
-}
-
-extension HomeViewController: SeeMoreFoodsDelegate {
-    func navigateToSeeMoreFoodsVC() {
-        let vc = SeeMoreFoodsViewController()
-        navigationController?.pushViewController(vc, animated: false)
-    }
-}
-
-extension HomeViewController: SeeMoreDrinksDelegate {
-    func navigateToSeeMoreDrinksVC() {
-        let vc = SeeMoreDrinksViewController()
-        navigationController?.pushViewController(vc, animated: false)
-    }
-}
-
-extension HomeViewController: SeeMoreSnacksDelegate {
-    func navigateToSeeMoreSnacksVC() {
-        let vc = SeeMoreSnacksViewController()
-        navigationController?.pushViewController(vc, animated: false)
-    }
-}
-
-extension HomeViewController: SeeMoreSauceDelegate {
-    func navigateToSeeMoreSauceVC() {
-        let vc = SeeMoreSauceViewController()
-        navigationController?.pushViewController(vc, animated: false)
     }
 }

@@ -72,7 +72,6 @@ class FoodsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //let vc = FoodsDetailsViewController()
     }
     
     func setupSeeMoreButtonAction() {
@@ -83,7 +82,7 @@ class FoodsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func seeMoreButtonTapped() {
-        delegate?.navigateToSeeMoreFoodsVC()
+        delegate?.seeMoreFoodsButtonTapped()
     }
     
     required init?(coder: NSCoder) {

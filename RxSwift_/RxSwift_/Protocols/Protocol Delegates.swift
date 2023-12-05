@@ -20,21 +20,22 @@ protocol LoginViewControllerDelegate {
 }
 
 protocol SeeMoreFoodsDelegate {
-func navigateToSeeMoreFoodsVC()
+    func seeMoreFoodsButtonTapped()
+    func didSelectItem(at index: Int)
 }
 
 protocol SeeMoreDrinksDelegate {
-func navigateToSeeMoreDrinksVC()
+    func seeMoreDrinksButtonTapped()
+    func didSelectItem(at index: Int)
 }
 
 protocol SeeMoreSnacksDelegate {
-func navigateToSeeMoreSnacksVC()
+    func seeMoreSnacksButtonTapped()
+    func didSelectItem(at index: Int)
 }
 
 protocol SeeMoreSauceDelegate {
-func navigateToSeeMoreSauceVC()
+    func seeMoreSauceButtonTapped()
+    func didSelectItem(at index: Int)
 }
 
-protocol FoodsViewDetailsDelegate{
-    func presentDetailsVC()
-}
