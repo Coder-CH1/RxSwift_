@@ -53,7 +53,7 @@ class DrinksView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
             seeMoreButton.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             seeMoreButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            drinksCollectionView.topAnchor.constraint(equalTo: seeMoreButton.bottomAnchor, constant: 10),
+            drinksCollectionView.topAnchor.constraint(equalTo: seeMoreButton.bottomAnchor, constant: 5),
             drinksCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -5),
             drinksCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5),
             drinksCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)

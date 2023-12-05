@@ -53,7 +53,7 @@ class SnacksView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
             seeMoreButton.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             seeMoreButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            snacksCollectionView.topAnchor.constraint(equalTo: seeMoreButton.bottomAnchor, constant: 10),
+            snacksCollectionView.topAnchor.constraint(equalTo: seeMoreButton.bottomAnchor, constant: 5),
             snacksCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -5),
             snacksCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5),
             snacksCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)

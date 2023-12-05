@@ -35,6 +35,6 @@ protocol SeeMoreSauceDelegate {
 func navigateToSeeMoreSauceVC()
 }
 
-protocol FoodsViewCollectionViewDelegate{
-    func presentView(cell: FoodsViewCollectionViewCell)
+protocol FoodsViewDetailsDelegate{
+    func presentDetailsVC()
 }

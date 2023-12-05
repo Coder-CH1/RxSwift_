@@ -9,5 +9,4 @@ import UIKit
 
 class FoodsViewCollectionViewCell: UICollectionViewCell {
     
-    var delegate: FoodsViewCollectionViewDelegate?
 }

@@ -53,7 +53,7 @@ class SauceView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
             seeMoreButton.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             seeMoreButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            sauceCollectionView.topAnchor.constraint(equalTo: seeMoreButton.bottomAnchor, constant: 10),
+            sauceCollectionView.topAnchor.constraint(equalTo: seeMoreButton.bottomAnchor, constant: 5),
             sauceCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -5),
             sauceCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5),
             sauceCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)

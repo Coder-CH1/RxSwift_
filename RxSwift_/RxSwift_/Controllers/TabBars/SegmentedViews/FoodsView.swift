@@ -18,7 +18,7 @@ class FoodsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 2
-        layout.itemSize = CGSize(width: 100.0, height: 200.0)
+        layout.itemSize = CGSize(width: 150.0, height: 200.0)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
@@ -53,7 +53,7 @@ class FoodsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
             seeMoreButton.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             seeMoreButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            foodsCollectionView.topAnchor.constraint(equalTo: seeMoreButton.bottomAnchor, constant: 10),
+            foodsCollectionView.topAnchor.constraint(equalTo: seeMoreButton.bottomAnchor, constant: 5),
             foodsCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -10),
             foodsCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 10),
             foodsCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
@@ -67,7 +67,12 @@ class FoodsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FoodsViewCollectionViewCell", for: indexPath) as! FoodsViewCollectionViewCell
         cell.backgroundColor = .gray
+        cell.layer.cornerRadius = 10
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //let vc = FoodsDetailsViewController()
     }
     
     func setupSeeMoreButtonAction() {

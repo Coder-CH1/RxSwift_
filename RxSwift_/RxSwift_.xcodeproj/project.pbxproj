@@ -26,6 +26,10 @@
 		04B370A02B177A60005358E7 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 04B3709F2B177A60005358E7 /* RxCocoa */; };
 		04B370A22B177A60005358E7 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 04B370A12B177A60005358E7 /* RxSwift */; };
 		04B370A62B19D45F005358E7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370A52B19D45F005358E7 /* Coordinator.swift */; };
+		04B370A92B1F29FA005358E7 /* FoodsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370A82B1F29FA005358E7 /* FoodsDetailsViewController.swift */; };
+		04B370AB2B1F2A1B005358E7 /* DrinksDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370AA2B1F2A1B005358E7 /* DrinksDetailsViewController.swift */; };
+		04B370AD2B1F2A2D005358E7 /* SnacksDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370AC2B1F2A2D005358E7 /* SnacksDetailsViewController.swift */; };
+		04B370AF2B1F2A40005358E7 /* SauceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370AE2B1F2A40005358E7 /* SauceDetailsViewController.swift */; };
 		04D41A392B06CF470054F7F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A382B06CF470054F7F8 /* AppDelegate.swift */; };
 		04D41A3B2B06CF470054F7F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A3A2B06CF470054F7F8 /* SceneDelegate.swift */; };
 		04D41A3D2B06CF470054F7F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D41A3C2B06CF470054F7F8 /* ViewController.swift */; };
@@ -94,6 +98,10 @@
 		04B3709A2B177840005358E7 /* SeeMoreSnacksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreSnacksViewController.swift; sourceTree = "<group>"; };
 		04B3709C2B177851005358E7 /* SeeMoreSauceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreSauceViewController.swift; sourceTree = "<group>"; };
 		04B370A52B19D45F005358E7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		04B370A82B1F29FA005358E7 /* FoodsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsDetailsViewController.swift; sourceTree = "<group>"; };
+		04B370AA2B1F2A1B005358E7 /* DrinksDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksDetailsViewController.swift; sourceTree = "<group>"; };
+		04B370AC2B1F2A2D005358E7 /* SnacksDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacksDetailsViewController.swift; sourceTree = "<group>"; };
+		04B370AE2B1F2A40005358E7 /* SauceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceDetailsViewController.swift; sourceTree = "<group>"; };
 		04D41A352B06CF470054F7F8 /* RxSwift_.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwift_.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D41A382B06CF470054F7F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D41A3A2B06CF470054F7F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,15 +187,19 @@
 			children = (
 				04B370802B148CE9005358E7 /* FoodsView.swift */,
 				04B370962B177816005358E7 /* SeeMoreFoodsViewController.swift */,
+				04B370A82B1F29FA005358E7 /* FoodsDetailsViewController.swift */,
 				04B3708B2B161078005358E7 /* FoodsCell */,
 				04B370822B148CF5005358E7 /* DrinksView.swift */,
 				04B370982B17782D005358E7 /* SeeMoreDrinksViewController.swift */,
+				04B370AA2B1F2A1B005358E7 /* DrinksDetailsViewController.swift */,
 				04B3708F2B161C4C005358E7 /* DrinksCell */,
 				04B370842B148CFF005358E7 /* SnacksView.swift */,
 				04B3709A2B177840005358E7 /* SeeMoreSnacksViewController.swift */,
+				04B370AC2B1F2A2D005358E7 /* SnacksDetailsViewController.swift */,
 				04B370922B161EC1005358E7 /* SnacksCell */,
 				04B370862B148D08005358E7 /* SauceView.swift */,
 				04B3709C2B177851005358E7 /* SeeMoreSauceViewController.swift */,
+				04B370AE2B1F2A40005358E7 /* SauceDetailsViewController.swift */,
 				04B370952B16200D005358E7 /* SauceCell */,
 			);
 			path = SegmentedViews;
@@ -530,6 +542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04B3709B2B177840005358E7 /* SeeMoreSnacksViewController.swift in Sources */,
+				04B370AB2B1F2A1B005358E7 /* DrinksDetailsViewController.swift in Sources */,
 				04B370812B148CE9005358E7 /* FoodsView.swift in Sources */,
 				04B370A62B19D45F005358E7 /* Coordinator.swift in Sources */,
 				04D41A882B06D34F0054F7F8 /* SignupView.swift in Sources */,
@@ -551,6 +564,7 @@
 				04B3709D2B177851005358E7 /* SeeMoreSauceViewController.swift in Sources */,
 				04D41A772B06D2720054F7F8 /* Label.swift in Sources */,
 				04D41A6B2B06D1700054F7F8 /* TabBarViewController.swift in Sources */,
+				04B370AF2B1F2A40005358E7 /* SauceDetailsViewController.swift in Sources */,
 				04D41A972B06D5D70054F7F8 /* Protocol Delegates.swift in Sources */,
 				04B370972B177816005358E7 /* SeeMoreFoodsViewController.swift in Sources */,
 				04D41A692B06D1340054F7F8 /* SegmentedViewController.swift in Sources */,
@@ -558,6 +572,7 @@
 				04D41A7B2B06D2990054F7F8 /* CustomSegmentedControl.swift in Sources */,
 				04D41A862B06D33C0054F7F8 /* LoginView.swift in Sources */,
 				04D41AA32B07875E0054F7F8 /* OfferViewController.swift in Sources */,
+				04B370AD2B1F2A2D005358E7 /* SnacksDetailsViewController.swift in Sources */,
 				04D41A732B06D22A0054F7F8 /* HistoryViewController.swift in Sources */,
 				04D41A752B06D2580054F7F8 /* SideBarViewController.swift in Sources */,
 				04D41A712B06D21C0054F7F8 /* SideBarProfileViewController.swift in Sources */,
@@ -571,6 +586,7 @@
 				04D41A832B06D2FE0054F7F8 /* CustomTopView.swift in Sources */,
 				04D41A9F2B075BA10054F7F8 /* SideBarModel.swift in Sources */,
 				04B3706A2B0DDBBA005358E7 /* PaymentCollectionViewCell.swift in Sources */,
+				04B370A92B1F29FA005358E7 /* FoodsDetailsViewController.swift in Sources */,
 				04B370852B148CFF005358E7 /* SnacksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
