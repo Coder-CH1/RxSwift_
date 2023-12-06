@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//MARK: -
 class DrinksView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var delegate: SeeMoreDrinksDelegate?
