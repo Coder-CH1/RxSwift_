@@ -48,7 +48,7 @@ class CustomSegmentedControl: UIStackView {
     }
     
     @objc func segmentTapped(_ sender: UIButton) {
-        for (index, button) in buttons.enumerated() {
+        for (_, button) in buttons.enumerated() {
             button.isSelected = (button == sender)
         }
     }
