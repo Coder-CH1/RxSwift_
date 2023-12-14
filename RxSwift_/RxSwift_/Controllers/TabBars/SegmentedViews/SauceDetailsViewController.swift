@@ -38,7 +38,7 @@ class SauceDetailsViewController: UIViewController, UIScrollViewDelegate {
         scrollView.contentSize = CGSize(width: view.bounds.width * CGFloat(imageNames.count), height: 100)
         
         for (index, imageName) in imageNames.enumerated() {
-            let imageView = UIImageView(frame: CGRect(x: view.bounds.width * CGFloat(index), y: 50, width: view.bounds.width, height: 100))
+            let imageView = UIImageView(frame: CGRect(x: view.bounds.width * CGFloat(index), y: 100, width: view.frame.width, height: 200))
             imageView.image = UIImage(named: imageName)
             imageView.contentMode = .scaleAspectFit
             scrollView.addSubview(imageView)
