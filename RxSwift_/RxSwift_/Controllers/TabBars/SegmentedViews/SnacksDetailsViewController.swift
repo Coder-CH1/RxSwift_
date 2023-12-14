@@ -15,8 +15,16 @@ class SnacksDetailsViewController: UIViewController, UIScrollViewDelegate {
     
     let imageNames = ["fireIcon", "appLogo", "fireIcon", "appLogo"]
     
+    let addToCartButton = Button(image: UIImage(systemName: ""), label: "Add to cart", btnTitleColor: .white, backgroundColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), radius: 30, imageColor: .clear)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUi()
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    func updateUi() {
+        setupViews()
         configureScrollView()
         configurePageControl()
         pageControlSelectedAction()
@@ -57,11 +65,21 @@ class SnacksDetailsViewController: UIViewController, UIScrollViewDelegate {
     func pageControlTapped(_ sender: UIPageControl) {
         let currentPage = pageControl.currentPage
         let xOffset = view.bounds.width * CGFloat(currentPage)
-        scrollView.setContentOffset(CGPoint(x: xOffset, y: -100), animated: false)
+        scrollView.setContentOffset(CGPoint(x: xOffset, y: 50), animated: false)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x / view.bounds.width)
         pageControl.currentPage = Int(pageIndex)
+    }
+    
+    func setupViews() {
+        view.addSubview(addToCartButton)
+        NSLayoutConstraint.activate([
+            addToCartButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
+            addToCartButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            addToCartButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+            addToCartButton.heightAnchor.constraint(equalToConstant: 60),
+        ])
     }
 }
