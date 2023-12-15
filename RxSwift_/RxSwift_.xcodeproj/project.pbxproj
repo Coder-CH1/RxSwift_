@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		048ABE422B2CAB4C00262FC3 /* SauceAddedToCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABE412B2CAB4B00262FC3 /* SauceAddedToCartViewController.swift */; };
+		048ABE442B2CAB7100262FC3 /* SnacksAddedToCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABE432B2CAB7100262FC3 /* SnacksAddedToCartViewController.swift */; };
+		048ABE462B2CAB9100262FC3 /* DrinksAddedToCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABE452B2CAB9100262FC3 /* DrinksAddedToCartViewController.swift */; };
+		048ABE482B2CABA900262FC3 /* FoodsAddedToCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ABE472B2CABA900262FC3 /* FoodsAddedToCartViewController.swift */; };
 		04B370682B0CDF15005358E7 /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370672B0CDF15005358E7 /* PaymentModel.swift */; };
 		04B3706A2B0DDBBA005358E7 /* PaymentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B370692B0DDBBA005358E7 /* PaymentCollectionViewCell.swift */; };
 		04B3706D2B0F7BCD005358E7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3706C2B0F7BCD005358E7 /* ProfileViewController.swift */; };
@@ -81,6 +85,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		048ABE412B2CAB4B00262FC3 /* SauceAddedToCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceAddedToCartViewController.swift; sourceTree = "<group>"; };
+		048ABE432B2CAB7100262FC3 /* SnacksAddedToCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacksAddedToCartViewController.swift; sourceTree = "<group>"; };
+		048ABE452B2CAB9100262FC3 /* DrinksAddedToCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksAddedToCartViewController.swift; sourceTree = "<group>"; };
+		048ABE472B2CABA900262FC3 /* FoodsAddedToCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsAddedToCartViewController.swift; sourceTree = "<group>"; };
 		04B370672B0CDF15005358E7 /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
 		04B370692B0DDBBA005358E7 /* PaymentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCollectionViewCell.swift; sourceTree = "<group>"; };
 		04B3706C2B0F7BCD005358E7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -188,18 +196,22 @@
 				04B370802B148CE9005358E7 /* FoodsView.swift */,
 				04B370962B177816005358E7 /* SeeMoreFoodsViewController.swift */,
 				04B370A82B1F29FA005358E7 /* FoodsDetailsViewController.swift */,
+				048ABE472B2CABA900262FC3 /* FoodsAddedToCartViewController.swift */,
 				04B3708B2B161078005358E7 /* FoodsCell */,
 				04B370822B148CF5005358E7 /* DrinksView.swift */,
 				04B370982B17782D005358E7 /* SeeMoreDrinksViewController.swift */,
 				04B370AA2B1F2A1B005358E7 /* DrinksDetailsViewController.swift */,
+				048ABE452B2CAB9100262FC3 /* DrinksAddedToCartViewController.swift */,
 				04B3708F2B161C4C005358E7 /* DrinksCell */,
 				04B370842B148CFF005358E7 /* SnacksView.swift */,
 				04B3709A2B177840005358E7 /* SeeMoreSnacksViewController.swift */,
 				04B370AC2B1F2A2D005358E7 /* SnacksDetailsViewController.swift */,
+				048ABE432B2CAB7100262FC3 /* SnacksAddedToCartViewController.swift */,
 				04B370922B161EC1005358E7 /* SnacksCell */,
 				04B370862B148D08005358E7 /* SauceView.swift */,
 				04B3709C2B177851005358E7 /* SeeMoreSauceViewController.swift */,
 				04B370AE2B1F2A40005358E7 /* SauceDetailsViewController.swift */,
+				048ABE412B2CAB4B00262FC3 /* SauceAddedToCartViewController.swift */,
 				04B370952B16200D005358E7 /* SauceCell */,
 			);
 			path = SegmentedViews;
@@ -550,6 +562,7 @@
 				04D41A7D2B06D2B20054F7F8 /* CustomTextField.swift in Sources */,
 				04D41A3D2B06CF470054F7F8 /* ViewController.swift in Sources */,
 				04D41A392B06CF470054F7F8 /* AppDelegate.swift in Sources */,
+				048ABE462B2CAB9100262FC3 /* DrinksAddedToCartViewController.swift in Sources */,
 				04D41A812B06D2E70054F7F8 /* CustomTextFieldView.swift in Sources */,
 				04B3706D2B0F7BCD005358E7 /* ProfileViewController.swift in Sources */,
 				04D41AA52B0787690054F7F8 /* PrivacyViewController.swift in Sources */,
@@ -559,7 +572,9 @@
 				04B370682B0CDF15005358E7 /* PaymentModel.swift in Sources */,
 				04D41A6F2B06D1F10054F7F8 /* FavoritesViewController.swift in Sources */,
 				04D41A7F2B06D2CA0054F7F8 /* CustomImageView.swift in Sources */,
+				048ABE442B2CAB7100262FC3 /* SnacksAddedToCartViewController.swift in Sources */,
 				04B3708A2B161073005358E7 /* FoodsViewCollectionViewCell.swift in Sources */,
+				048ABE482B2CABA900262FC3 /* FoodsAddedToCartViewController.swift in Sources */,
 				04D41A3B2B06CF470054F7F8 /* SceneDelegate.swift in Sources */,
 				04B3709D2B177851005358E7 /* SeeMoreSauceViewController.swift in Sources */,
 				04D41A772B06D2720054F7F8 /* Label.swift in Sources */,
@@ -587,6 +602,7 @@
 				04D41A9F2B075BA10054F7F8 /* SideBarModel.swift in Sources */,
 				04B3706A2B0DDBBA005358E7 /* PaymentCollectionViewCell.swift in Sources */,
 				04B370A92B1F29FA005358E7 /* FoodsDetailsViewController.swift in Sources */,
+				048ABE422B2CAB4C00262FC3 /* SauceAddedToCartViewController.swift in Sources */,
 				04B370852B148CFF005358E7 /* SnacksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
