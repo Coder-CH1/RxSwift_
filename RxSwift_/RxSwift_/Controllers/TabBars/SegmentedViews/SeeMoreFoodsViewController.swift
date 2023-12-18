@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: - SeeMoreFoodsViewController property objects and constraints
 class SeeMoreFoodsViewController: UIViewController {
     
     var num: Int = 0

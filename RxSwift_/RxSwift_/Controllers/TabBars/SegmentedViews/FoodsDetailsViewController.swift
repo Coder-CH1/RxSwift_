@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: - FoodsDetailsViewController property objects and constraints
 class FoodsDetailsViewController: UIViewController, UIScrollViewDelegate {
     
     let scrollView = UIScrollView()
@@ -55,6 +56,7 @@ class FoodsDetailsViewController: UIViewController, UIScrollViewDelegate {
         view.addSubview(pageControl)
     }
     
+    //MARK: - This action when tapped shows each page control.
     func pageControlSelectedAction() {
         let action = UIAction { [weak self] _ in
             self?.pageControlTapped(self!.pageControl)
@@ -62,12 +64,14 @@ class FoodsDetailsViewController: UIViewController, UIScrollViewDelegate {
         pageControl.addAction(action, for: .primaryActionTriggered)
     }
     
+    //MARK: - function that shows each page control
     func pageControlTapped(_ sender: UIPageControl) {
         let currentPage = pageControl.currentPage
         let xOffset = view.bounds.width * CGFloat(currentPage)
         scrollView.setContentOffset(CGPoint(x: xOffset, y: 50), animated: false)
     }
     
+    //MARK: - Scrollview Protocol Methods for scrolling the page control
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x / view.bounds.width)
         pageControl.currentPage = Int(pageIndex)

@@ -60,6 +60,7 @@ class FoodsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         ])
     }
     
+    //MARK: - CollectionView Protocol Methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -75,6 +76,7 @@ class FoodsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         delegate?.didSelectFoodsItem(at: indexPath.item)
     }
     
+    //MARK: - Button tap to navigate to another screen
     func setupSeeMoreButtonAction() {
         let action = UIAction { [weak self] _ in
             self?.seeMoreButtonTapped()
