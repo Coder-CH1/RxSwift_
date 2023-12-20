@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//MARK: -
+//MARK: - DrinksView property objects and constraints
 class DrinksView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var delegate: SeeMoreDrinksDelegate?
@@ -60,6 +60,7 @@ class DrinksView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
         ])
     }
     
+    //MARK: - CollectionView Protocol Methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 12
     }
@@ -74,6 +75,7 @@ class DrinksView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
         delegate?.didSelectDrinksItem(at: indexPath.item)
     }
     
+    //MARK: - Button tap to navigate to another screen
     func setupSeeMoreButtonAction() {
         let action = UIAction { [weak self] _ in
             self?.seeMoreButtonTapped()

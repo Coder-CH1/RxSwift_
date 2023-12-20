@@ -270,6 +270,7 @@ extension HomeViewController: SeeMoreSnacksDelegate {
     func didSelectSnacksItem(at index: Int) {
         let vc = SnacksDetailsViewController()
         navigationController?.pushViewController(vc, animated: false)
+        tabBarController?.tabBar.isHidden = false
     }
 }
 
