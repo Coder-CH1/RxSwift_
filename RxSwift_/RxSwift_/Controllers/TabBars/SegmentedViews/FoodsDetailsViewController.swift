@@ -26,6 +26,7 @@ class FoodsDetailsViewController: UIViewController, UIScrollViewDelegate {
     
     func updateUi() {
         setupViews()
+        navigateToFoodsCart()
         configureScrollView()
         configurePageControl()
         pageControlSelectedAction()
@@ -75,6 +76,20 @@ class FoodsDetailsViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x / view.bounds.width)
         pageControl.currentPage = Int(pageIndex)
+    }
+    
+    //MARK: - This action when tapped shows each page control.
+    func navigateToFoodsCart() {
+        let action = UIAction { [weak self] _ in
+            self?.addToCartButtonTapped()
+        }
+        addToCartButton.addAction(action, for: .primaryActionTriggered)
+    }
+    
+    //MARK: - function that shows each page control
+    func addToCartButtonTapped() {
+        let vc = FoodsDetailsViewController()
+        navigationController?.pushViewController(vc, animated: false)
     }
     
     func setupViews() {
