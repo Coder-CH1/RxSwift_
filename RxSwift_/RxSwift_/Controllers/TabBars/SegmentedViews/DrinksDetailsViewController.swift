@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//MARK: - DrinksDetailsViewController property objects and constraints
 class DrinksDetailsViewController: UIViewController, UIScrollViewDelegate {
 
     let scrollView = UIScrollView()
@@ -25,6 +25,7 @@ class DrinksDetailsViewController: UIViewController, UIScrollViewDelegate {
     
     func updateUi() {
         setupViews()
+        navigateToFoodsCart()
         configureScrollView()
         configurePageControl()
         pageControlSelectedAction()
@@ -55,6 +56,7 @@ class DrinksDetailsViewController: UIViewController, UIScrollViewDelegate {
         view.addSubview(pageControl)
     }
     
+    //MARK: - This action when tapped shows each page control.
     func pageControlSelectedAction() {
         let action = UIAction { [weak self] _ in
             self?.pageControlTapped(self!.pageControl)
@@ -62,15 +64,31 @@ class DrinksDetailsViewController: UIViewController, UIScrollViewDelegate {
         pageControl.addAction(action, for: .primaryActionTriggered)
     }
     
+    //MARK: - function that shows each page control
     func pageControlTapped(_ sender: UIPageControl) {
         let currentPage = pageControl.currentPage
         let xOffset = view.bounds.width * CGFloat(currentPage)
         scrollView.setContentOffset(CGPoint(x: xOffset, y: 50), animated: false)
     }
     
+    //MARK: - Scrollview Protocol Methods for scrolling the page control
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x / view.bounds.width)
         pageControl.currentPage = Int(pageIndex)
+    }
+    
+    //MARK: - This action when tapped shows a new screen
+    func navigateToFoodsCart() {
+        let action = UIAction { [weak self] _ in
+            self?.addToCartButtonTapped()
+        }
+        addToCartButton.addAction(action, for: .primaryActionTriggered)
+    }
+    
+    //MARK: - function that navigates to a viewcontroller
+    func addToCartButtonTapped() {
+        let vc = FoodsAddedToCartViewController()
+        navigationController?.pushViewController(vc, animated: false)
     }
     
     func setupViews() {
