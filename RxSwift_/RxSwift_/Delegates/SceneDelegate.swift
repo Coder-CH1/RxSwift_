@@ -14,7 +14,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(windowScene: windowScene)
         window?.backgroundColor = .white
-        window?.rootViewController?.navigationController?.navigationBar.tintColor = .black
         let rootViewController = SegmentedControlViewController()
         window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()

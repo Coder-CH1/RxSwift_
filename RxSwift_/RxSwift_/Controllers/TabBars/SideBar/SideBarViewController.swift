@@ -128,30 +128,25 @@ extension SideBarViewController {
     func navigateToProfileViewController() {
         let vc = SideBarProfileViewController()
         navigationController?.pushViewController(vc, animated: false)
-        navigationController?.navigationBar.tintColor = .black
     }
     
     func navigateToOrdersViewController() {
         let vc = OrdersViewController()
         navigationController?.pushViewController(vc, animated: false)
-        navigationController?.navigationBar.tintColor = .black
     }
     
     func navigateToOfferViewController() {
         let vc = OfferViewController()
         navigationController?.pushViewController(vc, animated: false)
-        navigationController?.navigationBar.tintColor = .black
     }
     
     func navigateToPrivacyViewController() {
         let vc = PrivacyViewController()
         navigationController?.pushViewController(vc, animated: false)
-        navigationController?.navigationBar.tintColor = .black
     }
     
     func navigateToSecurityViewController() {
         let vc = SecurityViewController()
         navigationController?.pushViewController(vc, animated: true)
-        navigationController?.navigationBar.tintColor = .black
     }
 }
