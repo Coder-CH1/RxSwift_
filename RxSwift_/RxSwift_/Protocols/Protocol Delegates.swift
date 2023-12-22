@@ -39,3 +39,12 @@ protocol SeeMoreSauceDelegate {
     func didSelectSauceItem(at index: Int)
 }
 
+protocol Coordinator {
+    func start()
+}
+
+protocol NavigatableCoordinator: Coordinator {
+    var navigationController: UINavigationController { get }
+}
+
+
