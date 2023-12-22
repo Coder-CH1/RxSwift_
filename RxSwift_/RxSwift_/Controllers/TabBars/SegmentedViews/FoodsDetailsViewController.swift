@@ -78,7 +78,7 @@ class FoodsDetailsViewController: UIViewController, UIScrollViewDelegate {
         pageControl.currentPage = Int(pageIndex)
     }
     
-    //MARK: - This action when tapped shows each page control.
+    //MARK: - This action when tapped shows a new screen
     func navigateToFoodsCart() {
         let action = UIAction { [weak self] _ in
             self?.addToCartButtonTapped()
@@ -86,9 +86,9 @@ class FoodsDetailsViewController: UIViewController, UIScrollViewDelegate {
         addToCartButton.addAction(action, for: .primaryActionTriggered)
     }
     
-    //MARK: - function that shows each page control
+    //MARK: - function that navigates to a viewcontroller
     func addToCartButtonTapped() {
-        let vc = FoodsDetailsViewController()
+        let vc = FoodsAddedToCartViewController()
         navigationController?.pushViewController(vc, animated: false)
     }
     
