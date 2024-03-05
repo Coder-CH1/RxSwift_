@@ -8,6 +8,8 @@
 import UIKit
 //MARK: - DrinksDetailsViewController property objects and constraints
 class DrinksDetailsViewController: UIViewController, UIScrollViewDelegate {
+    
+    let favoriteButton = Button(image: UIImage(named: "heart"), label: "", btnTitleColor: .clear, backgroundColor: .clear, radius: 0, imageColor: .black)
 
     let scrollView = UIScrollView()
     
@@ -93,7 +95,11 @@ class DrinksDetailsViewController: UIViewController, UIScrollViewDelegate {
     
     func setupViews() {
         view.addSubview(addToCartButton)
+        view.addSubview(favoriteButton)
         NSLayoutConstraint.activate([
+            favoriteButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 70),
+            favoriteButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            
             addToCartButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
             addToCartButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             addToCartButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
