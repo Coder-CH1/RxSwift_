@@ -90,7 +90,7 @@ class FoodsDetailsViewController: UIViewController, UIScrollViewDelegate {
     
     //MARK: - function that navigates to a viewcontroller
     func addToCartButtonTapped() {
-        let vc = FoodsAddedToCartViewController()
+        let vc = FoodsCartViewController()
         navigationController?.pushViewController(vc, animated: false)
     }
     
