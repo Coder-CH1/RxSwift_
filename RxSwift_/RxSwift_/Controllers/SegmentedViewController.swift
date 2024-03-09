@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//MARK: - Objects properties and Constraints
+//MARK: - Objects and its properties
 class SegmentedControlViewController: UIViewController, LoginViewControllerDelegate {
     
     let segmentedControlIndicatorView = UIView()
@@ -35,6 +35,7 @@ class SegmentedControlViewController: UIViewController, LoginViewControllerDeleg
         updatingUi()
     }
     
+    //MARK: - Function created to update the ui of the viewcontroller
     func updatingUi() {
         setupViews()
         setupSegmentsTappedAction()
@@ -44,6 +45,7 @@ class SegmentedControlViewController: UIViewController, LoginViewControllerDeleg
         appLogo.backgroundColor = .white
     }
     
+    //MARK: - The tap button event that selects either the login view/signup view
     func setupSegmentsTappedAction() {
         let action = UIAction { [weak self] _ in
             self?.segmentedControlChanged(self!.segmentedControl)
@@ -51,6 +53,7 @@ class SegmentedControlViewController: UIViewController, LoginViewControllerDeleg
         segmentedControl.addAction(action, for: .valueChanged)
     }
     
+    //MARK: - Setting the properties of the segmented control
     func setupSegmentedControlIndicator() {
         segmentedControlIndicatorView.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1)
         let segmentedWidth = segmentedControl.frame.width/CGFloat(segmentedControl.numberOfSegments)
@@ -59,6 +62,7 @@ class SegmentedControlViewController: UIViewController, LoginViewControllerDeleg
     }
 }
 
+//MARK: - Extending the constraints objects of the viewcontroller
 extension SegmentedControlViewController {
     
     func setupViews() {
@@ -99,6 +103,7 @@ extension SegmentedControlViewController {
         signupView.translatesAutoresizingMaskIntoConstraints = false
     }
     
+    //MARK: - The segmented control event functionality that selects either the login view/ signup view
     func segmentedControlChanged(_ sender: UISegmentedControl) {
         loginView.isHidden = sender.selectedSegmentIndex == 1
         signupView.isHidden = sender.selectedSegmentIndex == 0
@@ -110,6 +115,7 @@ extension SegmentedControlViewController {
         }
     }
     
+    //MARK: - Custom Delegate protocol that presents the viewcontroller
     func customViewDidPresentVC() {
         let vc = TabBarViewController()
         vc.modalPresentationStyle = .fullScreen

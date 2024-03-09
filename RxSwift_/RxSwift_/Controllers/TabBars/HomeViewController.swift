@@ -7,7 +7,7 @@
 
 import UIKit
 
-//MARK: - Objects properties
+//MARK: - Objects and its properties
 class HomeViewController: UIViewController, SidebarViewControllerDelegate {
     
     let sideBarWidth: CGFloat = 250
@@ -66,6 +66,7 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
         updatingUi()
     }
     
+    //MARK: - Function created to update the ui of the viewcontroller
     func updatingUi() {
         setupViews()
         hideBackButton()
@@ -77,6 +78,10 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
         setupSegmentedControlIndicator()
     }
     
+}
+
+//MARK: - Functions created to set the objects properties and action buttons
+extension HomeViewController {
     func hideBackButton() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
@@ -97,6 +102,7 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
         searchIconImage.backgroundColor = .clear
     }
 }
+
 //MARK: - Objects Constraints, setting up event to toggle the SideBar
 extension HomeViewController {
     
@@ -170,7 +176,10 @@ extension HomeViewController {
         snacksView.translatesAutoresizingMaskIntoConstraints = false
         sauceView.translatesAutoresizingMaskIntoConstraints = false
     }
-    
+}
+
+//MARK: Functions to toggle in/out of the sidebar
+extension HomeViewController {
     func toggleSideBar() {
         if sideBarShowing {
             hideSideBar()
@@ -208,7 +217,10 @@ extension HomeViewController {
     func sideBarDidToggleBack() {
         hideSideBar()
     }
-    
+}
+
+//MARK: - The segmented control event functionality that selects the menu views
+extension HomeViewController {
     func setupSegmentsTappedAction() {
         let action = UIAction { [weak self] _ in
             self?.segmentedControlChanged(self!.segmentedControl)

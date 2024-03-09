@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//MARK: - Setting the objects views and its properties
 class LoginView: UIView {
     
     var delegate: LoginViewControllerDelegate?
@@ -31,10 +31,10 @@ class LoginView: UIView {
         super.init(frame: frame)
         self.backgroundColor = #colorLiteral(red: 0.9436392188, green: 0.9436392188, blue: 0.9436392188, alpha: 1)
         setupViews()
-        setupSideBarButtonAction()
+        setupLoginButtonTapped()
     }
     
-    
+    //MARK: - Setting up the objects contraints
     func setupViews() {
         let subviews = [loginButton, loginEmailLabel, loginEmailTextField, emailView, loginPasswordLabel, loginPasswordTextField, passwordView, forgotPassCodeButton]
         for subview in subviews {
@@ -74,7 +74,8 @@ class LoginView: UIView {
         ])
     }
     
-    func setupSideBarButtonAction() {
+    //MARK: - Function created to implement login
+    func setupLoginButtonTapped() {
         let action = UIAction { [weak self] _ in
             self?.loginButtonTapped()
         }

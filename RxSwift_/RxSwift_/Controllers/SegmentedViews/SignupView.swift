@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//MARK: - Setting the objects views and its properties
 class SignupView: UIView {
     
     let nameLabel = Label(label: "Full name", textColor: #colorLiteral(red: 0.6677635312, green: 0.6680963635, blue: 0.6783171296, alpha: 1), font: UIFont.systemFont(ofSize: 12, weight: .regular))
@@ -41,6 +41,7 @@ class SignupView: UIView {
         setupViews()
     }
     
+    //MARK: - Setting up the objects contraints
     func setupViews() {
         let subviews = [nameLabel,nameTextField,nameView,residentialAddressLabel,residentialAddressTextField,residentialAddressView,signupButton, signupEmailLabel, signupEmailTextField, emailView, signupPasswordLabel, signupPasswordTextField, passwordView]
         for subview in subviews {
