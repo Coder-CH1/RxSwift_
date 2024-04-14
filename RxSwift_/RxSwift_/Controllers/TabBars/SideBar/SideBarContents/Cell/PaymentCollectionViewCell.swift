@@ -10,7 +10,7 @@ import UIKit
 //MARK: - Objects properties and Constraints
 class PaymentCollectionViewCell: UICollectionViewCell {
     
-    let radioButton = Button(image: UIImage(systemName: ""), label: "", btnTitleColor: .clear, backgroundColor: .clear, radius: 0, imageColor: .lightGray)
+    let radioButton = Button(image: UIImage(systemName: String()), label: String(), btnTitleColor: .clear, backgroundColor: .clear, radius: 0, imageColor: .lightGray)
     
     lazy var paymentIcon: UIImageView = {
         let paymentIcon = UIImageView()
@@ -20,7 +20,7 @@ class PaymentCollectionViewCell: UICollectionViewCell {
         return paymentIcon
     }()
     
-    let paymentLabel = Label(label: "", textColor: .black, font: UIFont.systemFont(ofSize: 14, weight: .regular))
+    let paymentLabel = Label(label: String(), textColor: .black, font: UIFont.systemFont(ofSize: 14, weight: .regular))
     
     lazy var separatorView: UIView = {
         let separatorView = UIView()

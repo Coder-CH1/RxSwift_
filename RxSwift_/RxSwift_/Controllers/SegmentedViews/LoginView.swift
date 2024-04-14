@@ -13,19 +13,19 @@ class LoginView: UIView {
     
     let loginEmailLabel = Label(label: "Email address", textColor: #colorLiteral(red: 0.6677635312, green: 0.6680963635, blue: 0.6783171296, alpha: 1), font: UIFont.systemFont(ofSize: 12, weight: .regular))
     
-    let loginEmailTextField = CustomTextField(placeholder: "", isSecureTextEntry: false)
+    let loginEmailTextField = CustomTextField(placeholder: String(), isSecureTextEntry: false)
     
     let emailView = CustomTextFieldView(color: .black)
     
     let loginPasswordLabel = Label(label: "Password", textColor: #colorLiteral(red: 0.6677635312, green: 0.6680963635, blue: 0.6783171296, alpha: 1), font: UIFont.systemFont(ofSize: 12, weight: .regular))
     
-    let loginPasswordTextField = CustomTextField(placeholder: "", isSecureTextEntry: true)
+    let loginPasswordTextField = CustomTextField(placeholder: String(), isSecureTextEntry: true)
     
     let passwordView = CustomTextFieldView(color: .black)
     
-    let forgotPassCodeButton = Button(image: UIImage(named: ""), label: "Forgot passcode?", btnTitleColor: #colorLiteral(red: 0.9940347075, green: 0.3827575445, blue: 0.02892503142, alpha: 1), backgroundColor: .clear, radius: 0, imageColor: .clear)
+    let forgotPassCodeButton = Button(image: UIImage(named: String()), label: "Forgot passcode?", btnTitleColor: #colorLiteral(red: 0.9940347075, green: 0.3827575445, blue: 0.02892503142, alpha: 1), backgroundColor: .clear, radius: 0, imageColor: .clear)
     
-    let loginButton = Button(image: UIImage(named: ""), label: "Login", btnTitleColor: .white, backgroundColor: #colorLiteral(red: 0.9940347075, green: 0.3827575445, blue: 0.02892503142, alpha: 1), radius: 30, imageColor: .clear)
+    let loginButton = Button(image: UIImage(named: String()), label: "Login", btnTitleColor: .white, backgroundColor: #colorLiteral(red: 0.9940347075, green: 0.3827575445, blue: 0.02892503142, alpha: 1), radius: 30, imageColor: .clear)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

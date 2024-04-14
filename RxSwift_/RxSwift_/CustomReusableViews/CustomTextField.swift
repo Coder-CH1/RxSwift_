@@ -12,7 +12,7 @@ class CustomTextField: UITextField {
     init(placeholder: String, isSecureTextEntry: Bool) {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
-        font = UIFont(name: "", size: 18)
+        font = UIFont(name: String(), size: 18)
         textColor = .black
         autocapitalizationType = .none
         autocorrectionType = .no

@@ -11,29 +11,29 @@ class SignupView: UIView {
     
     let nameLabel = Label(label: "Full name", textColor: #colorLiteral(red: 0.6677635312, green: 0.6680963635, blue: 0.6783171296, alpha: 1), font: UIFont.systemFont(ofSize: 12, weight: .regular))
     
-    let nameTextField = CustomTextField(placeholder: "", isSecureTextEntry: false)
+    let nameTextField = CustomTextField(placeholder: String(), isSecureTextEntry: false)
     
     let nameView = CustomTextFieldView(color: .black)
     
     let residentialAddressLabel = Label(label: "Residential Address", textColor: #colorLiteral(red: 0.6677635312, green: 0.6680963635, blue: 0.6783171296, alpha: 1), font: UIFont.systemFont(ofSize: 12, weight: .regular))
     
-    let residentialAddressTextField = CustomTextField(placeholder: "", isSecureTextEntry: false)
+    let residentialAddressTextField = CustomTextField(placeholder: String(), isSecureTextEntry: false)
     
     let residentialAddressView = CustomTextFieldView(color: .black)
     
     let signupEmailLabel = Label(label: "Email address", textColor: #colorLiteral(red: 0.6677635312, green: 0.6680963635, blue: 0.6783171296, alpha: 1), font: UIFont.systemFont(ofSize: 18, weight: .regular))
     
-    let signupEmailTextField = CustomTextField(placeholder: "", isSecureTextEntry: false)
+    let signupEmailTextField = CustomTextField(placeholder: String(), isSecureTextEntry: false)
     
     let emailView = CustomTextFieldView(color: .black)
     
     let signupPasswordLabel = Label(label: "Password", textColor: #colorLiteral(red: 0.6677635312, green: 0.6680963635, blue: 0.6783171296, alpha: 1), font: UIFont.systemFont(ofSize: 12, weight: .regular))
     
-    let signupPasswordTextField = CustomTextField(placeholder: "", isSecureTextEntry: true)
+    let signupPasswordTextField = CustomTextField(placeholder: String(), isSecureTextEntry: true)
     
     let passwordView = CustomTextFieldView(color: .black)
     
-    let signupButton = Button(image: UIImage(named: ""), label: "Sign-up", btnTitleColor: .white, backgroundColor: #colorLiteral(red: 0.9940347075, green: 0.3827575445, blue: 0.02892503142, alpha: 1), radius: 30, imageColor: .clear)
+    let signupButton = Button(image: UIImage(named: String()), label: "Sign-up", btnTitleColor: .white, backgroundColor: #colorLiteral(red: 0.9940347075, green: 0.3827575445, blue: 0.02892503142, alpha: 1), radius: 30, imageColor: .clear)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

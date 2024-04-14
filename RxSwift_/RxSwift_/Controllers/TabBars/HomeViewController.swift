@@ -16,7 +16,7 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
     
     var sideBarViewController = SideBarViewController()
     
-    let sideBarButton = Button(image: UIImage(systemName: "text.alignleft"), label: "", btnTitleColor: .clear, backgroundColor: .clear, radius: 0, imageColor: .black)
+    let sideBarButton = Button(image: UIImage(systemName: "text.alignleft"), label: String(), btnTitleColor: .clear, backgroundColor: .clear, radius: 0, imageColor: .black)
     
     let titleLabel = Label(label: "Delicious \nfood for you", textColor: .black, font: UIFont.systemFont(ofSize: 40, weight: .bold))
     
@@ -189,7 +189,6 @@ extension HomeViewController {
     }
     
     func showSideBar() {
-        sideBarViewController = SideBarViewController()
         sideBarViewController.delegate = self
         addChild(sideBarViewController)
         view.addSubview(sideBarViewController.view)

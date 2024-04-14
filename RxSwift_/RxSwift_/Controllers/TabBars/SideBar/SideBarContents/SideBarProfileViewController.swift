@@ -59,7 +59,7 @@ class SideBarProfileViewController: UIViewController {
         .paypal: PaymentOptions.OptionInfo(buttonImage: UIImage(systemName: "circle")!, imageName: "paypal", labelName: "Paypal", item: .paypal)
     ]
     
-    let updateButton = Button(image: UIImage(systemName: ""), label: "Update", btnTitleColor: .white, backgroundColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), radius: 30, imageColor: .clear)
+    let updateButton = Button(image: UIImage(systemName: String()), label: "Update", btnTitleColor: .white, backgroundColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), radius: 30, imageColor: .clear)
     
     override func viewDidLoad() {
         super.viewDidLoad()

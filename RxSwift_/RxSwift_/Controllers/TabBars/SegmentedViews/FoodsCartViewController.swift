@@ -9,7 +9,7 @@ import UIKit
 
 class FoodsCartViewController: UIViewController {
     
-    let completeOrderButton = Button(image: UIImage(systemName: ""), label: "Complete order", btnTitleColor: .white, backgroundColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), radius: 30, imageColor: .clear)
+    let completeOrderButton = Button(image: UIImage(systemName: String()), label: "Complete order", btnTitleColor: .white, backgroundColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), radius: 30, imageColor: .clear)
 
     override func viewDidLoad() {
         super.viewDidLoad()

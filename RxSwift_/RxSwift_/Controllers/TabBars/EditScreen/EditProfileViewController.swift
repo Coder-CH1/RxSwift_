@@ -11,7 +11,7 @@ class EditProfileViewController: UIViewController {
     
     var delegate: EditViewControllerDelegate?
     
-    let saveButton = Button(image: UIImage(systemName: ""), label: "save", btnTitleColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), backgroundColor: .clear, radius: 0, imageColor: .clear)
+    let saveButton = Button(image: UIImage(systemName: String()), label: "save", btnTitleColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), backgroundColor: .clear, radius: 0, imageColor: .clear)
     
     override func viewDidLoad() {
         super.viewDidLoad()

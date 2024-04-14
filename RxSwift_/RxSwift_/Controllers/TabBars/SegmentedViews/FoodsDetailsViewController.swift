@@ -10,7 +10,7 @@ import UIKit
 //MARK: - FoodsDetailsViewController property objects and constraints
 class FoodsDetailsViewController: UIViewController, UIScrollViewDelegate {
     
-    let favoriteButton = Button(image: UIImage(named: "heart"), label: "", btnTitleColor: .clear, backgroundColor: .clear, radius: 0, imageColor: .black)
+    let favoriteButton = Button(image: UIImage(named: "heart"), label: String(), btnTitleColor: .clear, backgroundColor: .clear, radius: 0, imageColor: .black)
     
     let scrollView = UIScrollView()
     
@@ -18,7 +18,7 @@ class FoodsDetailsViewController: UIViewController, UIScrollViewDelegate {
     
     let imageNames = ["fireIcon", "appLogo", "fireIcon", "appLogo"]
     
-    let addToCartButton = Button(image: UIImage(systemName: ""), label: "Add to cart", btnTitleColor: .white, backgroundColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), radius: 30, imageColor: .clear)
+    let addToCartButton = Button(image: UIImage(systemName: String()), label: "Add to cart", btnTitleColor: .white, backgroundColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), radius: 30, imageColor: .clear)
     
     override func viewDidLoad() {
         super.viewDidLoad()

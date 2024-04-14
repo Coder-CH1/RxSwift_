@@ -9,7 +9,7 @@ import UIKit
 
 class OrdersViewController: UIViewController {
     
-    let orderingButton = Button(image: UIImage(systemName: ""), label: "Start ordering", btnTitleColor: .white, backgroundColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), radius: 30, imageColor: .clear)
+    let orderingButton = Button(image: UIImage(systemName: String()), label: "Start ordering", btnTitleColor: .white, backgroundColor: #colorLiteral(red: 0.9803921569, green: 0.2901960784, blue: 0.04705882353, alpha: 1), radius: 30, imageColor: .clear)
 
     override func viewDidLoad() {
         super.viewDidLoad()
