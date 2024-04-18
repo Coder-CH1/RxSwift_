@@ -21,6 +21,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate  {
         setupViewControllers()
     }
     
+    //MARK: - Function to customize and set up the tabbars
     func setupViewControllers() {
         let vcIcons = [
             UIImage(systemName: "house.fill"),

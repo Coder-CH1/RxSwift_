@@ -61,6 +61,7 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
         return view
     }()
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         updatingUi()
@@ -83,7 +84,7 @@ class HomeViewController: UIViewController, SidebarViewControllerDelegate {
 //MARK: - Functions created to set the objects properties and action buttons
 extension HomeViewController {
     func hideBackButton() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: String(), style: .plain, target: nil, action: nil)
     }
     
     func setupSideBarButtonAction() {
